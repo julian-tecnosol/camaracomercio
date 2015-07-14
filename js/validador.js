@@ -31,6 +31,5 @@ function validador(){
         }
     });
 }
-//lkasjdajsdhja
 
 $(document).ready(validador);
