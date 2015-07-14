@@ -2,6 +2,10 @@
 	margin: 0px;
 }
 
-.error{
-    background: salmon;
+input[type=text].error{
+    box-shadow: 0 0 12px salmon;
+}
+
+input[type=radio].error{
+    box-shadow: 0 0 12px salmon;
 }

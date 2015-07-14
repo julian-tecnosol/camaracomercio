@@ -7,6 +7,7 @@ function validador(){
         var formulario = $("#formContainer");
         var allInputText = formulario.find("input[type='text']");
         var allInputRadio = formulario.find("input[type='radio'],input[type='checkbox']");
+        console.log(allInputText);
 
         var controlText = allInputText.length;
         var controlRadio = allInputText.length;
