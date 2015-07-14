@@ -250,14 +250,23 @@
             <label><input type="radio" name="sistemaSeguridad" value="si">Si</label>
             <label><input type="radio" name="sistemaSeguridad" value="no">No</label>
             <select name="tipoSistemaSeguridad" title="Tipos De Seguridad">
-                <option>Camaras</option>
-                <option>Vigilancia Privada</option>
-                <option>Alarmas</option>
-            </select>
-            <label>Ha sido victima de algun delito</label>
-            <input type="radio" name="delito">
-        </form>
-    </div>
+            <option value="camaras">Camaras</option>
+            <option value="vigilancia">Vigilancia Privada</option>
+            <option value="alarmas">Alarmas</option>
+        </select>
+        <label>Ha sido victima de algun delito</label>
+        <label><input type="radio" name="delito" value="si">Si</label>
+        <label><input type="radio" name="delito" value="no">No</label>
+        <select name="tipoDelito">
+            <option value="hurtoEstablecimientos">Hurto a personas</option>
+            <option value="hurtoPersonas">Hurto a establecimientos</option>
+        </select>
+        <label>Posee algun sistema de seguridad personal</label>
+        <label><input type="radio" name="seguridadPersonal" value="si">Si</label>
+        <label><input type="radio" name="seguridadPersonal" value="no">No</label>
+
+        <button type="submit">Enviar</button>
+    </form>
 
     <!--***********************************************-->
     <!--Librerias de javascrip para una carga asincrona-->
