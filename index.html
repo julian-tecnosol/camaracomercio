@@ -3,178 +3,258 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Aplicacion de censo empresarial</title>
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="libs/jquery/jquery-ui/jquery-ui.css">
-    <link rel="stylesheet" href="libs/jquery/jquery-ui/jquery-ui.theme.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!--<link rel="stylesheet" href="libs/jquery/jquery-ui/jquery-ui.css">-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body>
-    <form id="formContainer">
-        <h3>Informacion Personal</h3>
-        <label>Tipo de Identificacion</label>
-        <select name="selectTipoDocumento">
-            <option>C.C.</option>
-            <option>C.E.</option>
-            <option>NIT</option>
-            <option>TI</option>
-        </select>
-        <label>Numero de Documento</label>
-        <input type="text" name="inpNumDocuemnto">
-
-        <label>Nombre completo del propietario</label>
-        <input type="text" name="inpNombreRazonSocial">
-        <label>Telefono y/o Fax de la empresa</label>
-        <input type="text" name="telefonoEmpresa">
-        <label>Celular</label>
-        <input type="text" name="celularEmpresa">
-        <label>Correo Electronico</label>
-        <input type="text" name="correoEmpresa">
-        <label>Nombre Representante Legal</label>
-        <input type="text" name="inpNombreRepresentante">
-
-
-        <h3>Informacion de ubicacion</h3>
-        <label>Direccion</label>
-        <input type="text" name="direccionEmpresa">
-        <label>Barrio</label>
-        <input type="text" name="barrioEmpresa">
-
-
-        <label>Fecha de la encuesta</label>
-        <input type="date" name="fechaencuesta">
-        <label>Tipo de Organizacion</label>
-        <select name="tipoOrg" id="selectTipoOrg"></select>
-
-        <label>Ubicacion Comercial</label>
-        <select name="selectUbicaComercial" id="selUbicacionComercial"></select>
-        <label><input type="radio" name="caracterUbicacion" value="1">Propio</label>
-        <label><input type="radio" name="caracterUbicacion" value="2">Arrendado</label>
-
-        <h3>Clasificaion de la empresa</h3>
-        <select name="clasificacionEmpresa"></select>
-
-        <h4>Empleados</h4>
-        <label>Tiene Empleados</label>
-        <label><input type="radio" name="tieneEmpleados" value="1">Si</label>
-        <label><input type="radio" name="tieneEmpleados" value="0">No</label>
-        <div id="encuestaEmpleados">
-            <label><input type="checkbox" name="tipoEmpleados" value="directos">Directos</label>
-            <label><input type="checkbox" name="tipoEmpleados" value="indirectos">Indirectos</label>
-            <label>Cuantos</label>
-            <input type="text" name="numEmpleados">
-            <label>Se encuentran afiliados a salud, pension , ARL</label>
-            <label><input type="radio" name="empleadosAfiliados" value="si">Si</label>
-            <label><input type="radio" name="empleadosAfiliados" value="no">No</label>
-            <div>
-                <label>Porque ?</label>
-                <input type="text" name="justificacionPrestaciones">
+<body class="row">
+    <div class="col-md-2">
+        <p>
+            Espacio para el logo
+        </p>
+    </div>
+    <div>
+        <form id="formContainer" class="row col-md-6">
+            <div class="row">
+                <h3>
+                    Informacion Personal
+                </h3>
+                <div class="row col-md-12 typeId">
+                    <label class="col-md-6">
+                        Tipo de Identificacion
+                    </label>
+                    <span class="col-md-6">
+                        <select name="selectTipoDocumento">
+                            <option>C.C.</option>
+                            <option>C.E.</option>
+                            <option>NIT</option>
+                            <option>TI</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">Numero de Documento</label>
+                    <input class="col-md-6" type="text" name="inpNumDocuemnto">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Nombre completo del propietario
+                    </label>
+                    <input class="col-md-6" type="text" name="inpNombreRazonSocial">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Telefono y/o Fax de la empresa
+                    </label>
+                    <input class="col-md-6" type="text" name="telefonoEmpresa">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Celular
+                    </label>
+                    <input class="col-md-6" type="text" name="celularEmpresa">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Correo Electronico
+                    </label>
+                    <input class="col-md-6" type="text" name="correoEmpresa">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Nombre Representante Legal
+                    </label>
+                    <input class="col-md-6" type="text" name="inpNombreRepresentante">
+                </div>
+                <div class="row">
+                    <h3>Informacion de ubicacion</h3>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Direccion</label>
+                        <input class="col-md-6" type="text" name="direccionEmpresa">
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Barrio</label>
+                        <input class="col-md-6" type="text" name="barrioEmpresa">
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Fecha de la encuesta</label>
+                        <input class="col-md-6" type="date" name="fechaencuesta">
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Tipo de Organizacion</label>
+                        <select class="col-md-6" name="tipoOrg" id="selectTipoOrg"></select>
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Ubicacion Comercial</label>
+                        <select name="selectUbicaComercial" id="selUbicacionComercial"></select>
+                        <label>
+                            <input type="radio" name="caracterUbicacion" value="1">
+                                Propio
+                        </label>
+                        <label>
+                            <input type="radio" name="caracterUbicacion" value="2">
+                                Arrendado
+                        </label>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="row col-md-12">
+                <h3 class="col-md-6">Clasificaion de la empresa</h3>
+                <select class="col-md-6" name="clasificacionEmpresa"></select>
+            </div>
+            <div>
+                <h4>Empleados</h4>
+                    <div class="row col-md-12">
+                        <label>
+                            Tiene Empleados
+                        </label>
+                        <label>
+                            Si
+                            <input type="radio" name="tieneEmpleados" value="1">
+                        </label>
+                        <label>
+                            No
+                            <input type="radio" name="tieneEmpleados" value="0">
+                        </label>
+                    </div>
+                <div class="row" id="encuestaEmpleados">
+                    <label class="col-md-2">
+                        Directos
+                        <input type="checkbox" name="tipoEmpleados" value="directos">
+                    </label>
+                    <label class="col-md-2">
+                        Indirectos
+                        <input type="checkbox" name="tipoEmpleados" value="indirectos">
+                    </label>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">
+                            Cuantos
+                        </label>
+                        <input class="col-md-6" type="text" name="numEmpleados">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="col-md-4">Se encuentran afiliados a salud, pension , ARL</label>
+                        <label class="col-md-4">
+                            <input type="radio" name="empleadosAfiliados" value="si">
+                            Si
+                        </label>
+                        <label class="col-md-4">
+                            <input type="radio" name="empleadosAfiliados" value="no">
+                            No
+                        </label>
+                    </div>
+                    <div>
+                        <label>Porque:</label>
+                        <input type="text" name="justificacionPrestaciones">
+                    </div>
+                </div>
+            </div>
 
+            <h3>Encuesta</h3>
+            <div>
+                <label>Posee registro mercantil</label>
+                <label><input type="radio" name="registroMercantil"></label>
+                <label><input type="radio" name="registroMercantil"></label>
 
-        <h3>Encuesta</h3>
-        <div>
-            <label>Posee registro mercantil</label>
-            <label><input type="radio" name="registroMercantil"></label>
-            <label><input type="radio" name="registroMercantil"></label>
+                <label>Porque ?</label><input type="text" name="justificacionMercantil">
 
-            <label>Porque ?</label><input type="text" name="justificacionMercantil">
+                <label>Numero Matricula Mercantil</label><input type="text" name="numMatriculaMercantil">
+                <label>A que año se encuentra renovada</label><input type="text" name="anioMatriculaMercantil">
+            </div>
+            <div>
+                <label>Permiso de uso del suelo</label>
+                <label><input type="radio" name="usoDelSuelo" value="si">Si</label>
+                <label><input type="radio" name="usoDelSuelo" value="no">No</label>
+                <label>Porque ?</label><input type="text" name="justificacionUsoSuelo">
+            </div>
+            <div>
+                <label>Certificado de Bomberos</label>
+                <label><input type="radio" name="bomberos" value="si">Si</label>
+                <label><input type="radio" name="bomberos" value="no">No</label>
+                <label>Porque ?</label><input type="text" name="justificacionBomberos">
+            </div>
+            <div>
+                <label>Manipulacion de alimentos</label>
+                <label><input type="radio" name="manipulaAlimentos" value="si">Si</label>
+                <label><input type="radio" name="manipulaAlimentos" value="no">No</label>
+                <label>Porque ?</label><input type="text" name="justificacionManipulacionAlimentos">
+            </div>
+            <div>
+                <label>Posee registro invima</label>
+                <label><input type="radio" name="invima" value="si">Si</label>
+                <label><input type="radio" name="invima" value="no">No</label>
+                <label>Porque ?</label><input type="text" name="justificacionInvima">
+                <label>Numero</label><input type="text" name="numInvima">
+                <label>Fecha</label><input type="date" name="fechaInvima">
+            </div>
+            <div>
+                <label>Certificado de Sayco y Acinpro</label>
+                <label><input type="radio" name="saycoAcinpro" value="si">Si</label>
+                <label><input type="radio" name="saycoAcinpro" value="no">No</label>
+                <label>Porque ?</label><input type="text" name="justificacionSaycoAcinpro">
+                <label>Numero</label><input type="text" name="numSayco">
+                <label>Fecha</label><input type="date" name="fechaAcinpro">
+            </div>
+            <div>
+                <label>Contrato para dispocicion de residuos peligroso</label>
+                <label><input type="radio" name="residuosPeligroso" value="si">Si</label>
+                <label><input type="radio" name="residuosPeligroso" value="no">No</label>
+                <label>Numero</label><input type="text" name="numResiduosPeligrosos">
+                <label>Fecha</label><input type="date" name="fechaResiduosPeligrosos">
+            </div>
+            <div>
+                <label>Codigo CIIU</label>
+                <label><input type="radio" name="codCiiu" value="si">Si</label>
+                <label><input type="radio" name="codCiiu" value="no">No</label>
+                <label>Numero</label><input type="text" name="numCodCiiu">
+            </div>
+            <div>
+                <label>Codigo Industria y Comercio</label>
+                <label><input type="radio" name="industriaComercio" value="si">Si</label>
+                <label><input type="radio" name="industriaComercio" value="no">No</label>
+                <label>Numero</label><input type="text" name="numIndustriaComercio">
+            </div>
+            <label>Cuantos ingresos obtiene en el mes ?</label><input type="text" name="valorIngresosMensuales">
+            <label>Cuantos valen los activos del establecimiento ?</label><input type="text" name="valorActivosEmpresa">
+            <div>
+                <label>Permiso del Ministerio de las TIC o PRSTM para internet o venta de celulares</label>
+                <label><input type="radio" name="permisoTIC" value="si">Si</label>
+                <label><input type="radio" name="permisoTIC" value="no">No</label>
+            </div>
 
-            <label>Numero Matricula Mercantil</label><input type="text" name="numMatriculaMercantil">
-            <label>A que año se encuentra renovada</label><input type="text" name="anioMatriculaMercantil">
-        </div>
-        <div>
-            <label>Permiso de uso del suelo</label>
-            <label><input type="radio" name="usoDelSuelo" value="si">Si</label>
-            <label><input type="radio" name="usoDelSuelo" value="no">No</label>
-            <label>Porque ?</label><input type="text" name="justificacionUsoSuelo">
-        </div>
-        <div>
-            <label>Certificado de Bomberos</label>
-            <label><input type="radio" name="bomberos" value="si">Si</label>
-            <label><input type="radio" name="bomberos" value="no">No</label>
-            <label>Porque ?</label><input type="text" name="justificacionBomberos">
-        </div>
-        <div>
-            <label>Manipulacion de alimentos</label>
-            <label><input type="radio" name="manipulaAlimentos" value="si">Si</label>
-            <label><input type="radio" name="manipulaAlimentos" value="no">No</label>
-            <label>Porque ?</label><input type="text" name="justificacionManipulacionAlimentos">
-        </div>
-        <div>
-            <label>Posee registro invima</label>
-            <label><input type="radio" name="invima" value="si">Si</label>
-            <label><input type="radio" name="invima" value="no">No</label>
-            <label>Porque ?</label><input type="text" name="justificacionInvima">
-            <label>Numero</label><input type="text" name="numInvima">
-            <label>Fecha</label><input type="date" name="fechaInvima">
-        </div>
-        <div>
-            <label>Certificado de Sayco y Acinpro</label>
-            <label><input type="radio" name="saycoAcinpro" value="si">Si</label>
-            <label><input type="radio" name="saycoAcinpro" value="no">No</label>
-            <label>Porque ?</label><input type="text" name="justificacionSaycoAcinpro">
-            <label>Numero</label><input type="text" name="numSayco">
-            <label>Fecha</label><input type="date" name="fechaAcinpro">
-        </div>
-        <div>
-            <label>Contrato para dispocicion de residuos peligroso</label>
-            <label><input type="radio" name="residuosPeligroso" value="si">Si</label>
-            <label><input type="radio" name="residuosPeligroso" value="no">No</label>
-            <label>Numero</label><input type="text" name="numResiduosPeligrosos">
-            <label>Fecha</label><input type="date" name="fechaResiduosPeligrosos">
-        </div>
-        <div>
-            <label>Codigo CIIU</label>
-            <label><input type="radio" name="codCiiu" value="si">Si</label>
-            <label><input type="radio" name="codCiiu" value="no">No</label>
-            <label>Numero</label><input type="text" name="numCodCiiu">
-        </div>
-        <div>
-            <label>Codigo Industria y Comercio</label>
-            <label><input type="radio" name="industriaComercio" value="si">Si</label>
-            <label><input type="radio" name="industriaComercio" value="no">No</label>
-            <label>Numero</label><input type="text" name="numIndustriaComercio">
-        </div>
-        <label>Cuantos ingresos obtiene en el mes ?</label><input type="text" name="valorIngresosMensuales">
-        <label>Cuantos valen los activos del establecimiento ?</label><input type="text" name="valorActivosEmpresa">
-        <div>
-            <label>Permiso del Ministerio de las TIC o PRSTM para internet o venta de celulares</label>
-            <label><input type="radio" name="permisoTIC" value="si">Si</label>
-            <label><input type="radio" name="permisoTIC" value="no">No</label>
-        </div>
+            <h3>Informacion adicional para vendedores estacoinarios y ambulantes</h3>
+            <div>
+                <label>Tiene algun permiso para el funcionamiento</label>
+                <label><input type="radio" name="permisoFuncionamiento" value="si">Si</label>
+                <label><input type="radio" name="permisoFuncionamiento" value="no">No</label>
+                <label>Cual</label><input type="text" name="otroPermisoFunconamiento">
+            </div>
+            <div>
+                <label>Paga algun impuesto ?</label>
+                <label><input type="radio" name="pagaImpuesto" value="si">Si</label>
+                <label><input type="radio" name="pagaImpuesto" value="no">No</label>
+                <label>Cual</label><input type="text" name="otroImpuesto">
+            </div>
+            <div>
+                <label>Se encuentra afiliado a salud, pension, arl</label>
+                <label><input type="radio" name="pagaImpuesto" value="si">Si</label>
+                <label><input type="radio" name="pagaImpuesto" value="no">No</label>
+                <label>Cual</label><input type="text" name="otroImpuesto">
+            </div>
 
-        <h3>Informacion adicional para vendedores estacoinarios y ambulantes</h3>
-        <div>
-            <label>Tiene algun permiso para el funcionamiento</label>
-            <label><input type="radio" name="permisoFuncionamiento" value="si">Si</label>
-            <label><input type="radio" name="permisoFuncionamiento" value="no">No</label>
-            <label>Cual</label><input type="text" name="otroPermisoFunconamiento">
-        </div>
-        <div>
-            <label>Paga algun impuesto ?</label>
-            <label><input type="radio" name="pagaImpuesto" value="si">Si</label>
-            <label><input type="radio" name="pagaImpuesto" value="no">No</label>
-            <label>Cual</label><input type="text" name="otroImpuesto">
-        </div>
-        <div>
-            <label>Se encuentra afiliado a salud, pension, arl</label>
-            <label><input type="radio" name="pagaImpuesto" value="si">Si</label>
-            <label><input type="radio" name="pagaImpuesto" value="no">No</label>
-            <label>Cual</label><input type="text" name="otroImpuesto">
-        </div>
-
-        <h3>Informacion general de maquilas</h3>
-        <label>Cuantas maquinas tiene</label><input type="text" name="numMaquinas">
-        <label>Cuenta con sistema de seguridad</label>
-        <label><input type="radio" name="sistemaSeguridad" value="si">Si</label>
-        <label><input type="radio" name="sistemaSeguridad" value="no">No</label>
-        <select name="tipoSistemaSeguridad" title="Tipos De Seguridad">
-            <option value="camaras">Camaras</option>
-            <option value="vigilancia">Vigilancia Privada</option>
-            <option value="alarmas">Alarmas</option>
-        </select>
-        <label>Ha sido victima de algun delito</label>
+            <h3>Informacion general de maquilas</h3>
+            <label>Cuantas maquinas tiene</label><input type="text" name="numMaquinas">
+            <label>Cuenta con sistema de seguridad</label>
+            <label><input type="radio" name="sistemaSeguridad" value="si">Si</label>
+            <label><input type="radio" name="sistemaSeguridad" value="no">No</label>
+            <select name="tipoSistemaSeguridad" title="Tipos De Seguridad">
+                <option>Camaras</option>
+                <option>Vigilancia Privada</option>
+                <option>Alarmas</option>
+            </select>
+            <label>Ha sido victima de algun delito</label>
         <label><input type="radio" name="delito" value="si">Si</label>
         <label><input type="radio" name="delito" value="no">No</label>
         <select name="tipoDelito">
@@ -186,15 +266,18 @@
         <label><input type="radio" name="seguridadPersonal" value="no">No</label>
 
         <button type="submit">Enviar</button>
-    </form>
+        </form>
+    </div>
 
     <!--***********************************************-->
     <!--Librerias de javascrip para una carga asincrona-->
     <!--***********************************************-->
 
-    <script type="text/javascript" src="libs/jquery/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="libs/jquery/jquery-ui/jquery-ui.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- <script type="text/javascript" src="libs/jquery/jquery-ui/jquery-ui.min.js"></script> -->
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/validador.js"></script>
 
     <!--***********************************************-->
 </body>
