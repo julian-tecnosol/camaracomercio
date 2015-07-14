@@ -21,11 +21,11 @@
                 <h3>
                     Informacion Personal
                 </h3>
-                <div class="row col-md-2 typeId">
-                    <label class="col-md-12">
+                <div class="row col-md-12 typeId">
+                    <label class="col-md-6">
                         Tipo de Identificacion
                     </label>
-                    <span class="col-md-12">
+                    <span class="col-md-6">
                         <select name="selectTipoDocumento">
                             <option>C.C.</option>
                             <option>C.E.</option>
@@ -34,81 +34,123 @@
                         </select>
                     </span>
                 </div>
-                Hola mundo
-                <div class="row col-md-2">
-                    <label class="col-md-12">Numero de Documento</label>
-                    <input class="col-md-12" type="text" name="inpNumDocuemnto">
-                </div>
-                <div class="row col-md-2">
-                    <label class="col-md-12">
-                        Nombre completo del propietario
-                    </label>
-                    <input class="col-md-12" type="text" name="inpNombreRazonSocial">
-                </div>
-                <div class="row col-md-2">
-                    <label class="col-md-12">
-                        Telefono y/o Fax de la empresa
-                    </label>
-                    <input class="col-md-12" type="text" name="telefonoEmpresa">
-                </div>
-                <div class="row col-md-2">
-                    <label class="col-md-12">
-                        Celular
-                    </label>
-                    <input class="col-md-12" type="text" name="celularEmpresa">
-                </div>
-                <div class="row col-md-2">
-                    <label class="col-md-12">
-                        Correo Electronico
-                    </label>
-                    <input class="col-md-12" type="text" name="correoEmpresa">
+                <div class="row col-md-12">
+                    <label class="col-md-6">Numero de Documento</label>
+                    <input class="col-md-6" type="text" name="inpNumDocuemnto">
                 </div>
                 <div class="row col-md-12">
-                    <label class="col-md-12">
+                    <label class="col-md-6">
+                        Nombre completo del propietario
+                    </label>
+                    <input class="col-md-6" type="text" name="inpNombreRazonSocial">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Telefono y/o Fax de la empresa
+                    </label>
+                    <input class="col-md-6" type="text" name="telefonoEmpresa">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Celular
+                    </label>
+                    <input class="col-md-6" type="text" name="celularEmpresa">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
+                        Correo Electronico
+                    </label>
+                    <input class="col-md-6" type="text" name="correoEmpresa">
+                </div>
+                <div class="row col-md-12">
+                    <label class="col-md-6">
                         Nombre Representante Legal
                     </label>
-                    <input class="col-md-12" type="text" name="inpNombreRepresentante">
+                    <input class="col-md-6" type="text" name="inpNombreRepresentante">
                 </div>
-
-                <h3>Informacion de ubicacion</h3>
-                <label>Direccion</label>
-                <input type="text" name="direccionEmpresa">
-                <label>Barrio</label>
-                <input type="text" name="barrioEmpresa">
-
-
-                <label>Fecha de la encuesta</label>
-                <input type="date" name="fechaencuesta">
-                <label>Tipo de Organizacion</label>
-                <select name="tipoOrg" id="selectTipoOrg"></select>
-
-                <label>Ubicacion Comercial</label>
-                <select name="selectUbicaComercial" id="selUbicacionComercial"></select>
-                <label><input type="radio" name="caracterUbicacion" value="1">Propio</label>
-                <label><input type="radio" name="caracterUbicacion" value="2">Arrendado</label>
-            </div>
-
-            <h3>Clasificaion de la empresa</h3>
-            <select name="clasificacionEmpresa"></select>
-
-            <h4>Empleados</h4>
-            <label>Tiene Empleados</label>
-            <label><input type="radio" name="tieneEmpleados" value="1">Si</label>
-            <label><input type="radio" name="tieneEmpleados" value="0">No</label>
-            <div id="encuestaEmpleados">
-                <label><input type="checkbox" name="tipoEmpleados" value="directos">Directos</label>
-                <label><input type="checkbox" name="tipoEmpleados" value="indirectos">Indirectos</label>
-                <label>Cuantos</label>
-                <input type="text" name="numEmpleados">
-                <label>Se encuentran afiliados a salud, pension , ARL</label>
-                <label><input type="radio" name="empleadosAfiliados" value="si">Si</label>
-                <label><input type="radio" name="empleadosAfiliados" value="no">No</label>
-                <div>
-                    <label>Porque ?</label>
-                    <input type="text" name="justificacionPrestaciones">
+                <div class="row">
+                    <h3>Informacion de ubicacion</h3>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Direccion</label>
+                        <input class="col-md-6" type="text" name="direccionEmpresa">
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Barrio</label>
+                        <input class="col-md-6" type="text" name="barrioEmpresa">
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Fecha de la encuesta</label>
+                        <input class="col-md-6" type="date" name="fechaencuesta">
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Tipo de Organizacion</label>
+                        <select class="col-md-6" name="tipoOrg" id="selectTipoOrg"></select>
+                    </div>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">Ubicacion Comercial</label>
+                        <select name="selectUbicaComercial" id="selUbicacionComercial"></select>
+                        <label>
+                            <input type="radio" name="caracterUbicacion" value="1">
+                                Propio
+                        </label>
+                        <label>
+                            <input type="radio" name="caracterUbicacion" value="2">
+                                Arrendado
+                        </label>
+                    </div>
                 </div>
             </div>
-
+            <div class="row col-md-12">
+                <h3 class="col-md-6">Clasificaion de la empresa</h3>
+                <select class="col-md-6" name="clasificacionEmpresa"></select>
+            </div>
+            <div>
+                <h4>Empleados</h4>
+                    <div class="row col-md-12">
+                        <label>
+                            Tiene Empleados
+                        </label>
+                        <label>
+                            Si
+                            <input type="radio" name="tieneEmpleados" value="1">
+                        </label>
+                        <label>
+                            No
+                            <input type="radio" name="tieneEmpleados" value="0">
+                        </label>
+                    </div>
+                <div class="row" id="encuestaEmpleados">
+                    <label class="col-md-2">
+                        Directos
+                        <input type="checkbox" name="tipoEmpleados" value="directos">
+                    </label>
+                    <label class="col-md-2">
+                        Indirectos
+                        <input type="checkbox" name="tipoEmpleados" value="indirectos">
+                    </label>
+                    <div class="row col-md-12">
+                        <label class="col-md-6">
+                            Cuantos
+                        </label>
+                        <input class="col-md-6" type="text" name="numEmpleados">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="col-md-4">Se encuentran afiliados a salud, pension , ARL</label>
+                        <label class="col-md-4">
+                            <input type="radio" name="empleadosAfiliados" value="si">
+                            Si
+                        </label>
+                        <label class="col-md-4">
+                            <input type="radio" name="empleadosAfiliados" value="no">
+                            No
+                        </label>
+                    </div>
+                    <div>
+                        <label>Porque:</label>
+                        <input type="text" name="justificacionPrestaciones">
+                    </div>
+                </div>
+            </div>
 
             <h3>Encuesta</h3>
             <div>
