@@ -6,7 +6,9 @@ function validador(){
         event.preventDefault();
         var formulario = $("#formContainer");
         var allInputText = formulario.find("input[type='text']");
-        var allInputRadio = formulario.find("input[type='radio'],input[type='checkbox']");
+        var allInputRadio = formulario.find("input[type='checkbox']");
+        var allInputs = [];
+        var contadorErrores = 0;
 
         var controlText = allInputText.length;
         var controlRadio = allInputText.length;
@@ -19,19 +21,31 @@ function validador(){
             }else{
                 parent.append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><span id="inputError2Status" class="sr-only">(error)</span>');
                 parent.addClass('has-error has-feedback');
+
+                contadorErrores += 1;
             }
         }
 
         for(var j = 0; j < controlRadio; j++){
             var thisInputRadio = $(allInputRadio[j]);
-            var parent = thisInputRadio.parent();
+            var parent2 = thisInputRadio.parent();
             if(thisInputRadio.is(':checked')){
-                thisInputRadio.hide();
+                parent2.hide();
             }else{
-                parent.parent().addClass('has-error');
+                parent2.parent().addClass('has-error');
+                contadorErrores += 1;
             }
         }
+
+        if(contadorErrores > 0){
+            $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Faltan '+contadorErrores+' campos por llenar</div>');
+            $('.persona-danger').fadeOut(5000);
+        }else{
+            alert('True')
+        }
+
     });
 }
+
 
 $(document).ready(validador);
