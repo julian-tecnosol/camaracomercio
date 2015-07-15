@@ -9,6 +9,7 @@
     <!--<link rel="stylesheet" href="libs/jquery/jquery-ui/jquery-ui.css">-->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,700' rel='stylesheet' type='text/css'>
 </head>
 <body class="row">
     <header class="row header col-md-12">
@@ -18,560 +19,649 @@
     </header>
     <section class="row col-md-offset-3">
         <form id="formContainer" class="form-horizontal row col-md-8 edit">
-        <!--Informacion personal -------------------------------------------------------------------->
-            <div class="row">
-                <h3>
-                    Informacion Personal
-                </h3>
-                <div class="form-group">
-                    <label class="col-md-4">
-                        Tipo de Identificacion
-                    </label>
-                    <div class="col-md-2">
-                        <select class="form-control" name="selectTipoDocumento">
-                            <option>C.C.</option>
-                            <option>C.E.</option>
-                            <option>NIT</option>
-                            <option>TI</option>
-                        </select>
+<!--Informacion personal                                                                                           -->
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Informacion Personal
+                            </a>
+                        </h3>
                     </div>
-                    <label class="col-md-2">
-                        Fecha de la encuesta
-                    </label>
-                    <div class="col-md-4">
-                        <input class="form-control col-md-6" type="date" name="fechaencuesta">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4">Numero de Documento</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" type="text" name="inpNumDocuemnto">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class=" col-md-4">
-                        Nombre completo del propietario
-                    </label>
-                    <div class="col-sm-8">
-                        <input class="form-control" type="text" name="inpNombreRazonSocial">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4">
-                        Telefono y/o Fax de la empresa
-                    </label>
-                    <div class="col-md-8">
-                        <input class="form-control col-md-6" type="text" name="telefonoEmpresa">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4">
-                        Celular
-                    </label>
-                    <div class="col-md-8">
-                        <input class="form-control col-md-6" type="text" name="celularEmpresa">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4">
-                        Correo Electronico
-                    </label>
-                    <div class="col-md-8">
-                        <input class="form-control col-md-6" type="text" name="correoEmpresa">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4">
-                        Nombre Representante Legal
-                    </label>
-                    <div class="col-md-8">
-                        <input class="form-control col-md-6" type="text" name="inpNombreRepresentante">
-                    </div>
-                </div>
-
-<!--      Informacion ubicación -------------------------------------------------------------------->
-                <div class="row">
-                    <h3>
-                        Informacion de ubicacion
-                    </h3>
-                    <div class="form-group col-md-12">
-                        <label class="col-md-4">
-                            Direccion
-                        </label>
-                        <div class="col-md-8">
-                            <input class="form-control col-md-6" type="text" name="direccionEmpresa">
-                        </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label class="col-md-4">
-                            Barrio
-                        </label>
-                        <div class="col-md-8">
-                            <input class="form-control col-md-6" type="text" name="barrioEmpresa">
-                        </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2">
-                            Tipo de Organizacion
-                        </label>
-                        <div class="col-md-4">
-                            <select class="form-control" name="tipoOrg" id="selectTipoOrg">
-                                <option>
-                                    Comercial
-                                </option>
-                                <option>
-                                    Servicios
-                                </option>
-                                <option>
-                                    Industrial
-                                </option>
-                            </select>
-                        </div>
-                        <label class="col-md-2">
-                            Ubicación Comercial
-                        </label>
-                        <div class="col-md-4">
-                            <select class="form-control" name="selectUbicaComercial" id="selUbicacionComercial">
-                                <option>
-                                    Propio
-                                </option>
-                                <option>
-                                    Arrendado
-                                </option>
-                            </select>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Tipo de Identificación
+                                </label>
+                                <div class="col-md-2">
+                                    <select class="form-control" name="selectTipoDocumento">
+                                        <option value="1">
+                                            C.C.
+                                        </option>
+                                        <option value="2">
+                                            C.E.
+                                        </option>
+                                        <option value="3">
+                                            NIT
+                                        </option>
+                                        <option value="4">
+                                            TI
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-md-2">
+                                    Fecha de la encuesta
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-6" type="date" name="fechaencuesta">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">Numero de Documento</label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" name="inpNumDocuemnto">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class=" col-md-4">
+                                    Nombre completo del propietario
+                                </label>
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" name="inpNombreRazonSocial">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Telefono y/o Fax de la empresa
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control col-md-6" type="text" name="telefonoEmpresa">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Celular
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control col-md-6" type="text" name="celularEmpresa">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Correo Electronico
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control col-md-6" type="text" name="correoEmpresa">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Nombre Representante Legal
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control col-md-6" type="text" name="inpNombreRepresentante">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-<!--Informacion empresa                                                                                             -->
-                <h3>
-                    Clasificación de la empresa
-                </h3>
-                <div class="form-group">
-                    <label class="col-md-2">
-                        Categoria:
-                    </label>
-                    <div class="col-md-10">
-                        <select class="form-control" name="clasificacionEmpresa">
-                            <option>
-                                Micro
-                            </option>
-                            <option>
-                                Pequeña
-                            </option>
-                            <option>
-                                Mediana
-                            </option>
-                            <option>
-                                Grande
-                            </option>
-                        </select>
+<!--      Informacion ubicación                                                                                 -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                Informacion de ubicacion
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="form-group col-md-12">
+                                <label class="col-md-4">
+                                    Direccion
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control col-md-6" type="text" name="direccionEmpresa">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="col-md-4">
+                                    Barrio
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control col-md-6" type="text" name="barrioEmpresa">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="col-md-2">
+                                    Tipo de Organizacion
+                                </label>
+                                <div class="col-md-4">
+                                    <select class="form-control" name="tipoOrg" id="selectTipoOrg">
+                                        <option value="1">
+                                            Comercial
+                                        </option>
+                                        <option value="2">
+                                            Servicios
+                                        </option>
+                                        <option value="3">
+                                            Industrial
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-md-2">
+                                    Ubicación Comercial
+                                </label>
+                                <div class="col-md-4">
+                                    <select class="form-control" name="selectUbicaComercial" id="selUbicacionComercial">
+                                        <option value="1">
+                                            Propio
+                                        </option>
+                                        <option value="2">
+                                            Arrendado
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <h4>
-                    Empleados
-                </h4>
-                <br>
-                <div class="form-group">
-                    <label class="col-md-2">
-                        Tiene Empleados
-                    </label>
-                    <div class="col-md-3">
-                        <select class="form-control" name="tieneEmpleados">
-                            <option>
-                                Si
-                            </option>
-                            <option>
-                                No
-                            </option>
-                        </select>
+    <!--Informacion empresa                                                                                             -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                Clasificación de la empresa
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-md-2">
+                                    Categoria:
+                                </label>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="clasificacionEmpresa">
+                                        <option value="1">
+                                            Micro
+                                        </option>
+                                        <option value="2">
+                                            Pequeña
+                                        </option>
+                                        <option value="3">
+                                            Mediana
+                                        </option>
+                                        <option value="4">
+                                            Grande
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <h4>
+                                Empleados
+                            </h4>
+                            <br>
+                            <div class="form-group">
+                                <label class="col-md-2">
+                                    Tiene Empleados
+                                </label>
+                                <div class="col-md-3">
+                                    <select class="form-control" name="tieneEmpleados">
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="encuestaEmpleados">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="tipoEmpleados" value="directos">Directos
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="tipoEmpleados" value="indirectos">Indirectos
+                                    </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1">
+                                    Cuantos
+                                </label>
+                                <div class="col-md-2 col-md-offset-1">
+                                    <input class="form-control" type="text" name="numEmpleados">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-6">
+                                    Se encuentran afiliados a salud, pension o ARL
+                                </label>
+                                <div class="col-md-3">
+                                    <select class="form-control" name="afilPensSalud">
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group" id="encuestaEmpleados">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="tipoEmpleados" value="directos">Directos
-                        </label>
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="tipoEmpleados" value="indirectos">Indirectos
-                        </label>
+
+    <!--        Encuesta                                                                                -->
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h3 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                Encuesta
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Posee registro mercantil
+                                </label>
+                                <select class="form-control col-md-3" name="registMercant">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3">
+                                        Numero Matricula Mercantil
+                                </label>
+                                <div class="col-md-3">
+                                    <input class="form-control col-md-8" type="text" name="numMatriculaMercantil">
+                                </div>
+                                <label class="col-md-3">
+                                        A que año se encuentra renovada
+                                </label>
+                                <div class="col-md-3">
+                                    <input class="form-control col-md-4" type="text" name="anioMatriculaMercantil">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Permiso de uso del suelo
+                                </label>
+                                <select  class="form-control" name="permiSuelo">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                                <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Certificado de Bomberos
+                                </label>
+                                <select  class="form-control" name="certBomberos">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                                <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Manipulacion de alimentos
+                                </label>
+                                <select  class="form-control" name="manipAlimentos">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                                <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Posee registro invima
+                                </label>
+                                <select  class="form-control" name="regisInvima">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                                <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1">
+                                    Numero
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-4" type="text" name="numInvima">
+                                </div>
+                                <label class="col-md-1">
+                                    Fecha
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-4" type="date" name="fechaInvima">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-6">
+                                    Certificado de Sayco y Acinpro
+                                </label>
+                                <select class="form-control" name="certSayAcin">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1">
+                                    Numero
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-4" type="text" name="numSayco">
+                                </div>
+                                <label class="col-md-1">
+                                    Fecha
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-4" type="date" name="fechaAcinpro">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-8">
+                                    Contrato para dispocicion de residuos peligroso
+                                </label>
+                                <select class="form-control" name="contrDispoResid">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1">
+                                    Numero
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="text" name="numResiduosPeligrosos">
+                                </div>
+                                <label class="col-md-1">
+                                    Fecha
+                                </label>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="date" name="fechaResiduosPeligrosos">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2">
+                                    Codigo CIIU
+                                </label>
+                                <select class="form-control" >
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div  class="form-group">
+                                <label class="col-md-1">
+                                    Numero
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="numCodCiiu">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Codigo Industria y Comercio
+                                </label>
+                                <select  class="form-control" name="codIndustComerc">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2">
+                                    Numero
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="numIndustriaComercio">
+                                </div>
+                            </div>
+                            <div  class="form-group">
+                                <label class="col-md-4">
+                                    Cuantos ingresos obtiene en el mes ?
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="valorIngresosMensuales">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cuantos valen los activos del establecimiento ?
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="valorActivosEmpresa">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Permiso del Ministerio de las TIC o PRSTM para internet o venta de celulares
+                                </label>
+                                <select  class="form-control" name="permisoTic">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-1">
-                        Cuantos
-                    </label>
-                    <div class="col-md-2 col-md-offset-1">
-                        <input class="form-control" type="text" name="numEmpleados">
+
+
+        <!--Información adicional                                                                               -->
+                <div class="panel panel-default">
+                    <div class="panel-heading" rol="tab" id="headingFive">
+                        <h3 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                Informacion adicional para vendedores estacinarios y ambulantes
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Tiene algun permiso para el funcionamiento
+                                </label>
+                                <select  class="form-control" name="permisoFuncionamiento">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cual
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="otroPermisoFunconamiento">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Paga algun impuesto:
+                                </label>
+                                <select  class="form-control" name="pagaImpuesto">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cual
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="otroImpuesto">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Se encuentra afiliado a salud, pension, arl
+                                </label>
+                                <select  class="form-control" name="afiliadoSaludPensionArl">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cual
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="otroImpuesto">
+                                </div>
+                            </div>
+
+                            <h3 class="col-md-12">
+                                Informacion general de maquilas
+                            </h3>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cuantas maquinas tiene
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="numMaquinas">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cuenta con sistema de seguridad
+                                </label>
+                                <select  class="form-control" name="tieneSeguridadPriv">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Cual:
+                                </label>
+                                <select name="tipoSistemaSeguridad" title="Tipos De Seguridad">
+                                    <option value="camaras">Camaras</option>
+                                    <option value="vigilancia">Vigilancia Privada</option>
+                                    <option value="alarmas">Alarmas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Ha sido victima de algun delito
+                                </label>
+                                <select class="form-control" name="victimaDelito">
+                                    <option value="1">
+                                        Si
+                                    </option>
+                                    <option value="2">
+                                        No
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cual:
+                                </label>
+                                <select name="tipoDelito">
+                                    <option value="1">
+                                        Hurto a personas
+                                    </option>
+                                    <option value="2">
+                                        Hurto a establecimientos
+                                    </option>
+                                    <option value="3">
+                                        Violación
+                                    </option>
+                                    <option value="4">
+                                        Esxtorción
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Posee algun sistema de seguridad personal
+                                </label>
+                               <select  class="form-control" name="segPersonal">
+                                   <option value="1">
+                                       Si
+                                   </option>
+                                   <option value="2">
+                                       No
+                                   </option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-6">
-                        Se encuentran afiliados a salud, pension o ARL
-                    </label>
-                    <div class="col-md-3">
-                        <select class="form-control" name="afilPensSalud">
-                            <option>
-                                Si
-                            </option>
-                            <option>
-                                No
-                            </option>
-                        </select>
-                    </div>
+                    <button class="btn btn-block btn-success btn-lg sbmtButton" type="submit">Enviar</button>
                 </div>
-                <div class="form-group">
-                    <input class="form-control" class="col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
-                </div>
-
-<!--        Encuesta                                                                                -->
-
-            <h3 class="col-md-12">
-                Encuesta
-            </h3>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Posee registro mercantil
-                </label>
-                <select name="registMercant">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-                <div>
-                    <input class="form-control" type="text" name="justificacionMercantil" placeholder="Porque">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3">
-                        Numero Matricula Mercantil
-                </label>
-                <div class="col-md-3">
-                    <input class="form-control col-md-8" type="text" name="numMatriculaMercantil">
-                </div>
-                <label class="col-md-3">
-                        A que año se encuentra renovada
-                </label>
-                <div class="col-md-3">
-                    <input class="form-control col-md-4" type="text" name="anioMatriculaMercantil">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Permiso de uso del suelo
-                </label>
-                <select name="permiSuelo">
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-                <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque">
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Certificado de Bomberos
-                </label>
-                <select name="certBomberos">
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-                <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque">
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Manipulacion de alimentos
-                </label>
-                <select name="manipAlimentos">
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-                <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque">
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Posee registro invima
-                </label>
-                <select name="regisInvima">
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-                <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
-            </div>
-            <div class="form-group">
-                <label class="col-md-1">
-                    Numero
-                </label>
-                <div class="col-md-4">
-                    <input class="form-control col-md-4" type="text" name="numInvima">
-                </div>
-                <label class="col-md-1">
-                    Fecha
-                </label>
-                <div class="col-md-4">
-                    <input class="form-control col-md-4" type="date" name="fechaInvima">
-                </div>
-            </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-6">
-                    Certificado de Sayco y Acinpro
-                </label>
-                <select name="certSayAcin">
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-                <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
-            </div>
-            <div class="form-group">
-                <label class="col-md-1">
-                    Numero
-                </label>
-                <div class="col-md-4">
-                    <input class="form-control col-md-4" type="text" name="numSayco">
-                </div>
-                <label class="col-md-1">
-                    Fecha
-                </label>
-                <div class="col-md-4">
-                    <input class="form-control col-md-4" type="date" name="fechaAcinpro">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-8">
-                    Contrato para dispocicion de residuos peligroso
-                </label>
-                <select name="contrDispoResid">
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-1">
-                    Numero
-                </label>
-                <div class="col-md-4">
-                    <input class="form-control" type="text" name="numResiduosPeligrosos">
-                </div>
-                <label class="col-md-1">
-                    Fecha
-                </label>
-                <div class="col-md-4">
-                    <input class="form-control" type="date" name="fechaResiduosPeligrosos">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2">
-                    Codigo CIIU
-                </label>
-                <select>
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-            </div>
-            <div  class="form-group">
-                <label class="col-md-1">
-                    Numero
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="numCodCiiu">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Codigo Industria y Comercio
-                </label>
-                <select name="codIndustComerc">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-2">
-                    Numero
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="numIndustriaComercio">
-                </div>
-            </div>
-            <div  class="form-group">
-                <label class="col-md-4">
-                    Cuantos ingresos obtiene en el mes ?
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="valorIngresosMensuales">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cuantos valen los activos del establecimiento ?
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="valorActivosEmpresa">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>
-                    Permiso del Ministerio de las TIC o PRSTM para internet o venta de celulares
-                </label>
-                <select name="permisoTic">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-
-
-<!--Información adicional                                                                               -->
-
-            <h3 class="col-md-12">
-                Informacion adicional para vendedores estacinarios y ambulantes
-            </h3>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Tiene algun permiso para el funcionamiento
-                </label>
-                <select name="permisoFuncionamiento">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cual
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="otroPermisoFunconamiento">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Paga algun impuesto:
-                </label>
-                <select name="pagaImpuesto">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cual
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="otroImpuesto">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Se encuentra afiliado a salud, pension, arl
-                </label>
-                <select name="afiliadoSaludPensionArl">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cual
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="otroImpuesto">
-                </div>
-            </div>
-
-            <h3 class="col-md-12">
-                Informacion general de maquilas
-            </h3>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cuantas maquinas tiene
-                </label>
-                <div class="col-md-8">
-                    <input class="form-control" type="text" name="numMaquinas">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cuenta con sistema de seguridad
-                </label>
-                <select name="tieneSeguridadPriv">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>
-                    Cual:
-                </label>
-                <select name="tipoSistemaSeguridad" title="Tipos De Seguridad">
-                    <option value="camaras">Camaras</option>
-                    <option value="vigilancia">Vigilancia Privada</option>
-                    <option value="alarmas">Alarmas</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>
-                    Ha sido victima de algun delito
-                </label>
-                <select name="victimaDelito">
-                    <option>
-                        Si
-                    </option>
-                    <option>
-                        No
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Cual:
-                </label>
-                <select name="tipoDelito">
-                    <option value="hurtoEstablecimientos">
-                        Hurto a personas
-                    </option>
-                    <option value="hurtoPersonas">
-                        Hurto a establecimientos
-                    </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4">
-                    Posee algun sistema de seguridad personal
-                </label>
-               <select name="segPersonal">
-                   <option>
-                       Si
-                   </option>
-                   <option>
-                       No
-                   </option>
-                </select>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-block btn-success btn-lg sbmtButton" type="submit">Enviar</button>
             </div>
         </form>
     </section>
@@ -585,6 +675,7 @@
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/validador.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!--***********************************************-->
 </body>
 </html>
