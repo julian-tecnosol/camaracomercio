@@ -11,7 +11,8 @@ header{
 .edit{
 	background-color: #ffffff;
 	padding: 1% 6%;
-  	box-shadow: 0 0 12px silver;
+  	-webkit-box-shadow: 0px 2px 5px silver;
+  	-moz-box-shadow: 0px 2px 5px silver;
 }
 
 .arrow{
@@ -20,4 +21,8 @@ header{
     border-style: solid;
     border-width: 10px;
     border-color: #B0B0B0 #ffffff #ffffff #ffffff;
+}
+
+.checkBx{
+	height: 15px;
 }

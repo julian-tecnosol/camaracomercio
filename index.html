@@ -18,6 +18,7 @@
     </header>
     <section class="row col-md-offset-3">
         <form id="formContainer" class="form-horizontal row col-md-8 edit">
+        <!--Informacion personal -------------------------------------------------------------------->
             <div class="row">
                 <h3>
                     Informacion Personal
@@ -81,6 +82,8 @@
                         <input class="form-control col-md-6" type="text" name="inpNombreRepresentante">
                     </div>
                 </div>
+
+<!--      Informacion ubicación -------------------------------------------------------------------->
                 <div class="row">
                     <h3>
                         Informacion de ubicacion
@@ -129,50 +132,85 @@
                     </div>
                 </div>
             </div>
+
+<!--Informacion empresa                                                                                             -->
             <div class="row col-md-12">
                 <h3 class="col-md-6">
                     Clasificación de la empresa
                 </h3>
-                <select class="col-md-6" name="clasificacionEmpresa"></select>
-                    <div class="form-group col-md-12">
-                        <h4>Empleados</h4>
-                        <label>
-                            Tiene Empleados
-                        </label>
+                <select class="col-md-6" name="clasificacionEmpresa">
+                    <option>
+                        Micro
+                    </option>
+                    <option>
+                        Pequeña
+                    </option>
+                    <option>
+                        Mediana
+                    </option>
+                    <option>
+                        Grande
+                    </option>
+                </select>
+                <div class="form-group col-md-12">
+                    <h4 class="col-md-12">
+                        Empleados
+                    </h4>
+                    <label class="col-md-4">
+                        Tiene Empleados
+                    </label>
+                    <span class="col-md-6">
                         <select name="tieneEmpleados">
-                            <option>Si</option>
-                            <option>No</option>
+                            <option>
+                                Si
+                            </option>
+                            <option>
+                                No
+                            </option>
                         </select>
-                    </div>
+                    </span>
+                </div>
                 <div class="form-group" id="encuestaEmpleados">
-                    <label class="col-md-6">
-                        Directos
-                        <div class="col-md-8">
-                            <input class="form-control" type="checkbox" name="tipoEmpleados" value="directos">
+                    <label class="row col-md-4">
+                        <label class="col-md-4">
+                            Directos
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control checkBx" type="checkbox" name="tipoEmpleados" value="directos">
                         </div>
                     </label>
-                    <label class="col-md-6">
-                        Indirectos
-                        <div class="col-md-8">
-                            <input class="form-control" type="checkbox" name="tipoEmpleados" value="indirectos">
+                    <label class="row col-md-4">
+                        <label class="col-md-4">
+                            Indirectos
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control checkBx" type="checkbox" name="tipoEmpleados" value="indirectos">
                         </div>
                     </label>
-                    <label class="col-md-6">
+                    <label class="col-md-5">
                         Cuantos
                     </label>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <input class="form-control" class="col-md-6" type="text" name="numEmpleados">
                     </div>
                     <label class="col-md-6">
                         Se encuentran afiliados a salud, pension o ARL
                     </label>
-                    <select name="afilPensSalud">
-                        <option>Si</option>
-                        <option>No</option>
-                    </select>
+                    <div class="col-md-6">
+                        <select name="afilPensSalud">
+                            <option>
+                                Si
+                            </option>
+                            <option>
+                                No
+                            </option>
+                        </select>
+                    </div>
                     <input class="form-control" class="col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
                 </div>
             </div>
+
+<!--        Encuesta                                                                                -->
 
             <div class="form-group col-md-12">
                 <h3 class="col-md-12">
@@ -266,8 +304,9 @@
                             Fecha
                         </label>
                         <div class="col-md-8">
-                            <input class="form-control col-md-4" type="date" name="fechaInvima"></div>
+                            <input class="form-control col-md-4" type="date" name="fechaInvima">
                         </div>
+                    </div>
                 </div>
                 <div class="from-group col-md-12">
                     <div class="from-group col-md-12">
@@ -383,7 +422,10 @@
                 </div>
             </div>
 
-            <h3>Informacion adicional para vendedores estacoinarios y ambulantes</h3>
+
+<!--Información adicional                                                                               -->
+
+            <h3>Informacion adicional para vendedores estacinarios y ambulantes</h3>
             <div>
                 <label>Tiene algun permiso para el funcionamiento</label>
                 <label>
