@@ -16,14 +16,19 @@ function validador(){
         for(var i = 0; i < controlText; i++){
             var thisInputText = $(allInputText[i]);
             var parent = thisInputText.parent();
-            if(thisInputText.val().length >= 1){
-                parent.parent().hide();
+            var place = thisInputText.attr('placeholder');
+            if(!place){
+                if(thisInputText.val().length >= 1){
+                    parent.parent().hide();
+                }else{
+                    parent.append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><span id="inputError2Status" class="sr-only">(error)</span>');
+                    parent.addClass('has-error has-feedback');
+                    contadorErrores += 1;
+                }
             }else{
-                parent.append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><span id="inputError2Status" class="sr-only">(error)</span>');
-                parent.addClass('has-error has-feedback');
 
-                contadorErrores += 1;
             }
+
         }
 
         for(var j = 0; j < controlRadio; j++){
