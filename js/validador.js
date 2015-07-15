@@ -7,27 +7,28 @@ function validador(){
         var formulario = $("#formContainer");
         var allInputText = formulario.find("input[type='text']");
         var allInputRadio = formulario.find("input[type='radio'],input[type='checkbox']");
-        console.log(allInputText);
 
         var controlText = allInputText.length;
         var controlRadio = allInputText.length;
 
         for(var i = 0; i < controlText; i++){
-            console.log(allInputText[i]);
             var thisInputText = $(allInputText[i]);
+            var parent = thisInputText.parent();
             if(thisInputText.val().length >= 1){
-                thisInputText.hide();
+                parent.parent().hide();
             }else{
-                thisInputText.addClass('error');
+                parent.append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><span id="inputError2Status" class="sr-only">(error)</span>');
+                parent.addClass('has-error has-feedback');
             }
         }
 
         for(var j = 0; j < controlRadio; j++){
             var thisInputRadio = $(allInputRadio[j]);
+            var parent = thisInputRadio.parent();
             if(thisInputRadio.is(':checked')){
                 thisInputRadio.hide();
             }else{
-                thisInputRadio.addClass('error');
+                parent.parent().addClass('has-error');
             }
         }
     });
