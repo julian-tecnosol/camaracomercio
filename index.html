@@ -50,32 +50,32 @@
                         <input class="form-control" type="text" name="inpNombreRazonSocial">
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4">
                         Telefono y/o Fax de la empresa
                     </label>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <input class="form-control col-md-6" type="text" name="telefonoEmpresa">
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4">
                         Celular
                     </label>
                     <div class="col-md-8">
                         <input class="form-control col-md-6" type="text" name="celularEmpresa">
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4">
                         Correo Electronico
                     </label>
                     <div class="col-md-8">
                         <input class="form-control col-md-6" type="text" name="correoEmpresa">
                     </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <label class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4">
                         Nombre Representante Legal
                     </label>
                     <div class="col-md-8">
@@ -89,7 +89,7 @@
                         Informacion de ubicacion
                     </h3>
                     <div class="form-group col-md-12">
-                        <label class="col-md-6">
+                        <label class="col-md-4">
                             Direccion
                         </label>
                         <div class="col-md-8">
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <label class="col-md-6">
+                        <label class="col-md-4">
                             Barrio
                         </label>
                         <div class="col-md-8">
@@ -116,42 +116,56 @@
                         <label class="col-md-6">
                             Tipo de Organizacion
                         </label>
-                        <select class="col-md-6" name="tipoOrg" id="selectTipoOrg"></select>
+                        <select class="col-md-6" name="tipoOrg" id="selectTipoOrg">
+                            <option>
+                                Comercial
+                            </option>
+                            <option>
+                                Servicios
+                            </option>
+                            <option>
+                                Industrial
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group col-md-12">
                         <label class="col-md-6">
                             Ubicación Comercial
                         </label>
-                        <select class="col-md-6" name="selectUbicaComercial" id="selUbicacionComercial"></select>
-                        <div class="from-group col-md-12">
-                            <select name="local">
-                                <option>Propio</option>
-                                <option>Arrendado</option>
-                            </select>
-                        </div>
+                        <select name="selectUbicaComercial" id="selUbicacionComercial">
+                                <option>
+                                    Propio
+                                </option>
+                                <option>
+                                    Arrendado
+                                </option>
+                        </select>
                     </div>
                 </div>
-            </div>
 
 <!--Informacion empresa                                                                                             -->
-            <div class="row col-md-12">
-                <h3 class="col-md-6">
+                <h3 class="col-md-12">
                     Clasificación de la empresa
                 </h3>
-                <select class="col-md-6" name="clasificacionEmpresa">
-                    <option>
-                        Micro
-                    </option>
-                    <option>
-                        Pequeña
-                    </option>
-                    <option>
-                        Mediana
-                    </option>
-                    <option>
-                        Grande
-                    </option>
-                </select>
+                <div class="form-group">
+                    <label class="col-md-4">
+                        Categoria:
+                    </label>
+                    <select name="clasificacionEmpresa">
+                        <option>
+                            Micro
+                        </option>
+                        <option>
+                            Pequeña
+                        </option>
+                        <option>
+                            Mediana
+                        </option>
+                        <option>
+                            Grande
+                        </option>
+                    </select>
+                </div>
                 <div class="form-group col-md-12">
                     <h4 class="col-md-12">
                         Empleados
@@ -208,7 +222,6 @@
                     </div>
                     <input class="form-control" class="col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
                 </div>
-            </div>
 
 <!--        Encuesta                                                                                -->
 
@@ -220,8 +233,12 @@
                     Posee registro mercantil
                 </label>
                 <select name="registMercant">
-                    <option>Si</option>
-                    <option>No</option>
+                    <option>
+                        Si
+                    </option>
+                    <option>
+                        No
+                    </option>
                 </select>
                 <input class="form-control col-md-12" type="text" name="justificacionMercantil" placeholder="Porque">
             </div>
