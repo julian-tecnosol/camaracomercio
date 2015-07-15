@@ -18,15 +18,6 @@ header{
 .arrow{
     width:5px;
     height:5px;
-    border-style: solid;
-    border-width: 10px;
-    border-color: #B0B0B0 #ffffff #ffffff #ffffff;
-}
-
-.checkBx{
-	height: 15px;
-}
-
-.sbmtButton{
-	margin-left: 40%;
+    border: 10px solid #ffffff;
+    border-top-color: #B0B0B0;
 }

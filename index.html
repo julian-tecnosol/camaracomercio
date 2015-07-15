@@ -23,18 +23,24 @@
                 <h3>
                     Informacion Personal
                 </h3>
-                <div class="form-group col-md-12 typeId">
-                    <label class="col-md-6">
+                <div class="form-group">
+                    <label class="col-md-4">
                         Tipo de Identificacion
                     </label>
-                    <span class="col-md-6">
-                        <select name="selectTipoDocumento">
+                    <div class="col-md-2">
+                        <select class="form-control" name="selectTipoDocumento">
                             <option>C.C.</option>
                             <option>C.E.</option>
                             <option>NIT</option>
                             <option>TI</option>
                         </select>
-                    </span>
+                    </div>
+                    <label class="col-md-2">
+                        Fecha de la encuesta
+                    </label>
+                    <div class="col-md-4">
+                        <input class="form-control col-md-6" type="date" name="fechaencuesta">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-4">Numero de Documento</label>
@@ -105,74 +111,73 @@
                         </div>
                     </div>
                     <div class="form-group col-md-12">
-                        <label class="col-md-4">
-                            Fecha de la encuesta
-                        </label>
-                        <div class="col-md-8">
-                            <input class="form-control col-md-6" type="date" name="fechaencuesta">
-                        </div>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label class="col-md-3">
+                        <label class="col-md-2">
                             Tipo de Organizacion
                         </label>
-                        <select class="col-md-2" name="tipoOrg" id="selectTipoOrg">
-                            <option>
-                                Comercial
-                            </option>
-                            <option>
-                                Servicios
-                            </option>
-                            <option>
-                                Industrial
-                            </option>
-                        </select>
-                        <label class="col-md-3 col-md-offset-1">
+                        <div class="col-md-4">
+                            <select class="form-control" name="tipoOrg" id="selectTipoOrg">
+                                <option>
+                                    Comercial
+                                </option>
+                                <option>
+                                    Servicios
+                                </option>
+                                <option>
+                                    Industrial
+                                </option>
+                            </select>
+                        </div>
+                        <label class="col-md-2">
                             Ubicación Comercial
                         </label>
-                        <select class="col-md-2" name="selectUbicaComercial" id="selUbicacionComercial">
+                        <div class="col-md-4">
+                            <select class="form-control" name="selectUbicaComercial" id="selUbicacionComercial">
                                 <option>
                                     Propio
                                 </option>
                                 <option>
                                     Arrendado
                                 </option>
-                        </select>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
 <!--Informacion empresa                                                                                             -->
-                <h3 class="col-md-12">
+                <h3>
                     Clasificación de la empresa
                 </h3>
                 <div class="form-group">
-                    <label class="col-md-4">
+                    <label class="col-md-2">
                         Categoria:
                     </label>
-                    <select name="clasificacionEmpresa">
-                        <option>
-                            Micro
-                        </option>
-                        <option>
-                            Pequeña
-                        </option>
-                        <option>
-                            Mediana
-                        </option>
-                        <option>
-                            Grande
-                        </option>
-                    </select>
+                    <div class="col-md-10">
+                        <select class="form-control" name="clasificacionEmpresa">
+                            <option>
+                                Micro
+                            </option>
+                            <option>
+                                Pequeña
+                            </option>
+                            <option>
+                                Mediana
+                            </option>
+                            <option>
+                                Grande
+                            </option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group col-md-12">
-                    <h4 class="col-md-12">
-                        Empleados
-                    </h4>
-                    <label class="col-md-4">
+                <h4>
+                    Empleados
+                </h4>
+                <br>
+                <div class="form-group">
+                    <label class="col-md-2">
                         Tiene Empleados
                     </label>
-                    <span class="col-md-6">
-                        <select name="tieneEmpleados">
+                    <div class="col-md-3">
+                        <select class="form-control" name="tieneEmpleados">
                             <option>
                                 Si
                             </option>
@@ -180,36 +185,32 @@
                                 No
                             </option>
                         </select>
-                    </span>
+                    </div>
                 </div>
                 <div class="form-group" id="encuestaEmpleados">
-                    <label class="row col-md-4">
-                        <label class="col-md-4">
-                            Directos
+                    <div class="col-md-12">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="tipoEmpleados" value="directos">Directos
                         </label>
-                        <div class="col-md-4">
-                            <input class="form-control checkBx" type="checkbox" name="tipoEmpleados" value="directos">
-                        </div>
-                    </label>
-                    <label class="row col-md-4">
-                        <label class="col-md-4">
-                            Indirectos
+                        <label class="checkbox-inline">
+                            <input type="checkbox" name="tipoEmpleados" value="indirectos">Indirectos
                         </label>
-                        <div class="col-md-4">
-                            <input class="form-control checkBx" type="checkbox" name="tipoEmpleados" value="indirectos">
-                        </div>
-                    </label>
-                    <label class="col-md-5">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1">
                         Cuantos
                     </label>
-                    <div class="col-md-7">
-                        <input class="form-control" class="col-md-6" type="text" name="numEmpleados">
+                    <div class="col-md-2 col-md-offset-1">
+                        <input class="form-control" type="text" name="numEmpleados">
                     </div>
+                </div>
+                <div class="form-group">
                     <label class="col-md-6">
                         Se encuentran afiliados a salud, pension o ARL
                     </label>
-                    <div class="col-md-6">
-                        <select name="afilPensSalud">
+                    <div class="col-md-3">
+                        <select class="form-control" name="afilPensSalud">
                             <option>
                                 Si
                             </option>
@@ -218,6 +219,8 @@
                             </option>
                         </select>
                     </div>
+                </div>
+                <div class="form-group">
                     <input class="form-control" class="col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
                 </div>
 
@@ -567,8 +570,9 @@
                    </option>
                 </select>
             </div>
-
-            <button class="sbmtButton" type="submit">Enviar</button>
+            <div class="form-group">
+                <button class="btn btn-block btn-success btn-lg sbmtButton" type="submit">Enviar</button>
+            </div>
         </form>
     </section>
 
