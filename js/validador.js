@@ -54,11 +54,15 @@ function validador(){
             }
         }
 
+        /*******************************************************************************************************/
+        /******     OBTENER LOS DATOS DE EL HTML PARA SER ENVIADOS A EL PHP Y AGREGADOS A EL MYSQL   ***********/
+        /*******************************************************************************************************/
+
         if(contadorErrores > 0){
             $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Faltan '+contadorErrores+' campos por llenar</div>');
             $('.persona-danger').fadeOut(5000);
         }else{
-            console.log(formulario.serialize());
+            $('body').html(formulario.serialize());
             $.post('viewcontroller/putAllDataForm.php',formulario.serialize());
         }
 

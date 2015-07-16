@@ -52,13 +52,6 @@ function inicializar(){
         var select = $("select[name='clasificacionEmpresa']").html(codigoHTML);
     });
 
-
-    /*******************************************************************************************************/
-    /******     OBTENER LOS DATOS DE EL HTML PARA SER ENVIADOS A EL PHP Y AGREGADOS A EL MYSQL   ***********/
-    /*******************************************************************************************************/
-
-
-
 }
 
 $(document).ready(inicializar);
