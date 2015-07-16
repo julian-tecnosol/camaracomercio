@@ -46,6 +46,10 @@ label{
     color: #f5f5f5;
 }
 
+.ifHeHad{
+	display: none;
+}
+
 @media (max-width: 768px) {
 		.edit{
 			padding: 0px;

@@ -52,6 +52,43 @@ function inicializar(){
         var select = $("select[name='clasificacionEmpresa']").html(codigoHTML);
     });
 
+
+    /*******************************************************************************************************/
+    /******     OBTENER LOS DATOS DE EL HTML PARA SER ENVIADOS A EL PHP Y AGREGADOS A EL MYSQL   ***********/
+    /*******************************************************************************************************/
 }
+
+function showHasEmployee(){
+    $( ".hasEmployee" ).show();
+}
+
+function hideHasEmployee(){
+    $( ".hasEmployee" ).hide();
+}
+
+function test(){
+    if($("#hasEmployee option:selected").val()==1){
+        showHasEmployee();
+    }
+    else{
+        hideHasEmployee();
+    }
+}
+
+$(function(){
+ $("#send").click(function(){
+ var url = "dame-datos.php"; // El script a dónde se realizará la petición.
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: $("#formulario").serialize(), // Adjuntar los campos del formulario enviado.
+           success: function(data)
+           {
+               $("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+           }
+         });
+    return false; // Evitar ejecutar el submit del formulario.
+ });
+});
 
 $(document).ready(inicializar);
