@@ -67,7 +67,7 @@ function hideHasEmployee(){
 }
 
 function test(){
-    if($("#hasEmployee option:selected").val()==1){
+    if($("#hasEmployee").find("option:selected").val()==1){
         showHasEmployee();
     }
     else{
