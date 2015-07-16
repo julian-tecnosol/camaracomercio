@@ -14,8 +14,8 @@
 <body>
     <header>
         <a class="col-md-offset-3 col-xs-offset-3" href="header">
-            <img src="img/icono.png">
-        </a>
+            <img src="img/icono.png"
+>        </a>
     </header>
     <section>
     <div class="row fix">
@@ -124,7 +124,7 @@
                     <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                         <div class="panel-body">
                             <div class="form-group col-md-12">
-                                <label class="col-md-4">
+                                <label class="col-md-2">
                                     Direccion
                                 </label>
                                 <div class="col-md-8">
@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
-                                <label class="col-md-4">
+                                <label class="col-md-2">
                                     Barrio
                                 </label>
                                 <div class="col-md-8">
@@ -223,7 +223,7 @@
                                     Tiene Empleados
                                 </label>
                                 <div class="col-md-3">
-                                    <select class="form-control" name="tieneEmpleados">
+                                    <select id="hasEmployee" onClick="test()" class="form-control" name="tieneEmpleados">
                                         <option value="">
 
                                         </option>
@@ -236,15 +236,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group" id="encuestaEmpleados">
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="tipoEmpleados" value="directos">Directos
+                            <div class="hasEmployee ifHeHad form-group" id="encuestaEmpleados">
+                                    <label class="col-md-2 row">
+                                        <p class="col-md-5">
+                                            Directos
+                                        </p>
+                                        <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="directos">
                                     </label>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" name="tipoEmpleados" value="indirectos">Indirectos
+                                    <label class="col-md-2 row">
+                                        <p class="col-md-6">
+                                            Indirectos
+                                        </p>
+                                        <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="indirectos">
                                     </label>
                             </div>
-                            <div class="form-group">
+                            <div class="hasEmployee ifHeHad form-group">
                                 <label class="col-md-1">
                                     Cuantos
                                 </label>
@@ -252,11 +258,11 @@
                                     <input class="form-control" type="text" name="numEmpleados">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-6">
+                            <div class="hasEmployee ifHeHad form-group">
+                                <label class="col-md-4">
                                     Se encuentran afiliados a salud, pension o ARL
                                 </label>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <select class="form-control" name="afilPensSalud">
                                         <option value="">
 
@@ -270,7 +276,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="hasEmployee ifHeHad form-group">
                                 <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
                             </div>
                         </div>
@@ -292,32 +298,34 @@
                                 <label class="col-md-4">
                                     Posee registro mercantil
                                 </label>
-                                <select class="form-control col-md-3" name="registMercant">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select class="form-control col-md-3" name="registMercant">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3">
+                                <label class="col-md-4">
                                         Numero Matricula Mercantil
                                 </label>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <input class="form-control col-md-8" type="text" name="numMatriculaMercantil">
                                 </div>
                                 <label class="col-md-3">
                                         A que año se encuentra renovada
                                 </label>
-                                <div class="col-md-3">
+                                <div class="col-md-2">
                                     <input class="form-control col-md-4" type="text" name="anioMatriculaMercantil">
                                 </div>
                             </div>
@@ -325,75 +333,91 @@
                                 <label class="col-md-4">
                                     Permiso de uso del suelo
                                 </label>
-                                <select  class="form-control" name="permiSuelo">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="permiSuelo">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                                <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque">
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Certificado de Bomberos
                                 </label>
-                                <select  class="form-control" name="certBomberos">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="certBomberos">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                                <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque">
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Manipulacion de alimentos
                                 </label>
-                                <select  class="form-control" name="manipAlimentos">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="manipAlimentos">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                                <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque">
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Posee registro invima
                                 </label>
-                                <select  class="form-control" name="regisInvima">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="regisInvima">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                                <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-1">
                                     Numero
                                 </label>
-                                <div class="col-md-4">
+                                <div class="col-md-2">
                                     <input class="form-control col-md-4" type="text" name="numInvima">
                                 </div>
                                 <label class="col-md-1">
@@ -404,20 +428,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-6">
+                                <label class="col-md-4">
                                     Certificado de Sayco y Acinpro
                                 </label>
-                                <select class="form-control" name="certSayAcin">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select class="form-control" name="certSayAcin">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
@@ -437,20 +463,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-8">
+                                <label class="col-md-4">
                                     Contrato para dispocicion de residuos peligroso
                                 </label>
-                                <select class="form-control" name="contrDispoResid">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select class="form-control" name="contrDispoResid">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-1">
@@ -467,50 +495,50 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-2">
+                                <label class="col-md-3">
                                     Codigo CIIU
                                 </label>
-                                <select class="form-control" >
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select class="form-control" >
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                            </div>
-                            <div  class="form-group">
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                                 <label class="col-md-1">
                                     Numero
                                 </label>
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <input class="form-control" type="text" name="numCodCiiu">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4">
+                                <label class="col-md-3">
                                     Codigo Industria y Comercio
                                 </label>
-                                <select  class="form-control" name="codIndustComerc">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="codIndustComerc">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2">
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                                <label class="col-md-1">
                                     Numero
                                 </label>
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <input class="form-control" type="text" name="numIndustriaComercio">
                                 </div>
                             </div>
@@ -531,20 +559,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>
+                                <label class="col-md-6">
                                     Permiso del Ministerio de las TIC o PRSTM para internet o venta de celulares
                                 </label>
-                                <select  class="form-control" name="permisoTic">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="permisoTic">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -566,17 +596,19 @@
                                 <label class="col-md-4">
                                     Tiene algun permiso para el funcionamiento
                                 </label>
-                                <select  class="form-control" name="permisoFuncionamiento">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="permisoFuncionamiento">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
@@ -590,17 +622,19 @@
                                 <label class="col-md-4">
                                     Paga algun impuesto:
                                 </label>
-                                <select  class="form-control" name="pagaImpuesto">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="pagaImpuesto">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
@@ -614,17 +648,19 @@
                                 <label class="col-md-4">
                                     Se encuentra afiliado a salud, pension, arl
                                 </label>
-                                <select  class="form-control" name="afiliadoSaludPensionArl">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="afiliadoSaludPensionArl">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
@@ -659,49 +695,61 @@
                                 <label class="col-md-4">
                                     Cuenta con sistema de seguridad
                                 </label>
-                                <select  class="form-control" name="tieneSeguridadPriv">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="tieneSeguridadPriv">
+                                        <option value="">
 
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    Cual:
-                                </label>
-                                <select name="tipoSistemaSeguridad" title="Tipos De Seguridad">
-                                    <option value="camaras">Camaras</option>
-                                    <option value="vigilancia">Vigilancia Privada</option>
-                                    <option value="alarmas">Alarmas</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>
-                                    Ha sido victima de algun delito
-                                </label>
-                                <select class="form-control" name="victimaDelito">
-                                    <option value="">
-
-                                    </option>
-                                    <option value="1">
-                                        Si
-                                    </option>
-                                    <option value="2">
-                                        No
-                                    </option>
-                                </select>
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Cual:
                                 </label>
-                                <select name="tipoDelito">
+                                <select class="form-control" name="tipoSistemaSeguridad" title="Tipos De Seguridad">
+                                    <option value="">
+                                    </option>
+                                    <option value="camaras">
+                                        Camaras
+                                    </option>
+                                    <option value="vigilancia">
+                                        Vigilancia Privada
+                                    </option>
+                                    <option value="alarmas">
+                                        Alarmas
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Ha sido victima de algun delito
+                                </label>
+                                <div class="col-md-2">
+                                    <select class="form-control" name="victimaDelito">
+                                        <option value="">
+
+                                        </option>
+                                        <option value="1">
+                                            Si
+                                        </option>
+                                        <option value="2">
+                                            No
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    Cual:
+                                </label>
+                                <select  class="form-control" name="tipoDelito">
                                     <option value="">
 
                                     </option>
@@ -723,23 +771,25 @@
                                 <label class="col-md-4">
                                     Posee algun sistema de seguridad personal
                                 </label>
-                               <select  class="form-control" name="segPersonal">
-                                   <option value="">
+                                <div class="col-md-2">
+                                   <select  class="form-control" name="segPersonal">
+                                       <option value="">
 
-                                   </option>
-                                   <option value="1">
-                                       Si
-                                   </option>
-                                   <option value="2">
-                                       No
-                                   </option>
-                                </select>
+                                       </option>
+                                       <option value="1">
+                                           Si
+                                       </option>
+                                       <option value="2">
+                                           No
+                                       </option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-block btn-success btn-lg sbmtButton" type="submit">Enviar</button>
+                    <button class="btn btn-block btn-success btn-lg sbmtButton" onclick="validar">Enviar</button>
                 </div>
             </div>
         </form>
