@@ -12,7 +12,7 @@ function inicializar(){
             data2 = JSON.parse(data2);
             tituloOrganizaciones = data2;
         }).done(function(){
-            var codigoHTML = '';
+            var codigoHTML = '<option value=""></option>';
 
             var lenTitleOrg = tituloOrganizaciones.length;
             var lenTiposOrg = objTiposOrganizacion.length;
@@ -32,7 +32,7 @@ function inicializar(){
 
     $.get('viewcontroller/getUbicacionComercial.php',function(data3){
         data3 = JSON.parse(data3);
-        var codigoHTML = '';
+        var codigoHTML = '<option value=""></option>';
 
         for(var i = 0;i < data3.length; i++){
             codigoHTML += '<option value="'+data3[i].ubicacion_id+'">'+data3[i].ubicacion_name+'</option>';
@@ -43,7 +43,7 @@ function inicializar(){
 
     $.get('viewcontroller/getClasificacionEmpresa.php',function(dataClasificaionEmpresa){
         dataClasificaionEmpresa = JSON.parse(dataClasificaionEmpresa);
-        var codigoHTML = '';
+        var codigoHTML = '<option value=""></option>';
 
         for(var i = 0;i < dataClasificaionEmpresa.length; i++){
             codigoHTML += '<option value="'+dataClasificaionEmpresa[i].id_clasificacion+'"><b>'+dataClasificaionEmpresa[i].name_clasificacion+'</b> --- '+dataClasificaionEmpresa[i].descripcion_clasificacion+'</option>';
