@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c53d481a-cb81-4177-beda-e5c703634a3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" afterPath="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/validador.js" afterPath="$PROJECT_DIR$/js/validador.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="censocc.iws" />
@@ -50,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.056604" vertical-offset="6211" max-vertical-offset="13022">
-              <caret line="378" column="79" selection-start-line="378" selection-start-column="68" selection-end-line="378" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.6131934" vertical-offset="2175" max-vertical-offset="13481">
+              <caret line="152" column="120" selection-start-line="152" selection-start-column="120" selection-end-line="152" selection-end-column="120" />
               <folding />
             </state>
           </provider>
@@ -63,7 +61,7 @@
       <file leaf-file-name="validador.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/validador.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="636" max-vertical-offset="1343">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
               <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding />
             </state>
@@ -73,17 +71,17 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1054">
-              <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1683">
+              <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="putAllDataForm.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="putAllDataForm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69452447" vertical-offset="419" max-vertical-offset="1173">
+            <state vertical-scroll-proportion="-18.538462" vertical-offset="419" max-vertical-offset="1173">
               <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
               <folding>
                 <element signature="e#6#98#0#PHP" expanded="true" />
@@ -105,10 +103,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/validador.js" />
         <option value="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -328,7 +326,19 @@
       <option name="project" value="LOCAL" />
       <updated>1437066538450</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Cambios de php javascript y el main js">
+      <created>1437083485689</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1437083485689</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Cambios de php javascript y el main js">
+      <created>1437083602552</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1437083602552</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -382,7 +392,8 @@
     <MESSAGE value="Cambio en el javascript html y css 15/07/2015 - 6:56 pm" />
     <MESSAGE value="Cambio en los javascripst para validar los selects y las fechas el main serializa los datos y los envia a un php y creacion de php para prepararse a recibir los datos&#10;&#10;16/07/2015 - 12:07 pm" />
     <MESSAGE value="No Add" />
-    <option name="LAST_COMMIT_MESSAGE" value="No Add" />
+    <MESSAGE value="Cambios de php javascript y el main js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios de php javascript y el main js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -525,6 +536,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.538462" vertical-offset="419" max-vertical-offset="1173">
+          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <element signature="e#6#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/validador.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="636" max-vertical-offset="1343">
@@ -535,27 +556,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="347" max-vertical-offset="1054">
-          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1683">
+          <caret line="93" column="31" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.056604" vertical-offset="6211" max-vertical-offset="13022">
-          <caret line="378" column="79" selection-start-line="378" selection-start-column="68" selection-end-line="378" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.6131934" vertical-offset="2175" max-vertical-offset="13481">
+          <caret line="152" column="120" selection-start-line="152" selection-start-column="120" selection-end-line="152" selection-end-column="120" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69452447" vertical-offset="419" max-vertical-offset="1173">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-          <folding>
-            <element signature="e#6#98#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
