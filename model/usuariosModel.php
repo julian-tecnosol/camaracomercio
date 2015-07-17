@@ -44,4 +44,14 @@ class usuariosModel extends Modelo
         $result->free();
         return $rows;
     }
+
+    public function validateUser($nickname, $password){
+        $password = md5($password);
+
+        $query = "SELECT id_encuestador,Nombre_Completo FROM info_encuestadores WHERE nickname =".$nickname." AND pass=".$password;
+
+        $result = $this->_db->query($query);
+
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+    }
 }

@@ -144,13 +144,105 @@
                                     Tipo de Organizacion
                                 </label>
                                 <div class="col-md-4">
-                                    <select onclick="test()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
+                                    <select onblur="test()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
                                 </div>
                                 <label class="col-md-2">
                                     Ubicación Comercial
                                 </label>
                                 <div class="col-md-4">
                                     <select class="form-control" name="selectUbicaComercial" id="selUbicacionComercial"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+                                Actividad Economica
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSeven">
+                        <div class="panel-body">
+                            <div class="form-group col-md-12">
+                                <label class="col-md-2">
+                                    Ingrese su actividad economica
+                                </label>
+                                <div class="col-md-8">
+                                    <select class="form-control" name="ActividadEconomica">
+                                        <option value="">
+
+                                        </option>
+                                        <optgroup label="Comercial">
+                                            <option value="1">
+                                                Tiendas
+                                            </option>
+                                            <option value="2">
+                                                Revuelterias
+                                            </option>
+                                            <option value="3">
+                                                Almacenes
+                                            </option>
+                                            <option value="4">
+                                                Panaderias
+                                            </option>
+                                            <option value="5">
+                                                Compraventas
+                                            </option>
+                                            <option value="6">
+                                                Farmacias
+                                            </option>
+                                            <option value="7">
+                                                Restaurantes
+                                            </option>
+                                            <option value="8">
+                                                Carnicerias
+                                            </option>
+                                            <option value="9">
+                                                Distribuidores
+                                            </option>
+                                            <option value="10">
+                                                Estanquillos
+                                            </option>
+                                            <option value="11">
+                                                Billares
+                                            </option>
+                                            <option value="12">
+                                                Queseras
+                                            </option>
+                                        </optgroup>
+                                        <optgroup label="Servicios">
+                                            <option value="13">
+                                                Peluquerias
+                                            </option>
+                                            <option value="14">
+                                                Reparaciones
+                                            </option>
+                                            <option value="15">
+                                                Laboratorios
+                                            </option>
+                                            <option value="16">
+                                                Veterinarias
+                                            </option>
+                                            <option value="17">
+                                                Corespondencia
+                                            </option>
+                                            <option value="18">
+                                                Hoteles
+                                            </option>
+                                            <option value="19">
+                                                Moteles
+                                            </option>
+                                            <option value="20">
+                                                Hostales
+                                            </option>
+                                            <option value="21">
+                                                Tecnologia
+                                            </option>
+                                        </optgroup>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +292,7 @@
                                     Tiene Empleados
                                 </label>
                                 <div class="col-md-3">
-                                    <select id="employeeForm" onClick='checkIdCondition(this.id)' class="form-control" name="tieneEmpleados">
+                                    <select id="employeeForm" onblur='checkIdCondition(this.id)' class="form-control" name="tieneEmpleados">
                                         <option value="">
 
                                         </option>
@@ -241,7 +333,7 @@
                                         Se encuentran afiliados a salud, pension o ARL
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="afilArl" onclick="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                        <select id="afilArl" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
                                             <option value="">
 
                                             </option>
@@ -278,7 +370,7 @@
                                     Posee registro mercantil
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
+                                    <select id="hasRegistMerc" onblur="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
                                         <option value="">
 
                                         </option>
@@ -313,7 +405,7 @@
                                     Permiso de uso del suelo
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="permSuelo" onClick="checkIdConditionW(this.id)" class="form-control" name="permiSuelo">
+                                    <select id="permSuelo" onblur="checkIdConditionW(this.id)" class="form-control" name="permiSuelo">
                                         <option value="">
 
                                         </option>
@@ -334,7 +426,7 @@
                                     Certificado de Bomberos
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="bombCert" onClick="checkIdConditionW(this.id)" class="form-control" name="certBomberos">
+                                    <select id="bombCert" onblur="checkIdConditionW(this.id)" class="form-control" name="certBomberos">
                                         <option value="">
 
                                         </option>
@@ -355,7 +447,7 @@
                                     Manipulacion de alimentos
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="manipAliment" onClick="checkIdConditionW(this.id)" class="form-control" name="manipAlimentos">
+                                    <select id="manipAliment" onblur="checkIdConditionW(this.id)" class="form-control" name="manipAlimentos">
                                         <option value="">
 
                                         </option>
@@ -376,7 +468,7 @@
                                     Posee registro invima
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
+                                    <select id="invimaReg" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
                                         <option value="">
 
                                         </option>
@@ -413,7 +505,7 @@
                                     Certificado de Sayco y Acinpro
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="saycoAcinpro" onClick="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
+                                    <select id="saycoAcinpro" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
                                         <option value="">
 
                                         </option>
@@ -450,7 +542,7 @@
                                     Contrato para dispocicion de residuos peligroso
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="dispResiduos" onclick="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
+                                    <select id="dispResiduos" onblur="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
                                         <option value="">
 
                                         </option>
@@ -484,7 +576,7 @@
                                     Codigo CIIU
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="ciiu" onClick="checkIdCondition(this.id)" class="form-control" >
+                                    <select id="ciiu" name="codCiiu" onblur="checkIdCondition(this.id)" class="form-control" >
                                         <option value="">
 
                                         </option>
@@ -510,7 +602,7 @@
                                     Codigo Industria y Comercio
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="industComer" onClick="checkIdCondition(this.id)"  class="form-control" name="codIndustComerc">
+                                    <select id="industComer" onblur="checkIdCondition(this.id)"  class="form-control" name="codIndustComerc">
                                         <option value="">
 
                                         </option>
@@ -609,6 +701,14 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
+                                    Cual es el valor de ventas mensuales ?
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="ventasMensuales">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
                                     Paga algun impuesto:
                                 </label>
                                 <div class="col-md-2">
@@ -635,6 +735,35 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
+                                    Cual es el numero de empleos que genera ?
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="empleosGenerados">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
+                                    En que jornada labora ?
+                                </label>
+                                <div class="col-md-8">
+                                    <select class="form-control" name="jornadaLaboral">
+                                        <option value="">
+
+                                        </option>
+                                        <option value="diurna">
+                                            Diurna
+                                        </option>
+                                        <option value="nocturna">
+                                            Nocturnas
+                                        </option>
+                                        <option value="ambas">
+                                            Ambas
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4">
                                     Se encuentra afiliado a salud, pension, arl
                                 </label>
                                 <div class="col-md-2">
@@ -652,12 +781,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-4">
-                                    Cual
-                                </label>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="text" name="otroImpuesto">
-                                </div>
+                                <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
                             </div>
                         </div>
                     </div>
@@ -685,7 +809,7 @@
                                     Cuenta con sistema de seguridad
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="sistSecurity" onclick="checkIdCondition(this.id)" class="form-control" name="tieneSeguridadPriv">
+                                    <select id="sistSecurity" onblur="checkIdCondition(this.id)" class="form-control" name="tieneSeguridadPriv">
                                         <option value="">
 
                                         </option>
@@ -723,7 +847,7 @@
                                     Ha sido victima de algun delito
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="victimaDelito" onClick="checkIdCondition(this.id)" class="form-control" name="victimaDelito">
+                                    <select id="victimaDelito" onblur="checkIdCondition(this.id)" class="form-control" name="victimaDelito">
                                         <option value="">
 
                                         </option>
@@ -782,7 +906,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-block btn-success btn-lg sbmtButton" onclick="validar">Enviar</button>
+                    <button class="btn btn-block btn-success btn-lg sbmtButton">Enviar</button>
                 </div>
             </div>
         </form>
