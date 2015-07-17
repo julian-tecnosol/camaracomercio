@@ -71,13 +71,11 @@ function checkIdCondition(id){
 }
 
 function checkIdConditionW(id){
-    if($("#" + id + " option:selected").val() == 1){
+    if(($("#" + id + " option:selected").val() == 1) || ($("#" + id + " option:selected").val() == "")){
         $("#" + id + 'Target' ).hide();
-        console.log(id);
     }
     else{
-        $("#" + id + 'Target' ).show();
-        console.log(id);
+            $("#" + id + 'Target' ).show();
     }
 }
 
@@ -85,29 +83,26 @@ function checkIdConditionRegMerc(id){
     if($("#" + id + " option:selected").val() == 1){
         $("#" + id + 'Target2' ).show();
         $("#" + id + 'Target1' ).hide();
-        console.log(id);
     }
     else{
-        $("#" + id + 'Target2' ).hide();
-        $("#" + id + 'Target1' ).show();
-        console.log(id);
+        if($("#" + id + " option:selected").val() == 2){
+            $("#" + id + 'Target2' ).hide();
+            $("#" + id + 'Target1' ).show();
+        }
+        else{
+            $("#" + id + 'Target1' ).hide();
+            $("#" + id + 'Target2' ).hide();
+        }
     }
 }
+
 
 function showAdInfo(){
-    $("#adInfo").show();
-}
-
-function hideAdInfo(){
-    $("#adInfo").hide();
-}
-
-function test(){
     if(($("#selectTipoOrg option:selected").val() == 2) || ($("#selectTipoOrg option:selected").val() == 3) ){
-        showAdInfo();
+        $("#adInfoCond").show();
     }
     else{
-        hideAdInfo();
+        $("#adInfoCond").hide();
     }
 }
 

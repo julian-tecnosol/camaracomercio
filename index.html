@@ -13,24 +13,24 @@
 </head>
 <body>
     <header>
-        <a class="col-md-offset-3 col-xs-offset-3" href="header">
+        <a class="col-md-offset-3" href="header">
             <img src="img/icono.png"
 >        </a>
     </header>
     <section>
     <div class="row fix">
-        <form id="formContainer" class="form-horizontal row col-md-8 col-md-offset-2 col-xs-12 edit">
+        <form id="formContainer" class="form-horizontal row col-md-8 col-md-offset-2 edit">
 <!--Informacion personal                                                                                           -->
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+            <div id="accordion" class="panel-group" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default" >
+                    <div id="personalInfo" data-toggle="collapse" data-parent="#accordion" href="#personalInfoTarget" aria-expanded="false" aria-controls="personalInfoTarget" class="panel-heading" role="tab">
                         <h3 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Informacion Personal
+                            <a role="button">
+                                Informacion Personal
                             </a>
                         </h3>
                     </div>
-                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div id="personalInfoTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="personalInfo">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-4">
@@ -114,14 +114,14 @@
 
 <!--      Informacion ubicación                                                                                 -->
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div id="locationInfo" data-toggle="collapse" href="#locationInfoTarget" data-parent="#accordion" aria-expanded="false" aria-controls="locationInfoTarget" class="panel-heading">
                         <h3 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                Informacion de ubicacion
-                            </a>
+                                <a role="button">
+                                    Informacion de ubicacion
+                                </a>
                         </h3>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                    <div id="locationInfoTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="locationInfo">
                         <div class="panel-body">
                             <div class="form-group col-md-12">
                                 <label class="col-md-2">
@@ -144,7 +144,7 @@
                                     Tipo de Organizacion
                                 </label>
                                 <div class="col-md-4">
-                                    <select onclick="test()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
+                                    <select onclick="showAdInfo()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
                                 </div>
                                 <label class="col-md-2">
                                     Ubicación Comercial
@@ -158,14 +158,14 @@
                 </div>
     <!--Informacion empresa                                                                                             -->
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div id="companyRating" data-toggle="collapse" data-parent="#accordion" href="#companyRatingTarget" aria-expanded="false" aria-controls="companyRatingTarget" class="panel-heading" role="tab">
                         <h3 class="panel-title">
-                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                             <a role="button">
                                 Clasificación de la empresa
                             </a>
                         </h3>
                     </div>
-                    <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                    <div id="companyRatingTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="companyRating">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-2">
@@ -191,10 +191,9 @@
                                     </select>
                                 </div>
                             </div>
-                            <h4>
+                            <h4 class="marginButton">
                                 Empleados
                             </h4>
-                            <br>
                             <div class="form-group">
                                 <label class="col-md-2">
                                     Tiene Empleados
@@ -215,17 +214,17 @@
                             </div>
                             <div id="employeeFormTarget" class="ifHeHas">
                                 <div class="form-group" id="encuestaEmpleados">
-                                        <label class="col-md-2 row">
-                                            <p class="col-md-5">
+                                        <label class="col-md-2 col-xs-6 row">
+                                            <p class="col-md-5 col-xs-5">
                                                 Directos
                                             </p>
-                                            <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="directos">
+                                            <input class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="directos">
                                         </label>
-                                        <label class="col-md-2 row">
-                                            <p class="col-md-6">
+                                        <label class="col-md-2 col-xs-6 row">
+                                            <p class="col-md-6 col-xs-5">
                                                 Indirectos
                                             </p>
-                                            <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="indirectos">
+                                            <input class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="indirectos">
                                         </label>
                                 </div>
                                 <div class="form-group">
@@ -241,7 +240,7 @@
                                         Se encuentran afiliados a salud, pension o ARL
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="afilArl" onclick="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                        <select id="afilArl" onClick="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
                                             <option value="">
 
                                             </option>
@@ -254,7 +253,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="afilArlTarget" class="ifHeHas2 form-group">
+                                <div id="afilArlTarget" class="ifHeHas form-group">
                                     <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
                                 </div>
                             </div>
@@ -264,21 +263,21 @@
 
     <!--        Encuesta                                                                                -->
                 <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
+                    <div id="quiz" data-toggle="collapse" data-parent="#accordion" href="#quizTarget" aria-expanded="false" aria-controls="quizTarget" class="panel-heading" role="tab">
                         <h3 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <a role="button">
                                 Encuesta
                             </a>
                         </h3>
                     </div>
-                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                    <div id="quizTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="quiz">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Posee registro mercantil
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
+                                    <select id="hasRegistMerc" onClick="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
                                         <option value="">
 
                                         </option>
@@ -291,10 +290,10 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="hasRegistMercTarget1" class="ifHeHas3 form-group">
+                            <div id="hasRegistMercTarget1" class="ifHeHas form-group">
                                 <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
                             </div>
-                            <div id="hasRegistMercTarget2" class="ifHeHas3 form-group">
+                            <div id="hasRegistMercTarget2" class="ifHeHas form-group">
                                 <label class="col-md-4">
                                         Numero Matricula Mercantil
                                 </label>
@@ -429,7 +428,7 @@
                             <div id="saycoAcinproTarget1" class="ifHeHas form-group">
                                 <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
                             </div>
-                            <div id="saycoAcinproTarget2">
+                            <div id="saycoAcinproTarget2" class="ifHeHas">
                                 <div class="form-group">
                                     <label class="col-md-1">
                                         Numero
@@ -447,10 +446,10 @@
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
-                                    Contrato para dispocicion de residuos peligroso
+                                    Contrato para dispocicion de residuos peligrosos
                                 </label>
                                 <div class="col-md-2">
-                                    <select id="dispResiduos" onclick="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
+                                    <select id="dispResiduos" onClick="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
                                         <option value="">
 
                                         </option>
@@ -463,7 +462,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div id="dispResiduosTarget">
+                            <div id="dispResiduosTarget" class="ifHeHas">
                                 <div class="form-group">
                                     <label class="col-md-1">
                                         Numero
@@ -522,7 +521,7 @@
                                         </option>
                                     </select>
                                 </div>
-                                <div id="industComer" class="ifHeHas">
+                                <div id="industComerTarget" class="ifHeHas">
                                     <label class="col-md-1">
                                         Numero
                                     </label>
@@ -571,22 +570,22 @@
 
 
         <!--Información adicional                                                                               -->
-                <div class="panel panel-default ifHeHas" id="adInfo">
-                    <div class="panel-heading" rol="tab" id="headingFive">
+                <div id="adInfoCond"class="panel panel-default ifHeHas">
+                    <div id="adInfo" data-toggle="collapse" href="#adInfoTarget" data-parent="#accordion" aria-expanded="false" aria-controls="adInfoTarget" class="panel-heading" role="tab">
                         <h3 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                            <a role="button">
                                 Informacion adicional para vendedores estacinarios y ambulantes
                             </a>
                         </h3>
                     </div>
-                    <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                    <div id="adInfoTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="adInfo">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Tiene algun permiso para el funcionamiento
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="permisoFuncionamiento">
+                                    <select id="permiFunc" onclick="checkIdConditionW(this.id)" class="form-control" name="permisoFuncionamiento">
                                         <option value="">
 
                                         </option>
@@ -599,20 +598,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4">
-                                    Cual
-                                </label>
-                                <div class="col-md-8">
-                                    <input class="form-control" type="text" name="otroPermisoFunconamiento">
+                            <div class="permiFuncTarget ifHeHas">
+                                    <label class="col-md-4">
+                                        Cual
+                                    </label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" type="text" name="otroPermisoFunconamiento">
+                                    </div>
                                 </div>
-                            </div>
+                            </div>    <div class="form-group">
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Paga algun impuesto:
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="pagaImpuesto">
+                                    <select id="payTax" onClick="checkIdConditionW(this.id)" class="form-control" name="pagaImpuesto">
                                         <option value="">
 
                                         </option>
@@ -625,7 +625,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="payTaxTarget" class="form-group">
                                 <label class="col-md-4">
                                     Cual
                                 </label>
@@ -638,7 +638,7 @@
                                     Se encuentra afiliado a salud, pension, arl
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="afiliadoSaludPensionArl">
+                                    <select id="afilSalPens" onClick="checkIdConditionW(this.id)" class="form-control" name="afiliadoSaludPensionArl">
                                         <option value="">
 
                                         </option>
@@ -651,7 +651,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="afilSalPensTarget" class="form-group">
                                 <label class="col-md-4">
                                     Cual
                                 </label>
@@ -663,14 +663,14 @@
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading" rol="tab" id="headingSix">
+                    <div id="infoMaquila" data-toggle="collapse" href="#infoMaquilaTarget" data-parent="#accordion" aria-expanded="false" aria-controls="infoMaquilaTarget" class="panel-heading" role="tab">
                         <h3 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                            <a role="button">
                                 Informacion general de maquilas
                             </a>
                         </h3>
                     </div>
-                    <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix">
+                    <div id="infoMaquilaTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="infoMaquila">
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-4">
@@ -781,8 +781,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <button class="btn btn-block btn-success btn-lg sbmtButton" onclick="validar">Enviar</button>
+                <div class="col-xs-1 visible-xs"></div>
+                <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-10">
+                    <button class="marginButton btn btn-block btn-success btn-lg sbmtButton" onclick="validar">Enviar</button>
                 </div>
             </div>
         </form>
