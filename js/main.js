@@ -58,37 +58,58 @@ function inicializar(){
     /*******************************************************************************************************/
 }
 
-function showHasEmployee(){
-    $( ".hasEmployee" ).show();
+
+function checkIdCondition(id){
+    if($("#" + id + " option:selected").val() == 1){
+        $("#" + id + 'Target' ).show();
+        console.log(id);
+    }
+    else{
+        $("#" + id + 'Target' ).hide();
+        console.log(id);
+    }
 }
 
-function hideHasEmployee(){
-    $( ".hasEmployee" ).hide();
+function checkIdConditionW(id){
+    if($("#" + id + " option:selected").val() == 1){
+        $("#" + id + 'Target' ).hide();
+        console.log(id);
+    }
+    else{
+        $("#" + id + 'Target' ).show();
+        console.log(id);
+    }
+}
+
+function checkIdConditionRegMerc(id){
+    if($("#" + id + " option:selected").val() == 1){
+        $("#" + id + 'Target2' ).show();
+        $("#" + id + 'Target1' ).hide();
+        console.log(id);
+    }
+    else{
+        $("#" + id + 'Target2' ).hide();
+        $("#" + id + 'Target1' ).show();
+        console.log(id);
+    }
+}
+
+function showAdInfo(){
+    $("#adInfo").show();
+}
+
+function hideAdInfo(){
+    $("#adInfo").hide();
 }
 
 function test(){
-    if($("#hasEmployee").find("option:selected").val()==1){
-        showHasEmployee();
+    if(($("#selectTipoOrg option:selected").val() == 2) || ($("#selectTipoOrg option:selected").val() == 3) ){
+        showAdInfo();
     }
     else{
-        hideHasEmployee();
+        hideAdInfo();
     }
 }
 
-$(function(){
- $("#send").click(function(){
- var url = "dame-datos.php"; // El script a dónde se realizará la petición.
-    $.ajax({
-           type: "POST",
-           url: url,
-           data: $("#formulario").serialize(), // Adjuntar los campos del formulario enviado.
-           success: function(data)
-           {
-               $("#respuesta").html(data); // Mostrar la respuestas del script PHP.
-           }
-         });
-    return false; // Evitar ejecutar el submit del formulario.
- });
-});
 
 $(document).ready(inicializar);

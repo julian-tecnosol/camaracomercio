@@ -144,7 +144,7 @@
                                     Tipo de Organizacion
                                 </label>
                                 <div class="col-md-4">
-                                    <select class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
+                                    <select onclick="test()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
                                 </div>
                                 <label class="col-md-2">
                                     Ubicación Comercial
@@ -200,61 +200,63 @@
                                     Tiene Empleados
                                 </label>
                                 <div class="col-md-3">
-                                    <select id="hasEmployee" onClick="test()" class="form-control" name="tieneEmpleados">
+                                    <select id="employeeForm" onClick='checkIdCondition(this.id)' class="form-control" name="tieneEmpleados">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="hasEmployee ifHeHad form-group" id="encuestaEmpleados">
-                                    <label class="col-md-2 row">
-                                        <p class="col-md-5">
-                                            Directos
-                                        </p>
-                                        <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="directos">
-                                    </label>
-                                    <label class="col-md-2 row">
-                                        <p class="col-md-6">
-                                            Indirectos
-                                        </p>
-                                        <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="indirectos">
-                                    </label>
-                            </div>
-                            <div class="hasEmployee ifHeHad form-group">
-                                <label class="col-md-1">
-                                    Cuantos
-                                </label>
-                                <div class="col-md-2 col-md-offset-1">
-                                    <input class="form-control" type="text" name="numEmpleados">
+                            <div id="employeeFormTarget" class="ifHeHas">
+                                <div class="form-group" id="encuestaEmpleados">
+                                        <label class="col-md-2 row">
+                                            <p class="col-md-5">
+                                                Directos
+                                            </p>
+                                            <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="directos">
+                                        </label>
+                                        <label class="col-md-2 row">
+                                            <p class="col-md-6">
+                                                Indirectos
+                                            </p>
+                                            <input class="col-md-4" type="checkbox" name="tipoEmpleados" value="indirectos">
+                                        </label>
                                 </div>
-                            </div>
-                            <div class="hasEmployee ifHeHad form-group">
-                                <label class="col-md-4">
-                                    Se encuentran afiliados a salud, pension o ARL
-                                </label>
-                                <div class="col-md-2">
-                                    <select class="form-control" name="afilPensSalud">
-                                        <option value="">
+                                <div class="form-group">
+                                    <label class="col-md-1">
+                                        Cuantos
+                                    </label>
+                                    <div class="col-md-2 col-md-offset-1">
+                                        <input class="form-control" type="text" name="numEmpleados">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4">
+                                        Se encuentran afiliados a salud, pension o ARL
+                                    </label>
+                                    <div class="col-md-2">
+                                        <select id="afilArl" onclick="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                            <option value="">
 
-                                        </option>
-                                        <option value="1">
-                                            Si
-                                        </option>
-                                        <option value="2">
-                                            No
-                                        </option>
-                                    </select>
+                                            </option>
+                                            <option value="1">
+                                                Si
+                                            </option>
+                                            <option value="0">
+                                                No
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="hasEmployee ifHeHad form-group">
-                                <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                                <div id="afilArlTarget" class="ifHeHas2 form-group">
+                                    <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -276,23 +278,23 @@
                                     Posee registro mercantil
                                 </label>
                                 <div class="col-md-2">
-                                    <select class="form-control col-md-3" name="registMercant">
+                                    <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="hasRegistMercTarget1" class="ifHeHas3 form-group">
                                 <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
                             </div>
-                            <div class="form-group">
+                            <div id="hasRegistMercTarget2" class="ifHeHas3 form-group">
                                 <label class="col-md-4">
                                         Numero Matricula Mercantil
                                 </label>
@@ -311,19 +313,19 @@
                                     Permiso de uso del suelo
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="permiSuelo">
+                                    <select id="permSuelo" onClick="checkIdConditionW(this.id)" class="form-control" name="permiSuelo">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div id="permSueloTarget" class="ifHeHas col-md-4">
                                     <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque">
                                 </div>
                             </div>
@@ -332,40 +334,40 @@
                                     Certificado de Bomberos
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="certBomberos">
+                                    <select id="bombCert" onClick="checkIdConditionW(this.id)" class="form-control" name="certBomberos">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div id="bombCertTarget" class="col-md-4 ifHeHas">
                                     <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div  class="form-group">
                                 <label class="col-md-4">
                                     Manipulacion de alimentos
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="manipAlimentos">
+                                    <select id="manipAliment" onClick="checkIdConditionW(this.id)" class="form-control" name="manipAlimentos">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div id="manipAlimentTarget" class="ifHeHas col-md-4">
                                     <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque">
                                 </div>
                             </div>
@@ -374,34 +376,36 @@
                                     Posee registro invima
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="regisInvima">
+                                    <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
-                                <div class="col-md-4">
+                                <div id="invimaRegTarget1" class="ifHeHas col-md-4">
                                     <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-1">
-                                    Numero
-                                </label>
-                                <div class="col-md-2">
-                                    <input class="form-control col-md-4" type="text" name="numInvima">
-                                </div>
-                                <label class="col-md-1">
-                                    Fecha
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control col-md-4" type="date" name="fechaInvima">
+                            <div id="invimaRegTarget2" class="ifHeHas">
+                                <div class="form-group">
+                                    <label class="col-md-1">
+                                        Numero
+                                    </label>
+                                    <div class="col-md-2">
+                                        <input class="form-control col-md-4" type="text" name="numInvima">
+                                    </div>
+                                    <label class="col-md-1">
+                                        Fecha
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control col-md-4" type="date" name="fechaInvima">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -409,34 +413,36 @@
                                     Certificado de Sayco y Acinpro
                                 </label>
                                 <div class="col-md-2">
-                                    <select class="form-control" name="certSayAcin">
+                                    <select id="saycoAcinpro" onClick="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="saycoAcinproTarget1" class="ifHeHas form-group">
                                 <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-1">
-                                    Numero
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control col-md-4" type="text" name="numSayco">
-                                </div>
-                                <label class="col-md-1">
-                                    Fecha
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control col-md-4" type="date" name="fechaAcinpro">
+                            <div id="saycoAcinproTarget2">
+                                <div class="form-group">
+                                    <label class="col-md-1">
+                                        Numero
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control col-md-4" type="text" name="numSayco">
+                                    </div>
+                                    <label class="col-md-1">
+                                        Fecha
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control col-md-4" type="date" name="fechaAcinpro">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -444,31 +450,33 @@
                                     Contrato para dispocicion de residuos peligroso
                                 </label>
                                 <div class="col-md-2">
-                                    <select class="form-control" name="contrDispoResid">
+                                    <select id="dispResiduos" onclick="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-1">
-                                    Numero
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control" type="text" name="numResiduosPeligrosos">
-                                </div>
-                                <label class="col-md-1">
-                                    Fecha
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control" type="date" name="fechaResiduosPeligrosos">
+                            <div id="dispResiduosTarget">
+                                <div class="form-group">
+                                    <label class="col-md-1">
+                                        Numero
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" name="numResiduosPeligrosos">
+                                    </div>
+                                    <label class="col-md-1">
+                                        Fecha
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="date" name="fechaResiduosPeligrosos">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -476,23 +484,25 @@
                                     Codigo CIIU
                                 </label>
                                 <div class="col-md-2">
-                                    <select class="form-control" >
+                                    <select id="ciiu" onClick="checkIdCondition(this.id)" class="form-control" >
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
-                                <label class="col-md-1">
-                                    Numero
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control" type="text" name="numCodCiiu">
+                                <div id="ciiuTarget" class="ifHeHas">
+                                    <label class="col-md-1">
+                                        Numero
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" name="numCodCiiu">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -500,23 +510,25 @@
                                     Codigo Industria y Comercio
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="codIndustComerc">
+                                    <select id="industComer" onClick="checkIdCondition(this.id)"  class="form-control" name="codIndustComerc">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
-                                <label class="col-md-1">
-                                    Numero
-                                </label>
-                                <div class="col-md-4">
-                                    <input class="form-control" type="text" name="numIndustriaComercio">
+                                <div id="industComer" class="ifHeHas">
+                                    <label class="col-md-1">
+                                        Numero
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" name="numIndustriaComercio">
+                                    </div>
                                 </div>
                             </div>
                             <div  class="form-group">
@@ -547,7 +559,7 @@
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
@@ -559,7 +571,7 @@
 
 
         <!--Información adicional                                                                               -->
-                <div class="panel panel-default">
+                <div class="panel panel-default ifHeHas" id="adInfo">
                     <div class="panel-heading" rol="tab" id="headingFive">
                         <h3 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
@@ -581,7 +593,7 @@
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
@@ -607,7 +619,7 @@
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
@@ -633,7 +645,7 @@
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
@@ -673,76 +685,80 @@
                                     Cuenta con sistema de seguridad
                                 </label>
                                 <div class="col-md-2">
-                                    <select  class="form-control" name="tieneSeguridadPriv">
+                                    <select id="sistSecurity" onclick="checkIdCondition(this.id)" class="form-control" name="tieneSeguridadPriv">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="sistSecurityTarget" class="ifHeHas form-group">
                                 <label class="col-md-4">
                                     Cual:
                                 </label>
-                                <select class="form-control" name="tipoSistemaSeguridad" title="Tipos De Seguridad">
-                                    <option value="">
-                                    </option>
-                                    <option value="camaras">
-                                        Camaras
-                                    </option>
-                                    <option value="vigilancia">
-                                        Vigilancia Privada
-                                    </option>
-                                    <option value="alarmas">
-                                        Alarmas
-                                    </option>
-                                </select>
+                                <div class="col-md-2">
+                                    <select class="form-control" name="tipoSistemaSeguridad" title="Tipos De Seguridad">
+                                        <option value="">
+                                        </option>
+                                        <option value="camaras">
+                                            Camaras
+                                        </option>
+                                        <option value="vigilancia">
+                                            Vigilancia Privada
+                                        </option>
+                                        <option value="alarmas">
+                                            Alarmas
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
                                     Ha sido victima de algun delito
                                 </label>
                                 <div class="col-md-2">
-                                    <select class="form-control" name="victimaDelito">
+                                    <select id="victimaDelito" onClick="checkIdCondition(this.id)" class="form-control" name="victimaDelito">
                                         <option value="">
 
                                         </option>
                                         <option value="1">
                                             Si
                                         </option>
-                                        <option value="2">
+                                        <option value="0">
                                             No
                                         </option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div id="victimaDelitoTarget" class="ifHeHas form-group">
                                 <label class="col-md-4">
                                     Cual:
                                 </label>
-                                <select  class="form-control" name="tipoDelito">
-                                    <option value="">
+                                <div class="col-md-2">
+                                    <select  class="form-control" name="tipoDelito">
+                                        <option value="">
 
-                                    </option>
-                                     <option value="1">
-                                        Hurto a personas
-                                    </option>
-                                    <option value="2">
-                                        Hurto a establecimientos
-                                    </option>
-                                    <option value="3">
-                                        Violación
-                                    </option>
-                                    <option value="4">
-                                        Esxtorción
-                                    </option>
-                                </select>
+                                        </option>
+                                         <option value="1">
+                                            Hurto a personas
+                                        </option>
+                                        <option value="2">
+                                            Hurto a establecimientos
+                                        </option>
+                                        <option value="3">
+                                            Violación
+                                        </option>
+                                        <option value="4">
+                                            Esxtorción
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-4">
