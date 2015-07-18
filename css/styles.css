@@ -18,8 +18,14 @@ label{
 	font-size: 16px;
 }
 
+.marginButton{
+	margin: 15px 0px;
+}
+
 .fix{
 	margin: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 .edit{
@@ -45,17 +51,9 @@ label{
     color: #f5f5f5;
     font-weight: bold;
 }
-
-.ifHeHas{
+ .ifHeHas{
 	display: none;
-}
-.ifHeHas2{
-	display: none;
-}
-.ifHeHas3{
-	display: none;
-}
-
+ }
 
 @media (max-width: 768px) {
 		.edit{
