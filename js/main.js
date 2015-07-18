@@ -62,11 +62,9 @@ function inicializar(){
 function checkIdCondition(id){
     if($("#" + id + " option:selected").val() == 1){
         $("#" + id + 'Target' ).show();
-        console.log(id);
     }
     else{
         $("#" + id + 'Target' ).hide();
-        console.log(id);
     }
 }
 
@@ -80,18 +78,23 @@ function checkIdConditionW(id){
 }
 
 function checkIdConditionRegMerc(id){
-    if($("#" + id + " option:selected").val() == 1){
-        $("#" + id + 'Target2' ).show();
+    if($("#" + id + " option:selected").val() == 3){
         $("#" + id + 'Target1' ).hide();
+        $("#" + id + 'Target2' ).hide();
+        console.log($("#" + id + " option:selected").val());
     }
-    else{
-        if($("#" + id + " option:selected").val() == 2){
-            $("#" + id + 'Target2' ).hide();
+    else {
+        if($("#" + id + " option:selected").val() == 1){
             $("#" + id + 'Target1' ).show();
+            $("#" + id + 'Target2' ).hide();
+            console.log($("#" + id + " option:selected").val());
         }
         else{
-            $("#" + id + 'Target1' ).hide();
-            $("#" + id + 'Target2' ).hide();
+            if($("#" + id + " option:selected").val() == 0){
+                $("#" + id + 'Target2' ).show();
+                $("#" + id + 'Target1' ).hide();
+                console.log($("#" + id + " option:selected").val());
+            }
         }
     }
 }
