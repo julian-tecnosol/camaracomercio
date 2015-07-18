@@ -390,7 +390,7 @@
                                         Posee registro mercantil
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="hasRegistMerc" onblur="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
+                                        <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
                                             <option value="">
 
                                             </option>
