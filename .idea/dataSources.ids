@@ -92,6 +92,7 @@
       <column name="Celular" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
       <column name="nickname" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="pass" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tipo_usuario" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="J0Mn"/>
       <primary-key name="PRIMARY" columns="id_encuestador"/>
     </table>
     <table name="info_maquila" schema="" catalog="camaracomercio" type="TABLE">
