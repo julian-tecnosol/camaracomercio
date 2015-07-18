@@ -78,7 +78,7 @@ function checkIdConditionW(id){
 }
 
 function checkIdConditionRegMerc(id){
-    if($("#" + id + " option:selected").val() == 3){
+    if($("#" + id + " option:selected").val() == ""){
         $("#" + id + 'Target1' ).hide();
         $("#" + id + 'Target2' ).hide();
     }
@@ -96,13 +96,29 @@ function checkIdConditionRegMerc(id){
     }
 }
 
-
-function showAdInfo(){
-    if(($("#selectTipoOrg option:selected").val() == 2) || ($("#selectTipoOrg option:selected").val() == 3) ){
-        $("#adInfoCond").show();
+function enableTag(id){
+    if(($("#" + id + " option:selected").val() == 2) || ($("#" + id + " option:selected").val() == 3)){
+        $("#" + id + "Target input").each(function(cont){
+            console.log(this);
+            $(this).removeAttr("disabled");
+        });
     }
     else{
-        $("#adInfoCond").hide();
+        $("#" + id +"Target input").each(function(cont){
+            console.log(this);
+            $(this).attr('disabled', "disabled");
+        });
+    }
+}
+
+function showAdInfo(id){
+    if(($("#" + id + " option:selected").val() == 2) || ($("#" + id + " option:selected").val() == 3)){
+        enableTag(id);
+        $("#" + id + "Target").show();
+    }
+    else{
+        enableTag(id);
+        $("#" + id + "Target").hide();
     }
 }
 
