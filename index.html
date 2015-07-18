@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
-    <header>
+<body class="backImg">
+    <header class="headerFx">
         <a class="col-md-offset-3" href="header">
             <img src="img/icono.png"
 >        </a>
@@ -345,9 +345,9 @@
                                                 </option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div id="afilArlTarget" class="ifHeHas2 form-group">
-                                        <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                                        <div id="afilArlTarget" class="ifHeHas col-md-6">
+                                            <input class="form-control" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -467,7 +467,7 @@
                                     </label>
                                     <div class="col-md-2">
                                         <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
-                                            <option value="">
+                                            <option value="3">
 
                                             </option>
                                             <option value="1">
@@ -478,11 +478,11 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="invimaRegTarget1" class="ifHeHas col-md-4">
+                                    <div id="invimaRegTarget2" class="ifHeHas col-md-4">
                                         <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
                                     </div>
                                 </div>
-                                <div id="invimaRegTarget2" class="ifHeHas">
+                                <div id="invimaRegTarget1" class="ifHeHas">
                                     <div class="form-group">
                                         <label class="col-md-1">
                                             Numero
@@ -504,7 +504,7 @@
                                     </label>
                                     <div class="col-md-2">
                                         <select id="saycoAcinpro" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
-                                            <option value="">
+                                            <option value="3">
 
                                             </option>
                                             <option value="1">
@@ -516,10 +516,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="saycoAcinproTarget1" class="ifHeHas form-group">
+                                <div id="saycoAcinproTarget2" class="ifHeHas form-group">
                                     <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
                                 </div>
-                                <div id="saycoAcinproTarget2" class="ifHeHas">
+                                <div id="saycoAcinproTarget1" class="ifHeHas">
                                     <div class="form-group">
                                         <label class="col-md-1">
                                             Numero
@@ -676,8 +676,8 @@
                                         Tiene algun permiso para el funcionamiento
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="permiFunc" onclick="checkIdConditionW(this.id)" class="form-control" name="permisoFuncionamiento">
-                                            <option value="">
+                                        <select id="permiFunc" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="permisoFuncionamiento">
+                                            <option value="3">
 
                                             </option>
                                             <option value="1">
@@ -689,7 +689,8 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="permiFuncTarget ifHeHas">
+                                <div class="form-group">
+                                    <div id="permiFuncTarget" class="col-md-12 ifHeHas">
                                         <label class="col-md-4">
                                             Cual
                                         </label>
@@ -697,7 +698,7 @@
                                             <input class="form-control" type="text" name="otroPermisoFunconamiento">
                                         </div>
                                     </div>
-                                </div>    <div class="form-group">
+                                </div>
                                 <div class="form-group">
                                     <label class="col-md-4">
                                         Cual es el valor de ventas mensuales ?
@@ -711,7 +712,7 @@
                                         Paga algun impuesto:
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="payTax" onClick="checkIdConditionW(this.id)" class="form-control" name="pagaImpuesto">
+                                        <select id="payTax" onClick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="pagaImpuesto">
                                             <option value="">
 
                                             </option>
@@ -724,7 +725,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="payTaxTarget" class="form-group">
+                                <div id="payTaxTarget" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                         Cual
                                     </label>
@@ -778,16 +779,8 @@
                                             </option>
                                         </select>
                                     </div>
-                                </div>
-                                <div id="afilSalPensTarget" class="form-group">
-                                    <label class="col-md-4">
-                                        Cual
-                                    </label>
-                                    <div class="col-md-8">
-                                        <input class="form-control" type="text" name="otroImpuesto">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control col-md-8" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                                    <div id="afilSalPensTarget" class="ifHeHas col-md-6">
+                                        <input class="form-control" type="text" name="justificacionPrestaciones2" placeholder="Porque">
                                     </div>
                                 </div>
                             </div>
