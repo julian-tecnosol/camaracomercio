@@ -1,6 +1,7 @@
 /**
  * Created by Julian Albero on 13/07/2015.
  */
+
 function validador(){
     var formulario = $("#formContainer");
     formulario.submit(function(event){
@@ -22,7 +23,8 @@ function validador(){
             if(!place){
                 if(thisInputText.val().length >= 1){
                     //parent.parent().hide();
-                }else{
+                }
+                else{
                     parent.append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span><span id="inputError2Status" class="sr-only">(error)</span>');
                     parent.addClass('has-error has-feedback');
                     contadorErrores += 1;
@@ -47,8 +49,9 @@ function validador(){
             var valThisSelect = thisSelect.val();
             var parentThisSelect = thisSelect.parent();
             if(valThisSelect.length >= 1){
-                parentThisSelect.hide();
-            }else{
+                parentThisSelect.addClass('has-success');
+            }
+            else{
                 parentThisSelect.addClass('has-error');
                 contadorErrores += 1;
             }

@@ -164,7 +164,7 @@
                                         Tipo de Organizacion
                                     </label>
                                     <div class="col-md-4">
-                                        <select onblur="showAdInfo()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
+                                        <select onclick="showAdInfo()" onclick="showAdInfo(this.id)" onblur="showAdInfo()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
                                     </div>
                                     <label class="col-md-2">
                                         Ubicación Comercial
@@ -312,7 +312,7 @@
                                         Tiene Empleados
                                     </label>
                                     <div class="col-md-3">
-                                        <select id="employeeForm" onblur='checkIdCondition(this.id)' class="form-control" name="tieneEmpleados">
+                                        <select id="employeeForm" onclick="checkIdCondition(this.id)" onblur='checkIdCondition(this.id)' class="form-control" name="tieneEmpleados">
                                             <option value="">
 
                                             </option>
@@ -331,13 +331,13 @@
                                                 <p class="col-md-5 col-xs-5">
                                                     Directos
                                                 </p>
-                                                <input class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="directos">
+                                                <input id="directosCheck" class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="directos">
                                             </label>
                                             <label class="col-md-2 col-xs-6 row">
                                                 <p class="col-md-6 col-xs-5">
                                                     Indirectos
                                                 </p>
-                                                <input class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="indirectos">
+                                                <input id="inDirectosCheck" class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="indirectos">
                                             </label>
                                     </div>
                                     <div class="form-group">
@@ -353,7 +353,7 @@
                                             Se encuentran afiliados a salud, pension o ARL
                                         </label>
                                         <div class="col-md-2">
-                                            <select id="afilArl" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                            <select id="afilArl" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
                                                 <option value="">
 
                                                 </option>
@@ -390,10 +390,8 @@
                                         Posee registro mercantil
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="hasRegistMerc" onblur="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
-                                            <option value="">
-
-                                            </option>
+                                        <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="registMercant">
+                                            <option value="3"></option>
                                             <option value="1">
                                                 Si
                                             </option>
@@ -402,11 +400,11 @@
                                             </option>
                                         </select>
                                     </div>
+                                    <div id="hasRegistMercTarget2" class="ifHeHas col-md-4">
+                                        <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
+                                    </div>
                                 </div>
-                                <div id="hasRegistMercTarget1" class="ifHeHas form-group">
-                                    <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
-                                </div>
-                                <div id="hasRegistMercTarget2" class="ifHeHas form-group">
+                                <div id="hasRegistMercTarget1" class="form-group ifHeHas col-md-12">
                                     <label class="col-md-4">
                                             Numero Matricula Mercantil
                                     </label>
@@ -425,7 +423,7 @@
                                         Permiso de uso del suelo
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="permSuelo" onblur="checkIdConditionW(this.id)" class="form-control" name="permiSuelo">
+                                        <select id="permSuelo" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="permiSuelo">
                                             <option value="">
 
                                             </option>
@@ -446,7 +444,7 @@
                                         Certificado de Bomberos
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="bombCert" onblur="checkIdConditionW(this.id)" class="form-control" name="certBomberos">
+                                        <select id="bombCert" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="certBomberos">
                                             <option value="">
 
                                             </option>
@@ -467,7 +465,7 @@
                                         Manipulacion de alimentos
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="manipAliment" onblur="checkIdConditionW(this.id)" class="form-control" name="manipAlimentos">
+                                        <select id="manipAliment" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="manipAlimentos">
                                             <option value="">
 
                                             </option>
@@ -488,7 +486,7 @@
                                         Posee registro invima
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="invimaReg" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
+                                        <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
                                             <option value="">
 
                                             </option>
@@ -525,7 +523,7 @@
                                         Certificado de Sayco y Acinpro
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="saycoAcinpro" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
+                                        <select id="saycoAcinpro" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
                                             <option value="">
 
                                             </option>
@@ -562,7 +560,7 @@
                                         Contrato para dispocicion de residuos peligrosos
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="dispResiduos" onblur="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
+                                        <select id="dispResiduos" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
                                             <option value="">
 
                                             </option>
@@ -596,7 +594,7 @@
                                         Codigo CIIU
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="ciiu" name="codCiiu" onblur="checkIdCondition(this.id)" class="form-control" >
+                                        <select id="ciiu" name="codCiiu" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" >
                                             <option value="">
 
                                             </option>
@@ -622,7 +620,7 @@
                                         Codigo Industria y Comercio
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="industComer" onblur="checkIdCondition(this.id)"  class="form-control" name="codIndustComerc">
+                                        <select id="industComer" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)"  class="form-control" name="codIndustComerc">
                                             <option value="">
 
                                             </option>
@@ -838,7 +836,7 @@
                                         Cuenta con sistema de seguridad
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="sistSecurity" onblur="checkIdCondition(this.id)" class="form-control" name="tieneSeguridadPriv">
+                                        <select id="sistSecurity" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="tieneSeguridadPriv">
                                             <option value="">
 
                                             </option>
@@ -876,7 +874,7 @@
                                         Ha sido victima de algun delito
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="victimaDelito" onblur="checkIdCondition(this.id)" class="form-control" name="victimaDelito">
+                                        <select id="victimaDelito" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="victimaDelito">
                                             <option value="">
 
                                             </option>
