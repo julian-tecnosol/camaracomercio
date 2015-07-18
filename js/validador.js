@@ -37,7 +37,7 @@ function validador(){
             var valThisDate = thisInputDate.val();
             var parentThisDate = thisInputDate.parent();
             if(valThisDate.length >= 1){
-                parentThisDate.hide();
+                parentThisDate.addClass('');
             }else{
                 parentThisDate.addClass('has-error');
                 contadorErrores += 1;

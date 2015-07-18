@@ -79,7 +79,7 @@
                                         Fecha de la encuesta
                                     </label>
                                     <div class="col-md-4">
-                                        <input class="form-control col-md-6" type="date" name="fechaencuesta" min="<?php echo $fechaHoy?>">
+                                        <input class="form-control col-md-6" type="date" name="fechaencuesta" max="<?php echo $fechaHoy?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -353,7 +353,7 @@
                                             Se encuentran afiliados a salud, pension o ARL
                                         </label>
                                         <div class="col-md-2">
-                                            <select id="afilArl" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                            <select id="afilArl" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
                                                 <option value="">
 
                                                 </option>
@@ -390,8 +390,10 @@
                                         Posee registro mercantil
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="registMercant">
-                                            <option value="3"></option>
+                                        <select id="hasRegistMerc" onblur="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
+                                            <option value="">
+
+                                            </option>
                                             <option value="1">
                                                 Si
                                             </option>
@@ -400,11 +402,11 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="hasRegistMercTarget2" class="ifHeHas col-md-4">
-                                        <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
-                                    </div>
                                 </div>
-                                <div id="hasRegistMercTarget1" class="form-group ifHeHas col-md-12">
+                                <div id="hasRegistMercTarget1" class="ifHeHas form-group">
+                                    <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
+                                </div>
+                                <div id="hasRegistMercTarget2" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                             Numero Matricula Mercantil
                                     </label>
@@ -487,7 +489,7 @@
                                     </label>
                                     <div class="col-md-2">
                                         <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
-                                            <option value="3">
+                                            <option value="">
 
                                             </option>
                                             <option value="1">
@@ -524,7 +526,7 @@
                                     </label>
                                     <div class="col-md-2">
                                         <select id="saycoAcinpro" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
-                                            <option value="3">
+                                            <option value="">
 
                                             </option>
                                             <option value="1">
