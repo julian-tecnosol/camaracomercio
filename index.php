@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    date_default_timezone_set('America/Bogota');
+
+    $validador = false;
+    if (!!isset($_SESSION['nombreCensador']) || !!isset($_SESSION['idCensador'])) {
+        $validador = true;
+    }
+
+    $fechaHoy = date('Y-m-d');
+?>
+
 <!DOCTYPE html>
 <html>
 <head lang="es">
@@ -19,7 +31,15 @@
     </header>
     <section>
         <div class="row fix">
+            <h2 class="col-md-8 col-md-offset-2 name-encuestador">
+                <?php
+                if ($validador) {
+                    echo 'Hola '.$_SESSION['nombreCensador'].' y Bienvenido';
+                }
+                ?>
+            </h2>
             <form id="formContainer" class="form-horizontal row col-md-8 col-md-offset-2 edit">
+                <input type="hidden" name="idEncuestador" value="<?php echo $_SESSION['idCensador'] ?>">
     <!--Informacion personal                                                                                           -->
                 <div id="accordion" class="panel-group" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default" >
@@ -59,7 +79,7 @@
                                         Fecha de la encuesta
                                     </label>
                                     <div class="col-md-4">
-                                        <input class="form-control col-md-6" type="date" name="fechaencuesta">
+                                        <input class="form-control col-md-6" type="date" name="fechaencuesta" min="<?php echo $fechaHoy?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -494,7 +514,7 @@
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="date" name="fechaInvima">
+                                            <input class="form-control col-md-4" type="date" name="fechaInvima" max="<?php echo $fechaHoy?>">
                                         </div>
                                     </div>
                                 </div>
@@ -531,7 +551,7 @@
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="date" name="fechaAcinpro">
+                                            <input class="form-control col-md-4" type="date" max="<?php echo $fechaHoy?>" name="fechaAcinpro">
                                         </div>
                                     </div>
                                 </div>
@@ -565,7 +585,7 @@
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control" type="date" name="fechaResiduosPeligrosos">
+                                            <input class="form-control" type="date" max="<?php echo $fechaHoy?>" name="fechaResiduosPeligrosos">
                                         </div>
                                     </div>
                                 </div>
@@ -907,7 +927,7 @@
                     </div>
                     <div class="col-xs-1 visible-xs"></div>
                     <div class="col-md-10 col-md-offset-1 col-sm-12 col-xs-10">
-                        <button class="marginButton btn btn-block btn-success btn-lg sbmtButton" onclick="validador">Enviar</button>
+                        <button class="marginButton btn btn-block btn-success btn-lg sbmtButton">Enviar</button>
                     </div>
                 </div>
             </form>

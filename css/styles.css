@@ -55,26 +55,12 @@ label{
 	display: none;
  }
 
- .headerImg{
- 	width: 100%;
- 	height: 200px;
- }
-
- .fixBody{
- 	margin: 0px;
- }
-
- .logoHeader{
- 	margin-left: 40%;
- 	margin-top: -5%;
- }
-
- .formEdit{
- 	margin-top: 50px;
- }
-
-.tagEdit{
-	margin-top: 20px;
+.name-encuestador{
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 0 5px silver;
+    padding: 10px 20px;
+    margin-bottom: 0;
 }
 
 .divLogo{
@@ -91,7 +77,7 @@ label{
 
 @media (max-width: 768px) {
 		.edit{
-			margin: 	0px;
+			margin: 0px;
 			padding: 0px;
 		}
 }
