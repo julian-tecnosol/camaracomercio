@@ -38,8 +38,7 @@ function validador(){
             var parentThisDate = thisInputDate.parent();
             if(valThisDate.length >= 1){
                 parentThisDate.addClass('');
-            }
-            else{
+            }else{
                 parentThisDate.addClass('has-error');
                 contadorErrores += 1;
             }
@@ -61,7 +60,7 @@ function validador(){
         /*******************************************************************************************************/
         /******     OBTENER LOS DATOS DE EL HTML PARA SER ENVIADOS A EL PHP Y AGREGADOS A EL MYSQL   ***********/
         /*******************************************************************************************************/
-        console.log(contadorErrores);
+
         if(contadorErrores > 0){
             $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Faltan '+contadorErrores+' campos por llenar</div>');
             $('.persona-danger').fadeOut(5000);
