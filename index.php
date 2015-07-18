@@ -164,7 +164,7 @@
                                         Tipo de Organizacion
                                     </label>
                                     <div class="col-md-4">
-                                        <select onclick="showAdInfo()" onclick="showAdInfo(this.id)" onblur="showAdInfo()" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
+                                        <select onclick="showAdInfo(this.id)" onblur="showAdInfo(this.id)" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
                                     </div>
                                     <label class="col-md-2">
                                         Ubicación Comercial
@@ -327,18 +327,23 @@
                                 </div>
                                 <div id="employeeFormTarget" class="ifHeHas">
                                     <div class="form-group" id="encuestaEmpleados">
-                                            <label class="col-md-2 col-xs-6 row">
-                                                <p class="col-md-5 col-xs-5">
-                                                    Directos
-                                                </p>
-                                                <input id="directosCheck" class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="directos">
+                                            <label class="col-md-2 label-control">
+                                                Tipo de empleados
                                             </label>
-                                            <label class="col-md-2 col-xs-6 row">
-                                                <p class="col-md-6 col-xs-5">
-                                                    Indirectos
-                                                </p>
-                                                <input id="inDirectosCheck" class="col-md-4 col-xs-2" type="checkbox" name="tipoEmpleados" value="indirectos">
-                                            </label>
+                                            <div class="col-md-4">
+                                                <select class="form-control" name="tipoEmpleados">
+                                                    <option value=""></option>
+                                                    <option value="directos">
+                                                        Directos
+                                                    </option>
+                                                    <option value="indirectos">
+                                                        Indirectos
+                                                    </option>
+                                                    <option value="directos e indirectos">
+                                                        Directos e indirectos
+                                                    </option>
+                                                </select>
+                                            </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-1">
@@ -353,7 +358,7 @@
                                             Se encuentran afiliados a salud, pension o ARL
                                         </label>
                                         <div class="col-md-2">
-                                            <select id="afilArl" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                            <select id="afilArl" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
                                                 <option value="">
 
                                                 </option>
@@ -403,10 +408,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="hasRegistMercTarget1" class="ifHeHas form-group">
+                                <div id="hasRegistMercTarget2" class="ifHeHas form-group">
                                     <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
                                 </div>
-                                <div id="hasRegistMercTarget2" class="ifHeHas form-group">
+                                <div id="hasRegistMercTarget1" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                             Numero Matricula Mercantil
                                     </label>
@@ -683,15 +688,15 @@
 
 
             <!--Información adicional                                                                               -->
-                    <div id="adInfoCond"class="panel panel-default ifHeHas">
-                        <div id="adInfo" data-toggle="collapse" href="#adInfoTarget" data-parent="#accordion" aria-expanded="false" aria-controls="adInfoTarget" class="panel-heading" role="tab">
+                    <div id="selectTipoOrgTarget"class="panel panel-default ifHeHas">
+                        <div id="adInfo" data-toggle="collapse" href="#adInfoCond" data-parent="#accordion" aria-expanded="false" aria-controls="adInfoCond" class="panel-heading" role="tab">
                             <h3 class="panel-title">
                                 <a role="button">
                                     Informacion adicional para vendedores estacinarios y ambulantes
                                 </a>
                             </h3>
                         </div>
-                        <div id="adInfoTarget" class="panel-collapse collapse" role="tabpanel" aria-labelledby="adInfo">
+                        <div id="adInfoCond" class="panel-collapse collapse" role="tabpanel" aria-labelledby="adInfo">
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label class="col-md-4">
