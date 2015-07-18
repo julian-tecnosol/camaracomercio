@@ -63,6 +63,7 @@ label{
     margin-bottom: 0;
 }
 
+
 .divLogo{
 	width: 237px;
 	height: 164px;
@@ -74,10 +75,36 @@ label{
 	height: 100%;
 }
 
+.formEdit{
+	margin-top: 50px;
+}
+
+.tagEdit{
+	margin-top: 20px;
+}
 
 @media (max-width: 768px) {
+		.divLogo{
+			  width: 237px;
+			  height: 90px;
+			  margin-top: -25%;
+		}
+
+		.backHeader img{
+			height: 75px;
+		}
+
 		.edit{
 			margin: 0px;
 			padding: 0px;
+		}
+
+		.divLogo img{
+			width: 118px;
+  			height: 82px;
+		}
+
+		.formEdit{
+			margin: 0px;
 		}
 }
