@@ -81,19 +81,16 @@ function checkIdConditionRegMerc(id){
     if($("#" + id + " option:selected").val() == 3){
         $("#" + id + 'Target1' ).hide();
         $("#" + id + 'Target2' ).hide();
-        console.log($("#" + id + " option:selected").val());
     }
     else {
         if($("#" + id + " option:selected").val() == 1){
             $("#" + id + 'Target1' ).show();
             $("#" + id + 'Target2' ).hide();
-            console.log($("#" + id + " option:selected").val());
         }
         else{
             if($("#" + id + " option:selected").val() == 0){
                 $("#" + id + 'Target2' ).show();
                 $("#" + id + 'Target1' ).hide();
-                console.log($("#" + id + " option:selected").val());
             }
         }
     }

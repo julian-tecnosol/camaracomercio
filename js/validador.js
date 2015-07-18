@@ -65,10 +65,16 @@ function validador(){
             $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Faltan '+contadorErrores+' campos por llenar</div>');
             $('.persona-danger').fadeOut(5000);
         }else{
-            $('body').html(formulario.serialize());
-            $.post('viewcontroller/putAllDataForm.php',formulario.serialize());
         }
-
+        $('body').html(formulario.serialize());
+        $.ajax({
+            method : 'POST',
+            url : 'viewcontroller/putAllDataForm.php',
+            data : formulario.serialize(),
+            success : function(data){
+                console.log(data);
+            }
+        });
     });
 }
 

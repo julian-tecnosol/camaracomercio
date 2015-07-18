@@ -6,6 +6,7 @@
  * Time: 08:33 PM
  */
 
+$idEncuestador = ['idEncuestador'];
 $tipoIdentificacion = $_POST['selectTipoDocumento'];
 $fechaEncuesta = $_POST['fechaencuesta'];
 $idEmpresa = $_POST['inpNumDocuemnto'];
@@ -67,28 +68,27 @@ $victimaDelito = $_POST['victimaDelito'];
 $tipoDelito = $_POST['tipoDelito'];
 $segPersonal = $_POST['segPersonal'];
 $ActividadEconomica = $_POST['ActividadEconomica'];
-$idEncuestador = $_POST['idEncuestador'];
 
 
 require_once('../model/encuestaModel.php');
 
 $putData = new encuestaModel();
 
-$putData->putDataEmpresa($idEmpresa,$tipoIdentificacion,$razonSocial,$nombreRepresenta,$dirEmpresa,$barrio,$telEmpresa,$celEmpresa,$emailEmpresa);
+//echo $putData->putDataEmpresa($idEmpresa,$tipoIdentificacion,$razonSocial,$nombreRepresenta,$dirEmpresa,$barrio,$telEmpresa,$celEmpresa,$emailEmpresa);
 
 if($tieneEmpleados){
-    $putData->putDataEmpleados($idEmpresa,$tipoEmpleados,$numEmpleados,$afilPensSalud,$justificacionPrestaciones);
+    echo $putData->putDataEmpleados($idEmpresa,$tipoEmpleados,$numEmpleados,$afilPensSalud,$justificacionPrestaciones);
 }
 
-$vendeAmbulante = 0;
-
-if($tipoOrganizacion == '2' || $tipoOrganizacion == '3'){
-    $putData->putDataVendedorEstacionario($idEmpresa,$permisoFuncionamiento,$otroPermisoFunconamiento,$valorIngresosMensuales,$pagaImpuesto,$otroImpuesto,$empleosGenerados,$jornadaLaboral,$afiliadoSaludPensionArl,$justificacionPrestaciones);
-    $vendeAmbulante = 1;
-}
-
-$putData->putDataMaquila($idEmpresa,$numMaquinas,$tieneSeguridadPriv,$tipoSistemaSeguridad,$victimaDelito,$tipoDelito,$segPersonal);
-
-$idEncuestaGeneral = $putData->putDataEncuestaGral($registMercant,$numMatriculaMercantil,$justificacionMercantil,$permiSuelo,$justificacionUsoSuelo,$certBomberos,$justificacionBomberos,$manipAlimentos,$justificacionManipulacionAlimentos,$regisInvima,$justificacionInvima,$certSayAcin,$justificacionSaycoAcinpro,$contrDispoResid,$valorIngresosMensuales,$codCiiu,$numCodCiiu,$codIndustComerc,$numIndustriaComercio,$valorActivosEmpresa,$permisoTic);
-
-$putData->putDataEncuestaPrincial($fechaEncuesta,$idEmpresa,$selectUbicacion,$ActividadEconomica,$clasificacionEmpresa,$tieneEmpleados,$idEncuestaGeneral,$vendeAmbulante,1,$idEncuestador,$selectUbicacion);
+//$vendeAmbulante = 0;
+//
+//if($tipoOrganizacion == '2' || $tipoOrganizacion == '3'){
+//    echo $putData->putDataVendedorEstacionario($idEmpresa,$permisoFuncionamiento,$otroPermisoFunconamiento,$valorIngresosMensuales,$pagaImpuesto,$otroImpuesto,$empleosGenerados,$jornadaLaboral,$afiliadoSaludPensionArl,$justificacionPrestaciones);
+//    $vendeAmbulante = 1;
+//}
+//
+//echo $putData->putDataMaquila($idEmpresa,$numMaquinas,$tieneSeguridadPriv,$tipoSistemaSeguridad,$victimaDelito,$tipoDelito,$segPersonal);
+//
+//echo $idEncuestaGeneral = $putData->putDataEncuestaGral($registMercant,$numMatriculaMercantil,$justificacionMercantil,$permiSuelo,$justificacionUsoSuelo,$certBomberos,$justificacionBomberos,$manipAlimentos,$justificacionManipulacionAlimentos,$regisInvima,$justificacionInvima,$certSayAcin,$justificacionSaycoAcinpro,$contrDispoResid,$valorIngresosMensuales,$codCiiu,$numCodCiiu,$codIndustComerc,$numIndustriaComercio,$valorActivosEmpresa,$permisoTic);
+//
+//echo $putData->putDataEncuestaPrincial($fechaEncuesta,$idEmpresa,$selectUbicacion,$ActividadEconomica,$clasificacionEmpresa,$tieneEmpleados,$idEncuestaGeneral,$vendeAmbulante,1,$idEncuestador,$selectUbicacion);

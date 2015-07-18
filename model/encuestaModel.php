@@ -64,7 +64,7 @@ class encuestaModel extends Modelo
 
     public function putDataEmpresa($idEmpresa,$tipoIdentificacion,$nombreRazon,$representanteLegal,$direccionEmpresa,$barrio,$telefonos,$celular,$correoElectronico){
 
-        $query = "INSERT INTO empresa_propietario(id_empresa, id_tipo_identifica, nombre_razon, representante_legal, direccion_empresa, barrio, telefonos, celular, correo_electronico) VALUES (".$idEmpresa.",".$tipoIdentificacion.",".$nombreRazon.",".$representanteLegal.$direccionEmpresa.",".$barrio.",".$telefonos.",".$celular.",".$correoElectronico.");";
+        $query = "INSERT INTO empresa_propietario(id_empresa, id_tipo_identifica, nombre_razon, representante_legal, direccion_empresa, barrio, telefonos, celular, correo_electronico) VALUES (".$idEmpresa.",".$tipoIdentificacion.",'".$nombreRazon."','".$representanteLegal."','".$direccionEmpresa."','".$barrio."','".$telefonos."','".$celular."','".$correoElectronico."');";
 
         if($this->_db->query($query) === TRUE){
             return 'Empresa agregada correctaente';
@@ -74,7 +74,7 @@ class encuestaModel extends Modelo
     }
 
     public function putDataEmpleados($id_empresa, $empleados_direc_indirect, $empleados_numero, $prestaciones, $porque_prestaciones){
-        $query = "INSERT INTO num_empleados(id_empresa, empleados_direc_indirect, empleados_numero, prestaciones, porque_prestaciones) VALUES (".$id_empresa.",". $empleados_direc_indirect.",". $empleados_numero.",". $prestaciones.",". $porque_prestaciones.");";
+        $query = "INSERT INTO num_empleados(id_empresa, empleados_direc_indirect, empleados_numero, prestaciones, porque_prestaciones) VALUES (".$id_empresa.",'". $empleados_direc_indirect."',". $empleados_numero.",". $prestaciones.",'". $porque_prestaciones."');";
 
         if($this->_db->query($query) === TRUE){
             return 'Empleados agregados correctaente';
