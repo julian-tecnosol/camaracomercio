@@ -325,13 +325,13 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="employeeFormTarget" class="ifHeHas">
+                                <div id="employeeFormTarget1" class="ifHeHas">
                                     <div class="form-group" id="encuestaEmpleados">
                                             <label class="col-md-2 label-control">
                                                 Tipo de empleados
                                             </label>
                                             <div class="col-md-4">
-                                                <select class="form-control" name="tipoEmpleados">
+                                                <select class="form-control" name="tipoEmpleados" disabled="disabled">
                                                     <option value=""></option>
                                                     <option value="directos">
                                                         Directos
@@ -350,7 +350,7 @@
                                             Cuantos
                                         </label>
                                         <div class="col-md-2 col-md-offset-1">
-                                            <input class="form-control" type="text" name="numEmpleados">
+                                            <input class="form-control" type="text" name="numEmpleados" disabled="disabled">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -358,7 +358,7 @@
                                             Se encuentran afiliados a salud, pension o ARL
                                         </label>
                                         <div class="col-md-2">
-                                            <select id="afilArl" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="afilPensSalud">
+                                            <select id="afilArl" onclick="checkIdConditionW(this.id); enableTag(this.id)" onblur="checkIdConditionW(this.id); enableTag(this.id)" class="form-control" name="afilPensSalud" disabled="disabled">
                                                 <option value="">
 
                                                 </option>
@@ -370,8 +370,8 @@
                                                 </option>
                                             </select>
                                         </div>
-                                        <div id="afilArlTarget" class="ifHeHas col-md-6">
-                                            <input class="form-control" type="text" name="justificacionPrestaciones" placeholder="Porque">
+                                        <div id="afilArlTarget2" class="ifHeHas col-md-6">
+                                            <input class="form-control" type="text" name="justificacionPrestaciones" placeholder="Porque" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -395,7 +395,7 @@
                                         Posee registro mercantil
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control col-md-3" name="registMercant">
+                                        <select id="hasRegistMerc" onclick="checkIdConditionRegMerc(this.id); enableTag(this.id)" onblur="checkIdConditionRegMerc(this.id); enableTag(this.id)" class="form-control col-md-3" name="registMercant">
                                             <option value="">
 
                                             </option>
@@ -409,20 +409,20 @@
                                     </div>
                                 </div>
                                 <div id="hasRegistMercTarget2" class="ifHeHas form-group">
-                                    <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque">
+                                    <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque" disabled="disabled">
                                 </div>
                                 <div id="hasRegistMercTarget1" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                             Numero Matricula Mercantil
                                     </label>
                                     <div class="col-md-2">
-                                        <input class="form-control col-md-8" type="text" name="numMatriculaMercantil">
+                                        <input class="form-control col-md-8" type="text" name="numMatriculaMercantil" disabled="disabled">
                                     </div>
                                     <label class="col-md-3">
                                             A que año se encuentra renovada
                                     </label>
                                     <div class="col-md-2">
-                                        <input class="form-control col-md-4" type="text" name="anioMatriculaMercantil">
+                                        <input class="form-control col-md-4" type="text" name="anioMatriculaMercantil" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -430,7 +430,7 @@
                                         Permiso de uso del suelo
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="permSuelo" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="permiSuelo">
+                                        <select id="permSuelo" onclick="checkIdConditionW(this.id); enableTag(this.id)" onblur="checkIdConditionW(this.id); enableTag(this.id)" class="form-control" name="permiSuelo">
                                             <option value="">
 
                                             </option>
@@ -442,8 +442,8 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="permSueloTarget" class="ifHeHas col-md-4">
-                                        <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque">
+                                    <div id="permSueloTarget2" class="ifHeHas col-md-4">
+                                        <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -451,7 +451,7 @@
                                         Certificado de Bomberos
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="bombCert" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="certBomberos">
+                                        <select id="bombCert" onclick="checkIdConditionW(this.id); enableTag(this.id)" onblur="checkIdConditionW(this.id); enableTag(this.id)" class="form-control" name="certBomberos">
                                             <option value="">
 
                                             </option>
@@ -463,8 +463,8 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="bombCertTarget" class="col-md-4 ifHeHas">
-                                        <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque">
+                                    <div id="bombCertTarget2" class="col-md-4 ifHeHas">
+                                        <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque" disabled="disabled">
                                     </div>
                                 </div>
                                 <div  class="form-group">
@@ -472,7 +472,7 @@
                                         Manipulacion de alimentos
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="manipAliment" onclick="checkIdConditionW(this.id)" onblur="checkIdConditionW(this.id)" class="form-control" name="manipAlimentos">
+                                        <select id="manipAliment" onclick="checkIdConditionW(this.id); enableTag(this.id)" onblur="checkIdConditionW(this.id); enableTag(this.id)" class="form-control" name="manipAlimentos">
                                             <option value="">
 
                                             </option>
@@ -484,8 +484,8 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="manipAlimentTarget" class="ifHeHas col-md-4">
-                                        <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque">
+                                    <div id="manipAlimentTarget2" class="ifHeHas col-md-4">
+                                        <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -493,7 +493,7 @@
                                         Posee registro invima
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="regisInvima">
+                                        <select id="invimaReg" onclick="checkIdConditionRegMerc(this.id); enableTag(this.id)" onblur="checkIdConditionRegMerc(this.id); enableTag(this.id)" class="form-control" name="regisInvima">
                                             <option value="">
 
                                             </option>
@@ -506,7 +506,7 @@
                                         </select>
                                     </div>
                                     <div id="invimaRegTarget2" class="ifHeHas col-md-4">
-                                        <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque">
+                                        <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque" disabled="disabled">
                                     </div>
                                 </div>
                                 <div id="invimaRegTarget1" class="ifHeHas">
@@ -515,13 +515,13 @@
                                             Numero
                                         </label>
                                         <div class="col-md-2">
-                                            <input class="form-control col-md-4" type="text" name="numInvima">
+                                            <input class="form-control col-md-4" type="text" name="numInvima" disabled="disabled">
                                         </div>
                                         <label class="col-md-1">
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="date" name="fechaInvima" max="<?php echo $fechaHoy?>">
+                                            <input class="form-control col-md-4" type="date" name="fechaInvima" max="<?php echo $fechaHoy?>" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -530,7 +530,7 @@
                                         Certificado de Sayco y Acinpro
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="saycoAcinpro" onclick="checkIdConditionRegMerc(this.id)" onblur="checkIdConditionRegMerc(this.id)" class="form-control" name="certSayAcin">
+                                        <select id="saycoAcinpro" onclick="checkIdConditionRegMerc(this.id); enableTag(this.id)" onblur="checkIdConditionRegMerc(this.id); enableTag(this.id)" class="form-control" name="certSayAcin">
                                             <option value="">
 
                                             </option>
@@ -544,7 +544,7 @@
                                     </div>
                                 </div>
                                 <div id="saycoAcinproTarget2" class="ifHeHas form-group">
-                                    <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque">
+                                    <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque" disabled="disabled">
                                 </div>
                                 <div id="saycoAcinproTarget1" class="ifHeHas">
                                     <div class="form-group">
@@ -552,13 +552,13 @@
                                             Numero
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="text" name="numSayco">
+                                            <input class="form-control col-md-4" type="text" name="numSayco" disabled="disabled">
                                         </div>
                                         <label class="col-md-1">
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="date" max="<?php echo $fechaHoy?>" name="fechaAcinpro">
+                                            <input class="form-control col-md-4" type="date" max="<?php echo $fechaHoy?>" name="fechaAcinpro" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -567,7 +567,7 @@
                                         Contrato para dispocicion de residuos peligrosos
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="dispResiduos" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="contrDispoResid">
+                                        <select id="dispResiduos" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="contrDispoResid">
                                             <option value="">
 
                                             </option>
@@ -580,19 +580,19 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="dispResiduosTarget" class="ifHeHas">
+                                <div id="dispResiduosTarget1" class="ifHeHas">
                                     <div class="form-group">
                                         <label class="col-md-1">
                                             Numero
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control" type="text" name="numResiduosPeligrosos">
+                                            <input class="form-control" type="text" name="numResiduosPeligrosos" disabled="disabled">
                                         </div>
                                         <label class="col-md-1">
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control" type="date" max="<?php echo $fechaHoy?>" name="fechaResiduosPeligrosos">
+                                            <input class="form-control" type="date" max="<?php echo $fechaHoy?>" name="fechaResiduosPeligrosos" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -601,7 +601,7 @@
                                         Codigo CIIU
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="ciiu" name="codCiiu" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" >
+                                        <select id="ciiu" name="codCiiu" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" >
                                             <option value="">
 
                                             </option>
@@ -613,12 +613,12 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="ciiuTarget" class="ifHeHas">
+                                    <div id="ciiuTarget1" class="ifHeHas">
                                         <label class="col-md-1">
                                             Numero
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control" type="text" name="numCodCiiu">
+                                            <input class="form-control" type="text" name="numCodCiiu" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -627,7 +627,7 @@
                                         Codigo Industria y Comercio
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="industComer" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)"  class="form-control" name="codIndustComerc">
+                                        <select id="industComer" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)"  class="form-control" name="codIndustComerc">
                                             <option value="">
 
                                             </option>
@@ -639,12 +639,12 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="industComerTarget" class="ifHeHas">
+                                    <div id="industComerTarget1" class="ifHeHas">
                                         <label class="col-md-1">
                                             Numero
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control" type="text" name="numIndustriaComercio">
+                                            <input class="form-control" type="text" name="numIndustriaComercio" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -692,7 +692,7 @@
                         <div id="adInfo" data-toggle="collapse" href="#adInfoCond" data-parent="#accordion" aria-expanded="false" aria-controls="adInfoCond" class="panel-heading" role="tab">
                             <h3 class="panel-title">
                                 <a role="button">
-                                    Informacion adicional para vendedores estacinarios y ambulantes
+                                    Informacion adicional para vendedores estacionarios y ambulantes
                                 </a>
                             </h3>
                         </div>
@@ -703,7 +703,7 @@
                                         Tiene algun permiso para el funcionamiento
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="permiFunc" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="permisoFuncionamiento">
+                                        <select id="permiFunc" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="permisoFuncionamiento" disabled="disabled">
                                             <option value="3">
 
                                             </option>
@@ -717,12 +717,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div id="permiFuncTarget" class="col-md-12 ifHeHas">
+                                    <div id="permiFuncTarget1" class="col-md-12 ifHeHas">
                                         <label class="col-md-4">
                                             Cual
                                         </label>
                                         <div class="col-md-8">
-                                            <input class="form-control" type="text" name="otroPermisoFunconamiento">
+                                            <input class="form-control" type="text" name="otroPermisoFunconamiento" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -731,7 +731,7 @@
                                         Cual es el valor de ventas mensuales ?
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text" name="ventasMensuales">
+                                        <input class="form-control" type="text" name="ventasMensuales" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -739,7 +739,7 @@
                                         Paga algun impuesto:
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="payTax" onClick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="pagaImpuesto">
+                                        <select id="payTax" onClick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="pagaImpuesto" disabled="disabled">
                                             <option value="">
 
                                             </option>
@@ -752,12 +752,12 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="payTaxTarget" class="ifHeHas form-group">
+                                <div id="payTaxTarget1" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                         Cual
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text" name="otroImpuesto">
+                                        <input class="form-control" type="text" name="otroImpuesto" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -765,7 +765,7 @@
                                         Cual es el numero de empleos que genera ?
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text" name="empleosGenerados">
+                                        <input class="form-control" type="text" name="empleosGenerados" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -773,7 +773,7 @@
                                         En que jornada labora ?
                                     </label>
                                     <div class="col-md-8">
-                                        <select class="form-control" name="jornadaLaboral">
+                                        <select class="form-control" name="jornadaLaboral" disabled="disabled">
                                             <option value="">
 
                                             </option>
@@ -794,7 +794,7 @@
                                         Se encuentra afiliado a salud, pension, arl
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="afilSalPens" onClick="checkIdConditionW(this.id)" class="form-control" name="afiliadoSaludPensionArl">
+                                        <select id="afilSalPens" onClick="checkIdConditionW(this.id); enableTag(this.id)" onblur="checkIdConditionW(this.id); enableTag(this.id)" class="form-control" name="afiliadoSaludPensionArl" disabled="disabled">
                                             <option value="">
 
                                             </option>
@@ -806,8 +806,8 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="afilSalPensTarget" class="ifHeHas col-md-6">
-                                        <input class="form-control" type="text" name="justificacionPrestaciones2" placeholder="Porque">
+                                    <div id="afilSalPensTargetYes" class="ifHeHas col-md-6">
+                                        <input class="form-control" type="text" name="justificacionPrestaciones2" placeholder="Porque" disabled="disabled">
                                     </div>
                                 </div>
                             </div>
@@ -836,7 +836,7 @@
                                         Cuenta con sistema de seguridad
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="sistSecurity" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="tieneSeguridadPriv">
+                                        <select id="sistSecurity" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="tieneSeguridadPriv">
                                             <option value="">
 
                                             </option>
@@ -849,7 +849,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="sistSecurityTarget" class="ifHeHas form-group">
+                                <div id="sistSecurityTarget2" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                         Cual:
                                     </label>
@@ -874,7 +874,7 @@
                                         Ha sido victima de algun delito
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="victimaDelito" onclick="checkIdCondition(this.id)" onblur="checkIdCondition(this.id)" class="form-control" name="victimaDelito">
+                                        <select id="victimaDelito" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="victimaDelito">
                                             <option value="">
 
                                             </option>
@@ -887,7 +887,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="victimaDelitoTarget" class="ifHeHas form-group">
+                                <div id="victimaDelitoTarget2" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                         Cual:
                                     </label>
@@ -906,7 +906,7 @@
                                                 Violación
                                             </option>
                                             <option value="4">
-                                                Esxtorción
+                                                Extorsión
                                             </option>
                                         </select>
                                     </div>
