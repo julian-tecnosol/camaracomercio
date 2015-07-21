@@ -84,7 +84,7 @@ class encuestaModel extends Modelo
     }
 
     public function putDataEncuestaGral($registroMercantil, $num_registro, $justificacion_registro, $usoSuelo, $justificacion_uso_suelo, $certificadoBomberos, $justificacion_bomberos, $manipulacion_alimentos, $justificacion_alimentos, $registro_Invima, $justificacion_Invima, $sayco_acinpro, $justificacion_sayco, $residuos_peligrosos, $ingresos_mensuales, $codigo_ciiu, $num_ciiu, $cod_industria_comercio, $num_cod_indusComer, $valor_activos, $TIC_PRSTM){
-        $query = "INSERT INTO encuesta_gral(registroMercantil, num_registro, justificacion_registro, usoSuelo, justificacion_uso_suelo, certificadoBomberos, justificacion_bomberos, manipulacion_alimentos, justificacion_alimentos, registro_Invima, justificacion_Invima, sayco_acinpro, justificacion_sayco, residuos_peligrosos, ingresos_mensuales, codigo_ciiu, num_ciiu, cod_industria_comercio, num_cod_indusComer, valor_activos, TIC_PRSTM) VALUES (".$registroMercantil.",". $num_registro.",". $justificacion_registro.",". $usoSuelo.",". $justificacion_uso_suelo.",". $certificadoBomberos.",". $justificacion_bomberos.",". $manipulacion_alimentos.",". $justificacion_alimentos.",". $registro_Invima.",". $justificacion_Invima.",". $sayco_acinpro.",". $justificacion_sayco.",". $residuos_peligrosos.",". $ingresos_mensuales.",". $codigo_ciiu.",". $num_ciiu.",". $cod_industria_comercio.",". $num_cod_indusComer.",". $valor_activos.",". $TIC_PRSTM.");";
+        $query = "INSERT INTO encuesta_gral(registroMercantil, num_registro, justificacion_registro, usoSuelo, justificacion_uso_suelo, certificadoBomberos, justificacion_bomberos, manipulacion_alimentos, justificacion_alimentos, registro_Invima, justificacion_Invima, sayco_acinpro, justificacion_sayco, residuos_peligrosos, ingresos_mensuales, codigo_ciiu, num_ciiu, cod_industria_comercio, num_cod_indusComer, valor_activos, TIC_PRSTM) VALUES (".$registroMercantil.",'". $num_registro."','". $justificacion_registro."',". $usoSuelo.",'". $justificacion_uso_suelo."',". $certificadoBomberos.",'". $justificacion_bomberos."',". $manipulacion_alimentos.",'". $justificacion_alimentos."',". $registro_Invima.",'". $justificacion_Invima."',". $sayco_acinpro.",'". $justificacion_sayco."',". $residuos_peligrosos.",". $ingresos_mensuales.",". $codigo_ciiu.",'". $num_ciiu."',". $cod_industria_comercio.",'". $num_cod_indusComer."',". $valor_activos.",". $TIC_PRSTM.");";
 
         if($this->_db->query($query) === TRUE){
             return $this->_db->insert_id;
@@ -94,7 +94,7 @@ class encuestaModel extends Modelo
     }
 
     public function putDataVendedorEstacionario($id_empresa, $permiso_funcionamiento, $cual_permiso, $valor_ventas, $impuestos, $cual_impuesto, $numero_empleos, $jornada, $prestaciones, $justificacion_prestaciones){
-        $query = "INSERT INTO adicional_vendedores_naturales(id_empresa, permiso_funcionamiento, cual_permiso, valor_ventas, impuestos, cual_impuesto, numero_empleos, jornada, prestaciones, justificacion_prestaciones) VALUES (".$id_empresa.",". $permiso_funcionamiento.",". $cual_permiso.",". $valor_ventas.",". $impuestos.",". $cual_impuesto.",". $numero_empleos.",". $jornada.",". $prestaciones.",". $justificacion_prestaciones.");";
+        $query = "INSERT INTO adicional_vendedores_naturales(id_empresa, permiso_funcionamiento, cual_permiso, valor_ventas, impuestos, cual_impuesto, numero_empleos, jornada, prestaciones, justificacion_prestaciones) VALUES (".$id_empresa.",". $permiso_funcionamiento.",'". $cual_permiso."',". $valor_ventas.",". $impuestos.",'". $cual_impuesto."',". $numero_empleos.",'". $jornada."',". $prestaciones.",'". $justificacion_prestaciones."');";
 
         if($this->_db->query($query) === TRUE){
             return 'Vendedor natural agregados correctaente';
@@ -115,7 +115,7 @@ class encuestaModel extends Modelo
 
     public function putDataEncuestaPrincial($fecha, $id_empresa, $ubicacion_id, $actividad_economica, $id_clasificacion, $empleados, $id_encuesta, $vendedor_estacionario, $maquila, $id_encuestador, $id_caracter_ubicacion){
         
-        $query = "INSERT INTO encuesta_principal(fecha, id_empresa, ubicacion_id, actividad_economica, id_clasificacion, empleados, id_encuesta, vendedor_estacionario, maquila, id_encuestador, id_caracter_ubicacion) VALUES (".$fecha.",". $id_empresa.",". $ubicacion_id.",". $actividad_economica.",". $id_clasificacion.",". $empleados.",". $id_encuesta.",". $vendedor_estacionario.",". $maquila.",". $id_encuestador.",". $id_caracter_ubicacion.");";
+        $query = "INSERT INTO encuesta_principal(fecha, id_empresa, ubicacion_id, actividad_economica, id_clasificacion, empleados, id_encuesta, vendedor_estacionario, maquila, id_encuestador, id_caracter_ubicacion) VALUES (".$fecha.",". $id_empresa.",". $ubicacion_id.",'". $actividad_economica."',". $id_clasificacion.",". $empleados.",". $id_encuesta.",". $vendedor_estacionario.",". $maquila.",". $id_encuestador.",". $id_caracter_ubicacion.");";
 
         if($this->_db->query($query) === TRUE){
             return 'Encuesta principal agregados correctaente';
