@@ -25,7 +25,7 @@
 </head>
 <body class="backImg">
     <header class="headerFx">
-        <a class="col-md-offset-3" href="header">
+        <a class="col-md-offset-3" href="#">
             <img src="img/icono.png"
 >        </a>
     </header>
@@ -703,8 +703,8 @@
                                         Tiene algun permiso para el funcionamiento
                                     </label>
                                     <div class="col-md-2">
-                                        <select id="permiFunc" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="permisoFuncionamiento" disabled="disabled">
-                                            <option value="3">
+                                        <select id="permiFunc" onclick="checkIdCondition(this.id); enableTag(this.id)" onblur="checkIdCondition(this.id); enableTag(this.id)" class="form-control" name="permisoFuncionamiento">
+                                            <option value="">
 
                                             </option>
                                             <option value="1">
@@ -849,7 +849,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="sistSecurityTarget2" class="ifHeHas form-group">
+                                <div id="sistSecurityTarget1" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                         Cual:
                                     </label>
@@ -887,7 +887,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div id="victimaDelitoTarget2" class="ifHeHas form-group">
+                                <div id="victimaDelitoTarget1" class="ifHeHas form-group">
                                     <label class="col-md-4">
                                         Cual:
                                     </label>

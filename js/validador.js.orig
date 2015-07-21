@@ -78,24 +78,28 @@ function validador(){
             $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Faltan ' + contadorErrores + ' campos por llenar</div>');
             $('.persona-danger').fadeOut(5000);
         }else{
+            $.ajax({
+                method : 'POST',
+                url : 'viewcontroller/putAllDataForm.php',
+                data : formulario.serialize(),
+                success : function(data){
+                    console.log(data);
+                }
+            });
         }
+<<<<<<< HEAD
+        /*
         $('body').html(formulario.serialize());
         $.ajax({
             method : 'POST',
             url : 'viewcontroller/putAllDataForm.php',
             data : formulario.serialize(),
             success : function(data){
-                if(data.status = "ok"){
-                    $('body').append('<div class="col-md-2 statusOk navbar-fixed-top">Almacenado con un estado de ' + massage + ' exito</div>');
-                    $('.persona-danger').fadeOut(5000);
-                }
-                else{
-                    $('body').append('<div class="col-md-2 person-danger navbar-fixed-top">Hubo un fallo ' + massage + ' fallo</div>');
-                    $('.persona-danger').fadeOut(5000);
-                }
                 console.log(data);
             }
-        });
+        });*/
+=======
+>>>>>>> 5f5e2dc286be1cb5b7966c8c8fa0ae3c0b2d1b8b
     });
 }
 
