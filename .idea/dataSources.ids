@@ -37,6 +37,7 @@
       <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="id_tipo_identifica" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="nombre_razon" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
+      <column name="nombre_persona" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <column name="representante_legal" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <column name="direccion_empresa" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <column name="barrio" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
@@ -83,6 +84,7 @@
       <column name="maquila" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <column name="id_encuestador" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="id_caracter_ubicacion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="completo" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <primary-key name="PRIMARY" columns="id_encuesta_principal"/>
     </table>
     <table name="info_encuestadores" schema="" catalog="camaracomercio" type="TABLE">
@@ -106,14 +108,30 @@
       <column name="sistema_seguridad_personal" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id_info_maquila"/>
     </table>
-    <table name="num_empleados" schema="" catalog="camaracomercio" type="TABLE">
-      <column name="id_num_empleados" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+    <table name="multimedia" schema="" catalog="camaracomercio" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="empleados_direc_indirect" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="id_encuestador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="localizacion_gps" sqlType="VARCHAR" precision="60" scale="0" nullable="false" jdbcType="12"/>
+      <column name="name_img" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="num_empleados" schema="" catalog="camaracomercio" type="TABLE">
+      <column name="id_num_empleados" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="empleados_direc_indirect" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MA=="/>
       <column name="empleados_numero" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="prestaciones" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
       <column name="porque_prestaciones" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_num_empleados"/>
+    </table>
+    <table name="relacion_digitador_encuesta" schema="" catalog="camaracomercio" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_digitador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_encuestador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_encuesta" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fecha" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="tipo_delitos" schema="" catalog="camaracomercio" type="TABLE">
       <column name="id_tipo_delito" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>

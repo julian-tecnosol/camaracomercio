@@ -100,10 +100,6 @@ label{
 			  margin-top: -25%;
 		}
 
-		.backHeader img{
-			height: 75px;
-		}
-
 		.edit{
 			margin: 0px;
 			padding: 0px;
@@ -117,4 +113,29 @@ label{
 		.formEdit{
 			margin: 0px;
 		}
+}
+
+
+/****************************************************************/
+
+.logo-img{
+    margin-top: -68px;
+}
+
+.backHeader{
+    background: url("../img/Fondo_azul.jpg");
+    height: 148px;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+    .logo-img{
+        margin-top: -30px;
+        margin-left: -15px;
+    }
+
+    .logo-img img{
+        width: 118px;
+        height: 82px;
+    }
 }

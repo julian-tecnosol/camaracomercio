@@ -5,6 +5,7 @@
 function validador(){
     var formulario = $("#formContainer");
     formulario.submit(function(event){
+
         event.preventDefault();
         var allInputText = formulario.find("input[type='text']");
         var allInputDate = formulario.find("input[type='date']");
@@ -72,30 +73,29 @@ function validador(){
         /*******************************************************************************************************/
         /******     OBTENER LOS DATOS DE EL HTML PARA SER ENVIADOS A EL PHP Y AGREGADOS A EL MYSQL   ***********/
         /*******************************************************************************************************/
-        console.log("Esto es :");
-        console.log(allInputText);
+
         if(contadorErrores > 0){
             $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Faltan ' + contadorErrores + ' campos por llenar</div>');
             $('.persona-danger').fadeOut(5000);
         }else{
+            var modal =$('#myModal');
+            modal.modal('show');
+            $.ajax({
+                method : 'POST',
+                url : 'viewcontroller/putAllDataForm.php',
+                data : formulario.serialize(),
+                success : function(data){
+                    $('#modalContainer').html("");
+                    $('#modalContainer').append(data);
+                    modal.on('hidden.bs.modal', function () {
+                        location.reload();
+                    });
+                    modal.on('hidden', function () {
+                        location.reload();
+                    })
+                }
+            });
         }
-        $('body').html(formulario.serialize());
-        $.ajax({
-            method : 'POST',
-            url : 'viewcontroller/putAllDataForm.php',
-            data : formulario.serialize(),
-            success : function(data){
-                if(data.status = "ok"){
-                    $('body').append('<div class="col-md-2 statusOk navbar-fixed-top">Almacenado con un estado de ' + massage + ' exito</div>');
-                    $('.persona-danger').fadeOut(5000);
-                }
-                else{
-                    $('body').append('<div class="col-md-2 person-danger navbar-fixed-top">Hubo un fallo ' + massage + ' fallo</div>');
-                    $('.persona-danger').fadeOut(5000);
-                }
-                console.log(data);
-            }
-        });
     });
 }
 

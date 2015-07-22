@@ -19,10 +19,12 @@ if(!!$datosCensador){
     if (!isset($_SESSION['nombreCensador']) || !isset($_SESSION['idCensador'])) {
         $_SESSION['nombreCensador'] = $datosCensador['Nombre_Completo'];
         $_SESSION['idCensador'] = $datosCensador['id_encuestador'];
+        $_SESSION['tipo_usuario'] = $datosCensador['tipo_usuario'];
     }
 
-    if($datosCensador['tipo_usuario'] == 'C'){
-        echo $datosCensador['tipo_usuario'];
-        header("Location: ../index.php");
+    if($datosCensador['tipo_usuario'] == 'C' || $datosCensador['tipo_usuario'] == 'D'){
+        header("Location: ../censo.php");
+    }else if($datosCensador['tipo_usuario'] == 'G'){
+        header("Location: ../picgps");
     }
 };

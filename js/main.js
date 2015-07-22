@@ -17,7 +17,7 @@ function inicializar(){
             var lenTitleOrg = tituloOrganizaciones.length;
             var lenTiposOrg = objTiposOrganizacion.length;
             for(var i = 0; i < lenTitleOrg; i++){
-                codigoHTML += '<optgroup label="'+tituloOrganizaciones[i].Name+'"' +'>';
+                codigoHTML += '<optgroup label="'+tituloOrganizaciones[i].Name+'"' +':>';
                 for(var j = 0;j < lenTiposOrg; j++){
                     if(objTiposOrganizacion[j].id_title == tituloOrganizaciones[i].id_title){
                         codigoHTML += '<option value="'+objTiposOrganizacion[j].TipoOrg_Id+'">'+objTiposOrganizacion[j].TipoOrg_name+'</option>';
@@ -52,10 +52,25 @@ function inicializar(){
         var select = $("select[name='clasificacionEmpresa']").html(codigoHTML);
     });
 
+    $.get('viewcontroller/getAllEncuestadores.php', function(encuestadores){
+        encuestadores = JSON.parse(encuestadores);
+        var codigoHTML = '<option value=""></option>';
+
+        for(var i = 0;i < encuestadores.length; i++){
+            codigoHTML += '<option value="'+encuestadores[i].id_encuestador+'"><b>'+encuestadores[i].Nombre_Completo+'</b></option>';
+        }
+
+        $("#idOtroEncuestador").html(codigoHTML);
+    });
+
 
     /*******************************************************************************************************/
     /******     OBTENER LOS DATOS DE EL HTML PARA SER ENVIADOS A EL PHP Y AGREGADOS A EL MYSQL   ***********/
     /*******************************************************************************************************/
+
+    var titulo = $('.name-encuestador');
+
+    titulo.fadeOut(4000);
 }
 
 
