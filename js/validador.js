@@ -4,11 +4,30 @@
 
 function validador(){
     var formulario = $("#formContainer");
+
+    document.onkeypress = function(event){
+        var x = event.which || event.keyCode;
+        var typeInput = event.target.type;
+        var keyString = String.fromCharCode(x);
+        var regular = new RegExp(/[0-9]/);
+
+        if(typeInput == "number"){
+            if(!(regular.test(keyString))){
+                $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Debe Ser Solo Numerico</div>');
+                $('.persona-danger').fadeOut(5000);
+                return false;
+            }else{
+                return true;
+            }
+        }
+    };
+
     formulario.submit(function(event){
 
         event.preventDefault();
         var allInputText = formulario.find("input[type='text']");
         var allInputDate = formulario.find("input[type='date']");
+        var allInputNum = formulario.find("input[type='number']");
         var allSelects = formulario.find("select");
 
         var contadorErrores = 0;
@@ -16,12 +35,11 @@ function validador(){
         var controlText = allInputText.length;
         var ControlDate = allInputDate.length;
         var ControlSelect = allSelects.length;
+        var ControlNumber = allInputNum.length;
 
         for(var a = 0; a < controlText; a++){
-            //console.log(allInputText[a].disabled == false)
             if(allInputText[a].disabled == false){
                 var thisInputText = $(allInputText[a]);
-                //console.log(thisInputText);
                 var parent = thisInputText.parent();
                 var place = thisInputText.attr('placeholder');
                 if(!place){
@@ -59,6 +77,7 @@ function validador(){
                 if(!(thisSelect.disabled)){
                     var valThisSelect = thisSelect.val();
                     var parentThisSelect = thisSelect.parent();
+                    console.log(thisSelect);
                     if(valThisSelect.length >= 1){
                         parentThisSelect.addClass('has-success');
                     }
@@ -85,13 +104,20 @@ function validador(){
                 url : 'viewcontroller/putAllDataForm.php',
                 data : formulario.serialize(),
                 success : function(data){
-                    $('#modalContainer').html("");
                     $('#modalContainer').append(data);
+                    $("#takePic").click(function(e){
+                        e.preventDefault();
+                        var numDocumento = $('#NumeroDeDocumento').val();
+                        var url = "picgps?error=FALSE&value="+numDocumento;
+                        window.open(url);
+                    });
                     modal.on('hidden.bs.modal', function () {
-                        location.reload();
+                        document.getElementById("formContainer").reset();
+                        location.reload()
                     });
                     modal.on('hidden', function () {
-                        location.reload();
+                        document.getElementById("formContainer").reset();
+                        location.reload()
                     })
                 }
             });

@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if (!!isset($_SESSION['num_fotos']) || !!isset($_SESSION['idCensador'])) {
+        $validador = true;
+    }else{
+        header("Location: /");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,16 +32,23 @@
             <!--</div>-->
         </div>
     </header>
-    <div class="col-md-offset-3 col-md-6">
-        <div id="geolocation-test"></div>
-        <form action="subir.php" method="POST" enctype="multipart/form-data">
-            <label class="label-control" for="imagen">Imagen:</label>
-            <input type="file" name="imagen" id="imagen" />
-            <br>
+    <form action="subir.php" method="POST" enctype="multipart/form-data">
+        <input type="hidden" value="<?php echo $_SESSION['num_fotos']?>" name="num_fotos">
+        <input type="hidden" value="<?php echo $_SESSION['idCensador']?>" name="idCensador">
+        <div class="col-md-offset-3 col-md-6" id="upImage">
+            <div id="geolocation-test">
+                <h3>Por favor, espera, estamos obteniendo tu posicion actual  ...</h3>
+            </div>
+            <div class="col-md-12 cuadroImagen">
+                <label class="label-control" for="imagen">Imagen:</label>
+                <input class="form-control" type="file" name="imagen" id="imagen" />
+                <br>
+            </div>
             <input class="btn btn-primary btn-block" type="submit" name="subir" value="Subir"/>
-        </form>
-    </div>
+        </div>
+    </form>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

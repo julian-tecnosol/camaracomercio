@@ -7,12 +7,18 @@
     <orderEntry type="module-library">
       <library name="PHP">
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../php/pear" />
+          <root url="file://$USER_HOME$/php/pear" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/../../php/pear" />
+          <root url="file://$USER_HOME$/php/pear" />
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="jquery-1.11.3" level="application" />
+    <orderEntry type="library" name="jquery-ui" level="application" />
+    <orderEntry type="library" name="jquery-1.11.3" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="jquery-1.11.3" level="application" />
   </component>
 </module>

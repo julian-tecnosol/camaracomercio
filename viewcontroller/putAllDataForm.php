@@ -19,8 +19,11 @@ $emailEmpresa = isset($_POST['correoEmpresa']) ? $_POST['correoEmpresa'] : '';
 $nombreRepresenta = isset($_POST['inpNombreRepresentante']) ? $_POST['inpNombreRepresentante'] : '';
 $dirEmpresa = isset($_POST['direccionEmpresa']) ? $_POST['direccionEmpresa'] : '';
 $barrio = isset($_POST['barrioEmpresa']) ? $_POST['barrioEmpresa'] : '';
+$comunaEmpresa = isset($_POST['comunaEmpresa']) ? $_POST['comunaEmpresa'] : '';
 $tipoOrganizacion = isset($_POST['tipoOrg']) ? $_POST['tipoOrg'] : '';
 $selectUbicacion = isset($_POST['selectUbicaComercial']) ? $_POST['selectUbicaComercial'] : '';
+$id_caracter_ubicacion = isset($_POST['caracterUbicacion']) ? $_POST['caracterUbicacion'] : '';
+$actividadEconomica = isset($_POST['ActividadEconomica']) ? $_POST['ActividadEconomica'] : '';
 $clasificacionEmpresa = isset($_POST['clasificacionEmpresa']) ? $_POST['clasificacionEmpresa'] : '';
 $tieneEmpleados = isset($_POST['tieneEmpleados']) ? $_POST['tieneEmpleados'] : '';
 $tipoEmpleados = isset($_POST['tipoEmpleados']) ? $_POST['tipoEmpleados'] : '';
@@ -65,40 +68,67 @@ $otroImpuesto = isset($_POST['otroImpuesto']) ? $_POST['otroImpuesto'] : '';
 $afiliadoSaludPensionArl = isset($_POST['afiliadoSaludPensionArl']) ? $_POST['afiliadoSaludPensionArl'] : '';
 $numMaquinas = isset($_POST['numMaquinas']) ? $_POST['numMaquinas'] : '';
 $tieneSeguridadPriv = isset($_POST['tieneSeguridadPriv']) ? $_POST['tieneSeguridadPriv'] : '';
-$tipoSistemaSeguridad = isset($_POST['tipoSistemaSeguridad']) ? $_POST['tipoSistemaSeguridad'] : '';
+$tipoSistemaSeguridad = isset($_POST['tipoSistemaSeguridad']) ? $_POST['tipoSistemaSeguridad'] : '0';
 $victimaDelito = isset($_POST['victimaDelito']) ? $_POST['victimaDelito'] : '';
-$tipoDelito = isset($_POST['tipoDelito']) ? $_POST['tipoDelito'] : '';
+$tipoDelito = isset($_POST['tipoDelito']) ? $_POST['tipoDelito'] : '0';
 $segPersonal = isset($_POST['segPersonal']) ? $_POST['segPersonal'] : '';
-$ActividadEconomica = isset($_POST['ActividadEconomica']) ? $_POST['ActividadEconomica'] : '';
+
+$idPersonaEncuestada = isset($_POST['idPersonaEncuestada']) ? $_POST['idPersonaEncuestada'] : '';
+$nombrePersonaEncuestada = isset($_POST['nombrePersonaEncuestada']) ? $_POST['nombrePersonaEncuestada'] : '';
+$telefonoEncuestado = isset($_POST['telefonoEncuestado']) ? $_POST['telefonoEncuestado'] : '';
+$observaciones = isset($_POST['observa']) ? $_POST['observa'] : '';
 
 
 require_once('../model/encuestaModel.php');
 
 $putData = new encuestaModel();
 
-echo $putData->putDataEmpresa($idEmpresa,$tipoIdentificacion,$razonSocial, $personaNatural,$nombreRepresenta,$dirEmpresa,$barrio,$telEmpresa,$celEmpresa,$emailEmpresa);
+echo $putData->putDataEmpresa($idEmpresa,$tipoIdentificacion,$razonSocial, $personaNatural,$nombreRepresenta,$dirEmpresa,$barrio,$comunaEmpresa,$telEmpresa,$celEmpresa,$emailEmpresa);
 
 if($tieneEmpleados){
     echo $putData->putDataEmpleados($idEmpresa,$tipoEmpleados,$numEmpleados,$afilPensSalud,$justificacionPrestaciones);
-    echo "<br>";
 }
 
 $vendeAmbulante = 0;
-
-if($tipoOrganizacion == '2' || $tipoOrganizacion == '3'){
+if($tipoOrganizacion == '2' || $tipoOrganizacion == '3' || $tipoOrganizacion == '17'|| $tipoOrganizacion == '18'){
     echo $putData->putDataVendedorEstacionario($idEmpresa,$permisoFuncionamiento,$otroPermisoFunconamiento,$valorIngresosMensuales,$pagaImpuesto,$otroImpuesto,$empleosGenerados,$jornadaLaboral,$afiliadoSaludPensionArl,$justificacionPrestaciones);
-    echo "<br>";
     $vendeAmbulante = 1;
 }
 
-echo $putData->putDataMaquila($idEmpresa,$numMaquinas,$tieneSeguridadPriv,$tipoSistemaSeguridad,$victimaDelito,$tipoDelito,$segPersonal);
-echo "<br>";
+$idTablaMatricula =0;
+$idTablaInvima = 0;
+$idTablaSayco = 0;
+$idTablaResiduos = 0;
+$idTablaCiiu = 0;
+$idTablaComercio = 0;
 
-$idEncuestaGeneral = $putData->putDataEncuestaGral($registMercant,$numMatriculaMercantil,$justificacionMercantil,$permiSuelo,$justificacionUsoSuelo,$certBomberos,$justificacionBomberos,$manipAlimentos,$justificacionManipulacionAlimentos,$regisInvima,$justificacionInvima,$certSayAcin,$justificacionSaycoAcinpro,$contrDispoResid,$valorIngresosMensuales,$codCiiu,$numCodCiiu,$codIndustComerc,$numIndustriaComercio,$valorActivosEmpresa,$permisoTic);
-echo "<br>";
 
-$idEncuestaPrincipal = $putData->putDataEncuestaPrincial($fechaEncuesta,$idEmpresa,$selectUbicacion,$ActividadEconomica,$clasificacionEmpresa,$tieneEmpleados,$idEncuestaGeneral,$vendeAmbulante,1,$idEncuestador,$selectUbicacion);
-echo "<br>";
+if($registMercant){
+    $idTablaMatricula = $putData->putInfoDocumentos(1,$numMatriculaMercantil,$anioMatriculaMercantil);
+}
+if($regisInvima){
+    $idTablaInvima = $putData->putInfoDocumentos(2,$numInvima,$fechaInvima);
+}
+if($certSayAcin){
+    $idTablaSayco = $putData->putInfoDocumentos(3,$numSayco,$fechaAcinpro);
+}
+if($contrDispoResid){
+    $idTablaResiduos = $putData->putInfoDocumentos(4,$numResiduosPeligrosos,$fechaResiduosPeligrosos);
+}
+if($codCiiu){
+    $idTablaCiiu = $putData->putInfoDocumentos(5,$numCodCiiu,'No Aplica');
+}
+if($codIndustComerc){
+    $idTablaComercio = $putData->putInfoDocumentos(6,$numIndustriaComercio,'No Aplica');
+}
+
+echo $idMaquilaTable = $putData->putDataMaquila($numMaquinas,$tieneSeguridadPriv,$tipoSistemaSeguridad,$victimaDelito,$tipoDelito,$segPersonal);
+
+echo $idEncuestaGeneral = $putData->putDataEncuestaGral($registMercant,$idTablaMatricula,$justificacionMercantil,$permiSuelo,$justificacionUsoSuelo,$certBomberos,$justificacionBomberos,$manipAlimentos,$justificacionManipulacionAlimentos,$regisInvima,$idTablaInvima,$justificacionInvima,$certSayAcin,$idTablaSayco,$justificacionSaycoAcinpro,$contrDispoResid,$idTablaResiduos,$valorIngresosMensuales,$codCiiu,$idTablaCiiu,$codIndustComerc,$idTablaComercio,$valorActivosEmpresa,$permisoTic);
+
+echo $idTableEncuestado = $putData->putInfoEncuestado($idPersonaEncuestada,$nombrePersonaEncuestada,$telefonoEncuestado,$observaciones);
+
+echo $idEncuestaPrincipal = $putData->putDataEncuestaPrincial($fechaEncuesta,$idEmpresa,$selectUbicacion,$id_caracter_ubicacion,$actividadEconomica,$clasificacionEmpresa,$tieneEmpleados,$idEncuestaGeneral,$vendeAmbulante,$idMaquilaTable,$idEncuestador,$idTableEncuestado);
 
 if($tipoUsuario == 'D'){
     $idOtroEncuestador = isset($_POST['idOtroEncuestador']) ? $_POST['idOtroEncuestador'] : '';

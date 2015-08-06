@@ -36,6 +36,19 @@ class encuestaModel extends Modelo
         return $rows;
     }
 
+    public function getEncuestasForTable(){
+        $query = "SELECT a.id_encuesta_principal,a.fecha,a.id_empresa,a.ubicacion_id,a.id_encuestador,a.actividad_economica,b.nombre_razon, b.barrio, b.comuna, c.Nombre, c.telefono, c.observaciones FROM encuesta_principal a, empresa_propietario b, persona_encuestada c WHERE a.id_empresa = b.id_empresa AND a.id_tabla_persona = c.id_tabla_persona;";
+        $result = $this->_db->query($query);
+
+        $rows = [];
+        while($row = $result->fetch_array(SQLITE3_ASSOC)){
+            $rows[] = $row;
+        }
+
+        $result->free();
+        return $rows;
+    }
+
     public function clasificacionEmpresa(){
         $query = "SELECT * FROM clasificacion_de_empresas;";
         $result = $this->_db->query($query);
@@ -62,14 +75,14 @@ class encuestaModel extends Modelo
         return $rows;
     }
 
-    public function putDataEmpresa($idEmpresa,$tipoIdentificacion,$nombreRazon, $personaNatural ,$representanteLegal,$direccionEmpresa,$barrio,$telefonos,$celular,$correoElectronico){
+    public function putDataEmpresa($idEmpresa,$tipoIdentificacion,$nombreRazon, $personaNatural ,$representanteLegal,$direccionEmpresa,$barrio,$comuna,$telefonos,$celular,$correoElectronico){
 
-        $query = "INSERT INTO empresa_propietario(id_empresa, id_tipo_identifica, nombre_razon, nombre_persona,representante_legal, direccion_empresa, barrio, telefonos, celular, correo_electronico) VALUES (".$idEmpresa.",".$tipoIdentificacion.",'".$nombreRazon."','". $personaNatural."','".$representanteLegal."','".$direccionEmpresa."','".$barrio."','".$telefonos."','".$celular."','".$correoElectronico."');";
+        $query = "INSERT INTO empresa_propietario(id_empresa, id_tipo_identifica, nombre_razon, nombre_persona,representante_legal, direccion_empresa, barrio, comuna,telefonos, celular, correo_electronico) VALUES (".$idEmpresa.",".$tipoIdentificacion.",'".$nombreRazon."','". $personaNatural."','".$representanteLegal."','".$direccionEmpresa."','".$barrio."','".$comuna."','".$telefonos."','".$celular."','".$correoElectronico."');";
 
         if($this->_db->query($query) === TRUE){
             return 'Empresa agregada correctaente <br><br>';
         }else{
-            return "Error: empresa no agregada";
+            return "Error: " . $query . "<br>" . $this->_db->error;
         }
     }
 
@@ -79,12 +92,22 @@ class encuestaModel extends Modelo
         if($this->_db->query($query) === TRUE){
             return 'Empleados agregados correctaente <br><br>';
         }else{
-            return "Error: empleado no agregado";
+            return "Error: " . $query . "<br>" . $this->_db->error;
         }
     }
 
-    public function putDataEncuestaGral($registroMercantil, $num_registro, $justificacion_registro, $usoSuelo, $justificacion_uso_suelo, $certificadoBomberos, $justificacion_bomberos, $manipulacion_alimentos, $justificacion_alimentos, $registro_Invima, $justificacion_Invima, $sayco_acinpro, $justificacion_sayco, $residuos_peligrosos, $ingresos_mensuales, $codigo_ciiu, $num_ciiu, $cod_industria_comercio, $num_cod_indusComer, $valor_activos, $TIC_PRSTM){
-        $query = "INSERT INTO encuesta_gral(registroMercantil, num_registro, justificacion_registro, usoSuelo, justificacion_uso_suelo, certificadoBomberos, justificacion_bomberos, manipulacion_alimentos, justificacion_alimentos, registro_Invima, justificacion_Invima, sayco_acinpro, justificacion_sayco, residuos_peligrosos, ingresos_mensuales, codigo_ciiu, num_ciiu, cod_industria_comercio, num_cod_indusComer, valor_activos, TIC_PRSTM) VALUES (".$registroMercantil.",'". $num_registro."','". $justificacion_registro."',". $usoSuelo.",'". $justificacion_uso_suelo."',". $certificadoBomberos.",'". $justificacion_bomberos."',". $manipulacion_alimentos.",'". $justificacion_alimentos."',". $registro_Invima.",'". $justificacion_Invima."',". $sayco_acinpro.",'". $justificacion_sayco."',". $residuos_peligrosos.",". $ingresos_mensuales.",". $codigo_ciiu.",'". $num_ciiu."',". $cod_industria_comercio.",'". $num_cod_indusComer."',". $valor_activos.",". $TIC_PRSTM.");";
+    public function putInfoDocumentos($tipo_documento, $num_documento, $fechaRenovada){
+        $query = "INSERT INTO info_documentos(tipo_documento,num_documento, fecha_renovada) VALUES (".$tipo_documento.",". $num_documento.",'". $fechaRenovada."');";
+
+        if($this->_db->query($query) === TRUE){
+            return $this->_db->insert_id;
+        }else{
+            return "Error: " . $query . "<br>" . $this->_db->error;
+        }
+    }
+
+    public function putDataEncuestaGral($registroMercantil, $num_registro, $justificacion_registro, $usoSuelo, $justificacion_uso_suelo, $certificadoBomberos, $justificacion_bomberos, $manipulacion_alimentos, $justificacion_alimentos, $registro_Invima, $num_invima, $justificacion_Invima, $sayco_acinpro, $num_sayco,$justificacion_sayco, $residuos_peligrosos, $num_residuo,$ingresos_mensuales, $codigo_ciiu, $num_ciiu, $cod_industria_comercio, $num_cod_indusComer, $valor_activos, $TIC_PRSTM){
+        $query = "INSERT INTO encuesta_gral(registroMercantil, num_registro, justificacion_registro, usoSuelo, justificacion_uso_suelo, certificadoBomberos, justificacion_bomberos, manipulacion_alimentos, justificacion_alimentos, registro_Invima, num_invima, justificacion_Invima, sayco_acinpro, num_sayco, justificacion_sayco, residuos_peligrosos, num_residuos, ingresos_mensuales, codigo_ciiu, num_ciiu, cod_industria_comercio, num_cod_indusComer, valor_activos, TIC_PRSTM) VALUES (".$registroMercantil.",". $num_registro.",'". $justificacion_registro."',". $usoSuelo.",'". $justificacion_uso_suelo."',". $certificadoBomberos.",'". $justificacion_bomberos."',". $manipulacion_alimentos.",'". $justificacion_alimentos."',". $registro_Invima.",".$num_invima.",'". $justificacion_Invima."',". $sayco_acinpro.",".$num_sayco.",'". $justificacion_sayco."',". $residuos_peligrosos.",".$num_residuo.",". $ingresos_mensuales.",". $codigo_ciiu.",". $num_ciiu.",". $cod_industria_comercio.",". $num_cod_indusComer.",". $valor_activos.",". $TIC_PRSTM.");";
 
         if($this->_db->query($query) === TRUE){
             return $this->_db->insert_id;
@@ -99,28 +122,29 @@ class encuestaModel extends Modelo
         if($this->_db->query($query) === TRUE){
             return 'Vendedor natural agregados correctaente <br><br>';
         }else{
-            return "Error: vendedor natural no agregado";
+            return "Error: " . $query . "<br>" . $this->_db->error;
         }
     }
 
-    public function putDataMaquila($id_empresa, $num_maquinas, $sistemaSeguridad, $id_tipos_seguridad, $victimaDelito, $id_tipo_delitos, $sistema_seguridad_personal){
-        $query = "INSERT INTO info_maquila(id_empresa, num_maquinas, sistemaSeguridad, id_tipos_seguridad, victimaDelito, id_tipo_delitos, sistema_seguridad_personal) VALUES (".$id_empresa.",". $num_maquinas.",". $sistemaSeguridad.",". $id_tipos_seguridad.",". $victimaDelito.",". $id_tipo_delitos.",". $sistema_seguridad_personal.");";
-
-        if($this->_db->query($query) === TRUE){
-            return 'Vendedor natural agregados correctaente <br><br>';
-        }else{
-            return "Error: Vendedor natural no agregado";
-        }
-    }
-
-    public function putDataEncuestaPrincial($fecha, $id_empresa, $ubicacion_id, $actividad_economica, $id_clasificacion, $empleados, $id_encuesta, $vendedor_estacionario, $maquila, $id_encuestador, $id_caracter_ubicacion){
-
-        $query = "INSERT INTO encuesta_principal(fecha, id_empresa, ubicacion_id, actividad_economica, id_clasificacion, empleados, id_encuesta, vendedor_estacionario, maquila, id_encuestador, id_caracter_ubicacion) VALUES (".$fecha.",". $id_empresa.",". $ubicacion_id.",'". $actividad_economica."',". $id_clasificacion.",". $empleados.",". $id_encuesta.",". $vendedor_estacionario.",". $maquila.",". $id_encuestador.",". $id_caracter_ubicacion.");";
+    public function putDataMaquila($num_maquinas, $sistemaSeguridad, $id_tipos_seguridad, $victimaDelito, $id_tipo_delitos, $sistema_seguridad_personal){
+        $query = "INSERT INTO info_maquila(num_maquinas, sistemaSeguridad, id_tipos_seguridad, victimaDelito, id_tipo_delitos, sistema_seguridad_personal) VALUES (". $num_maquinas.",". $sistemaSeguridad.",". $id_tipos_seguridad.",". $victimaDelito.",". $id_tipo_delitos.",". $sistema_seguridad_personal.");";
 
         if($this->_db->query($query) === TRUE){
             return $this->_db->insert_id;
         }else{
-            return "Error principal no agregada";
+            return "Error: " . $query . "<br>" . $this->_db->error;
+        }
+    }
+
+    public function putDataEncuestaPrincial($fecha, $id_empresa, $ubicacion_id, $id_caracter_ubicacion,$actividad_economica, $id_clasificacion, $empleados, $id_encuesta, $vendedor_estacionario, $maquila, $id_encuestador,$idTableEncuestado){
+
+        $query = "INSERT INTO encuesta_principal(fecha, id_empresa, ubicacion_id, id_caracter_ubicacion,actividad_economica, id_clasificacion, empleados, id_encuesta, vendedor_estacionario, id_info_maquila, id_encuestador, id_tabla_persona) VALUES ('" .$fecha."',". $id_empresa.",". $ubicacion_id.",". $id_caracter_ubicacion.",". $actividad_economica.",". $id_clasificacion.",". $empleados.",". $id_encuesta.",". $vendedor_estacionario.",". $maquila.",". $id_encuestador.",". $idTableEncuestado.");";
+
+        if($this->_db->query($query) === TRUE){
+            return $this->_db->insert_id;
+        }else{
+//            return "Error principal no agregada";
+            return "Error: " . $query . "<br>" . $this->_db->error;
         }
     }
 
@@ -131,7 +155,18 @@ class encuestaModel extends Modelo
         if($this->_db->query($query) === TRUE){
             return 'Relacion agregados correctamente <br><br>';
         }else{
-            return "Error: Relacion no agregados correctamente";
+            return "Error: " . $query . "<br>" . $this->_db->error;
+        }
+    }
+
+    public function putInfoEncuestado($id_persona, $Nombre, $telefono, $observaciones){
+
+        $query = "INSERT INTO persona_encuestada(id_persona, Nombre, telefono, observaciones) VALUES (".$id_persona.",'".$Nombre."','".$telefono."','".$observaciones."');";
+
+        if($this->_db->query($query) === TRUE){
+            return $this->_db->insert_id;
+        }else{
+            return "Error: " . $query . "<br>" . $this->_db->error;
         }
     }
 }

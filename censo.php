@@ -5,6 +5,8 @@
     $validador = false;
     if (!!isset($_SESSION['nombreCensador']) || !!isset($_SESSION['idCensador'])) {
         $validador = true;
+    }else{
+        header("Location: /");
     }
 
     $fechaHoy = date('Y-m-d');
@@ -24,10 +26,15 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:500,700' rel='stylesheet' type='text/css'>
 </head>
 <body class="backImg">
-    <header class="headerFx">
-        <a class="col-md-offset-3" href="#">
-            <img src="img/icono.png"
->        </a>
+    <header class="headerFx row">
+        <div class="col-md-8 col-md-offset-2">
+            <a href="#">
+                <img src="img/icono.png">
+            </a>
+            <div class="pull-right">
+                <a href="/" class="btn btn-info">Cerrar Sesion</a>
+            </div>
+        </div>
     </header>
     <section>
         <div class="row fix">
@@ -80,13 +87,13 @@
                                         Fecha de la encuesta
                                     </label>
                                     <div class="col-md-4">
-                                        <input class="form-control col-md-6" type="date" name="fechaencuesta" max="<?php echo $fechaHoy?>">
+                                        <input class="form-control col-md-6" type="date" name="fechaencuesta">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-4">Numero de Identificacion</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="number" name="inpNumDocuemnto">
+                                        <input class="form-control" type="number" name="inpNumDocuemnto" id="NumeroDeDocumento">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -126,14 +133,14 @@
                                         Correo Electronico
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control col-md-6" type="email" name="correoEmpresa">
+                                        <input class="form-control col-md-6" type="text" name="correoEmpresa">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-4">
                                         Tipo de Organizacion
                                     </label>
-                                    <div class="col-md-5">
+                                    <div class="col-md-6">
                                         <select onchange="showAdInfo(this.id)" class="form-control" name="tipoOrg" id="selectTipoOrg"></select>
                                     </div>
                                 </div>
@@ -164,7 +171,7 @@
                                     <label class="col-md-2">
                                         Direccion
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <input class="form-control col-md-6" type="text" name="direccionEmpresa">
                                     </div>
                                 </div>
@@ -172,8 +179,28 @@
                                     <label class="col-md-2">
                                         Barrio
                                     </label>
-                                    <div class="col-md-8">
-                                        <input class="form-control col-md-6" type="text" name="barrioEmpresa">
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" name="barrioEmpresa">
+                                    </div>
+                                    <label class="col-md-2">
+                                        Comuna
+                                    </label>
+                                    <div class="col-md-3">
+                                        <select class="form-control" name="comunaEmpresa">
+                                            <option value=""></option>
+                                            <option value="Comuna 1">Comuna 1</option>
+                                            <option value="Comuna 2">Comuna 2</option>
+                                            <option value="Comuna 3">Comuna 3</option>
+                                            <option value="Comuna 4">Comuna 4</option>
+                                            <option value="Comuna 4">Comuna 4</option>
+                                            <option value="Comuna 5">Comuna 5</option>
+                                            <option value="Comuna 6">Comuna 6</option>
+                                            <option value="Comuna 8">Comuna 8</option>
+                                            <option value="Comuna 9">Comuna 9</option>
+                                            <option value="Comuna 10">Comuna 10</option>
+                                            <option value="Comuna 11">Comuna 11</option>
+                                            <option value="Comuna 12">Comuna 12</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
@@ -186,7 +213,7 @@
                                     <label class="col-md-2">
                                         Caracter de ubicacion:
                                     </label>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <select class="form-control" name="caracterUbicacion">
                                             <option value="">
 
@@ -194,7 +221,7 @@
                                             <option value="1">
                                                 Propio
                                             </option>
-                                            <option value="0">
+                                            <option value="2">
                                                 Arrendado
                                             </option>
                                         </select>
@@ -219,97 +246,22 @@
                                         Actividad economica
                                     </label>
                                     <div class="col-md-3">
-                                        <select class="form-control" name="ActividadEconomica">
-                                            <option value="">
-
+                                        <select class="form-control" id="tipoDeActividad">
+                                            <option value=""></option>
+                                            <option value="1">
+                                                Servicios
                                             </option>
-                                            <optgroup label="Comercial:">
-                                                <option value="1">
-                                                    Tiendas
-                                                </option>
-                                                <option value="2">
-                                                    Revuelterias
-                                                </option>
-                                                <option value="3">
-                                                    Almacenes
-                                                </option>
-                                                <option value="4">
-                                                    Panaderias
-                                                </option>
-                                                <option value="5">
-                                                    Compraventas
-                                                </option>
-                                                <option value="6">
-                                                    Farmacias
-                                                </option>
-                                                <option value="7">
-                                                    Restaurantes
-                                                </option>
-                                                <option value="8">
-                                                    Carnicerias
-                                                </option>
-                                                <option value="9">
-                                                    Distribuidores
-                                                </option>
-                                                <option value="10">
-                                                    Estanquillos
-                                                </option>
-                                                <option value="11">
-                                                    Billares
-                                                </option>
-                                                <option value="12">
-                                                    Queseras
-                                                </option>
-                                            </optgroup>
-                                            <optgroup label="Servicios:">
-                                                <option value="13">
-                                                    Peluquerias
-                                                </option>
-                                                <option value="14">
-                                                    Reparaciones
-                                                </option>
-                                                <option value="15">
-                                                    Laboratorios
-                                                </option>
-                                                <option value="16">
-                                                    Veterinarias
-                                                </option>
-                                                <option value="17">
-                                                    Corespondencia
-                                                </option>
-                                                <option value="18">
-                                                    Hoteles
-                                                </option>
-                                                <option value="19">
-                                                    Moteles
-                                                </option>
-                                                <option value="20">
-                                                    Hostales
-                                                </option>
-                                                <option value="21">
-                                                    Tecnologia
-                                                </option>
-                                            </optgroup>
-                                            <optgroup label="Industrial:">
-                                                <option value="22">
-                                                    Madera
-                                                </option>
-                                                <option value="23">
-                                                    Cuero
-                                                </option>
-                                                <option value="24">
-                                                    Textil
-                                                </option>
-                                                <option value="25">
-                                                    Metalmecanica
-                                                </option>
-                                                <option value="26">
-                                                    Manufactura
-                                                </option>
-                                                <option value="27">
-                                                    Alimenticio
-                                                </option>
-                                            </optgroup>
+                                            <option value="2">
+                                                Comercial
+                                            </option>
+                                            <option value="3">
+                                                Industrial
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="ActividadEconomica" id="nameActividad">
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
@@ -367,13 +319,13 @@
                                             <div class="col-md-4">
                                                 <select class="form-control" name="tipoEmpleados" disabled="disabled">
                                                     <option value=""></option>
-                                                    <option value="directos">
+                                                    <option value="1">
                                                         Directos
                                                     </option>
-                                                    <option value="indirectos">
+                                                    <option value="2">
                                                         Indirectos
                                                     </option>
-                                                    <option value="directos e indirectos">
+                                                    <option value="3">
                                                         Directos e indirectos
                                                     </option>
                                                 </select>
@@ -441,9 +393,19 @@
                                             </option>
                                         </select>
                                     </div>
-                                </div>
-                                <div id="hasRegistMercTarget2" class="ifHeHas form-group">
-                                    <input class="form-control col-md-8" type="text" name="justificacionMercantil" placeholder="Porque" disabled="disabled">
+                                    <div class="col-md-6 ifHeHas" id="hasRegistMercTarget2">
+                                        <label class="col-md-3">
+                                            Por que?
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="justificacionMercantil" disabled="disabled">
+                                                <option value=""></option>
+                                                <option value="1">No Aplica</option>
+                                                <option value="2">Por Desconocimiento</option>
+                                                <option value="3">No lo ha hecho</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="hasRegistMercTarget1" class="ifHeHas form-group">
                                     <label class="col-md-4">
@@ -476,8 +438,18 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="permSueloTarget2" class="ifHeHas col-md-4">
-                                        <input class="form-control" type="text" name="justificacionUsoSuelo" placeholder="Porque" disabled="disabled">
+                                    <div id="permSueloTarget2" class="ifHeHas col-md-6">
+                                        <label class="col-md-3">
+                                            Por que?
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="justificacionUsoSuelo" disabled="disabled">
+                                                <option value=""></option>
+                                                <option value="1">No Aplica</option>
+                                                <option value="2">Por Desconocimiento</option>
+                                                <option value="3">No lo ha hecho</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -497,8 +469,18 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="bombCertTarget2" class="col-md-4 ifHeHas">
-                                        <input class="form-control col-md-12 nswr" type="text" name="justificacionBomberos" placeholder="Porque" disabled="disabled">
+                                    <div id="bombCertTarget2" class="col-md-6 ifHeHas">
+                                        <label class="col-md-3">
+                                            Por que?
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="justificacionBomberos" disabled="disabled">
+                                                <option value=""></option>
+                                                <option value="1">No Aplica</option>
+                                                <option value="2">Por Desconocimiento</option>
+                                                <option value="3">No lo ha hecho</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div  class="form-group">
@@ -518,8 +500,18 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="manipAlimentTarget2" class="ifHeHas col-md-4">
-                                        <input class="form-control" type="text" name="justificacionManipulacionAlimentos" placeholder="Porque" disabled="disabled">
+                                    <div id="manipAlimentTarget2" class="ifHeHas col-md-6">
+                                        <label class="col-md-3">
+                                            Por que?
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="justificacionManipulacionAlimentos" disabled="disabled">
+                                                <option value=""></option>
+                                                <option value="1">No Aplica</option>
+                                                <option value="2">Por Desconocimiento</option>
+                                                <option value="3">No lo ha hecho</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -539,8 +531,18 @@
                                             </option>
                                         </select>
                                     </div>
-                                    <div id="invimaRegTarget2" class="ifHeHas col-md-4">
-                                        <input class="form-control col-md-8" type="text" name="justificacionInvima" placeholder="Porque" disabled="disabled">
+                                    <div id="invimaRegTarget2" class="ifHeHas col-md-6">
+                                        <label class="col-md-3">
+                                            Por que?
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="justificacionInvima" disabled="disabled">
+                                                <option value=""></option>
+                                                <option value="1">No Aplica</option>
+                                                <option value="2">Por Desconocimiento</option>
+                                                <option value="3">No lo ha hecho</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="invimaRegTarget1" class="ifHeHas">
@@ -576,9 +578,19 @@
                                             </option>
                                         </select>
                                     </div>
-                                </div>
-                                <div id="saycoAcinproTarget2" class="ifHeHas form-group">
-                                    <input class="form-control col-md-4" type="text" name="justificacionSaycoAcinpro" placeholder="Porque" disabled="disabled">
+                                    <div id="saycoAcinproTarget2" class="ifHeHas col-md-6">
+                                        <label class="col-md-3">
+                                            Por que?
+                                        </label>
+                                        <div class="col-md-9">
+                                            <select class="form-control" name="justificacionSaycoAcinpro" disabled="disabled">
+                                                <option value=""></option>
+                                                <option value="1">No Aplica</option>
+                                                <option value="2">Por Desconocimiento</option>
+                                                <option value="3">No lo ha hecho</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div id="saycoAcinproTarget1" class="ifHeHas">
                                     <div class="form-group">
@@ -973,8 +985,49 @@
                                         Cuantas maquinas tiene
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control" type="text" name="numMaquinas">
+                                        <input class="form-control" type="number" name="numMaquinas">
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div id="locationInfo" data-toggle="collapse" href="#infoEncuestado" data-parent="#accordion" aria-expanded="false" aria-controls="infoEncuestado" class="panel-heading">
+                            <h3 class="panel-title">
+                                <a role="button">
+                                    Informacion de Encuestado
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="infoEncuestado" class="panel-collapse collapse" role="tabpanel" aria-labelledby="infoEncuestado">
+                            <div class="panel-body">
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-2">
+                                        Numero de cedula
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="number" name="idPersonaEncuestada">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-2">
+                                        Nombre Encuestado
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" name="nombrePersonaEncuestada">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="col-md-2">
+                                        Telefono
+                                    </label>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" name="telefonoEncuestado">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="comment">Observaciones</label>
+                                    <textarea class="form-control" id="comment" name="observa"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -1003,6 +1056,7 @@
                             <p>Espera un momento . Por favor</p>
                         </div>
                         <div class="modal-footer">
+                            <button type="button" class="btn btn-info" id="takePic">Tomar Fotografia</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div><!-- /.modal-content -->
@@ -1020,6 +1074,7 @@
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/validador.js"></script>
+    <script type="text/javascript" src="js/autocompleActividades.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!--***********************************************-->
 </body>

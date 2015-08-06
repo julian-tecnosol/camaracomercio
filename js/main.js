@@ -25,7 +25,6 @@ function inicializar(){
                 }
                 codigoHTML += '</optgroup>'
             }
-
             $('#selectTipoOrg').html(codigoHTML);
         });
     });
@@ -108,14 +107,12 @@ function checkIdConditionRegMerc(id){
 function disableAllInput(id, container){
     $("#" + id +"Target" + container + " input").each(function(cont){
         $(this).attr("disabled", "disabled");
-        console.log(this);
     });
 }
 
 //Funcion para habilitar todos los input hijos del contenedor "id"
 function enableAllInput(id, container){
     $("#" + id + "Target" + container + " input").each(function(cont){
-            console.log(this);
             $(this).removeAttr("disabled");
         });
 }
@@ -124,14 +121,12 @@ function enableAllInput(id, container){
 function disableAllSelect(id, container){
     $("#" + id +"Target" + container + " select").each(function(cont){
         $(this).attr("disabled", "disabled");
-        console.log(this);
     });
 }
 
 //Funcion para habilitar todos los select hijos del contenedor "id"
 function enableAllSelect(id, container){
     $("#" + id + "Target" + container + " select").each(function(cont){
-            console.log(this);
             $(this).removeAttr("disabled");
         });
 }
@@ -164,12 +159,7 @@ function disableSelectForm(id, container){
 
 //Funcion para habilitar  campos que se deben llenar y deshabilitar campos que van a quedar vacios
 function enableTag(id){
-        console.log("--Entro desde: ");
-        console.log("--" + id + " Query: ");
-        console.log($("#" + id).val())
     if(($("#" + id + " option:selected").val() == "1")){
-        console.log("Entro desde: ");
-        console.log(id);
         enableAllInput(id, 1);
         enableWhichForm(id, 1);
         enableWhyForm(id, 1);
@@ -182,12 +172,9 @@ function enableTag(id){
         //disableAllWhichForm(id, 2);
         //disableAllWhyForm(id, 2);
         disableAllSelect(id, 2);
-        console.log("inActivo");
-        console.log($("#" + id + "Target2")[0]);
     }
     else{
         if(($("#" + id + " option:selected").val() == "0")){
-            console.log("Entra y esta " + $("#" + id + " option:selected").val());
             enableAllInput(id, 2);
             enableWhichForm(id, 2);
             enableWhyForm(id, 2);
@@ -196,8 +183,6 @@ function enableTag(id){
             disableWhichForm(id, 1);
             disableWhyForm(id, 1);
             disableAllSelect(id, 1);
-            console.log("inActivo");
-            console.log($("#" + id + "Target2")[0]);
         }
         else{
             if(($("#" + id + " option:selected").val() === "")){
@@ -215,7 +200,7 @@ function enableTag(id){
 }
 
 function showAdInfo(id){
-    if(($("#" + id + " option:selected").val() == 2) || ($("#" + id + " option:selected").val() == 3)){
+    if(($("#" + id + " option:selected").val() == 2) || ($("#" + id + " option:selected").val() == 3) || ($("#" + id + " option:selected").val() == 17)|| ($("#" + id + " option:selected").val() == 18)){
         enableAllSelect(id, '');
         enableAllInput(id, '');
         $("#" + id + "Target").show();

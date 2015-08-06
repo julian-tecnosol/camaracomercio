@@ -22,9 +22,7 @@ if(!!$datosCensador){
         $_SESSION['tipo_usuario'] = $datosCensador['tipo_usuario'];
     }
 
-    if($datosCensador['tipo_usuario'] == 'C' || $datosCensador['tipo_usuario'] == 'D'){
-        header("Location: ../censo.php");
-    }else if($datosCensador['tipo_usuario'] == 'G'){
-        header("Location: ../picgps");
-    }
-};
+    echo $_SESSION['tipo_usuario'];
+}else{
+    echo "0";
+}

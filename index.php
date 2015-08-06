@@ -40,7 +40,7 @@ if (!!isset($_SESSION['nombreCensador'])) {
 			</div>
 	</header>
 	<div class="row formEdit">
-		<form class="col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12" action="viewcontroller/validationUser.php" method="post">
+		<form class="col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12" action="" method="post" id="loginForm">
 			<div class="form-group">
                 <label class="control-label">Usuario</label>
                 <input class="form-control" type="text" name="nickname" required="required">
@@ -49,14 +49,42 @@ if (!!isset($_SESSION['nombreCensador'])) {
                 <br>
                 <button class="btn btn-block btn-success btn-lg" type="submit">Ingresar</button>
 			</div>
-		</form>
+            <div id="alertFail"></div>
+        </form>
 	</div>
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <!-- <script type="text/javascript" src="libs/jquery/jquery-ui/jquery-ui.min.js"></script> -->
     <script src="//code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/validador.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#loginForm").submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    method : 'POST',
+                    url : "viewcontroller/validationUser.php",
+                    data : $(this).serialize(),
+                    success : function(data){
+                        if(data){
+                            switch (data){
+                                case "C" || "D" :
+                                    window.location.href = "/censo.php";
+                                    break;
+                                case "A" :
+                                    window.location.href = "/view/admin/";
+                                    break;
+                                case "0":
+                                    $("#alertFail").html('<div class="alert alert-warning alert-dismissible" role="alert">'+
+                                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
+                                        '<strong>Upsss!</strong> Usuario y/o Contraseña Incorrectos'+
+                                        '</div>');
+                                    break;
+                            }
+                        }
+                    }
+                })
+            })
+        });
+    </script>
 </body>
 </html>
