@@ -23,6 +23,33 @@ class encuestaModel extends Modelo
         return $rows;
     }
 
+    public function getActividadesEconomicas(){
+        $query = "SELECT a.id_actividad ,a.actividad_name, b.Name_actividad FROM actividad_economica a, title_actividad_economica b WHERE b.id_title_actividad = a.id_title_actividad;";
+        $result = $this->_db->query($query);
+
+        $rows = [];
+        while($row = $result->fetch_array(MYSQLI_ASSOC)){
+            $rows[] = $row;
+        }
+
+        $result->free();
+        return $rows;
+    }
+
+    public function getActividadesEconomicasArr(){
+        $query = "SELECT id_actividad , actividad_name, id_title_actividad FROM actividad_economica;";
+        $result = $this->_db->query($query);
+
+        $rows = [];
+        while($row = $result->fetch_array(MYSQLI_ASSOC)){
+            $numTitle = $row["id_title_actividad"];
+            $rows[] = $row;
+        }
+
+        $result->free();
+        return $rows;
+    }
+
     public function getTituloOrganizacion(){
         $query = "SELECT id_title,Name FROM tipos_orgtitle;";
         $result = $this->_db->query($query);
@@ -37,7 +64,8 @@ class encuestaModel extends Modelo
     }
 
     public function getEncuestasForTable(){
-        $query = "SELECT a.id_encuesta_principal,a.fecha,a.id_empresa,a.ubicacion_id,a.id_encuestador,a.actividad_economica,b.nombre_razon, b.barrio, b.comuna, c.Nombre, c.telefono, c.observaciones FROM encuesta_principal a, empresa_propietario b, persona_encuestada c WHERE a.id_empresa = b.id_empresa AND a.id_tabla_persona = c.id_tabla_persona;";
+
+        $query = "SELECT a.id_encuesta_principal,a.fecha,a.id_empresa,a.ubicacion_id,a.id_encuestador,b.nombre_razon, b.nombre_persona, b.barrio, b.comuna, c.Nombre, c.telefono, c.observaciones, d.actividad_name, e.Nombre_Completo FROM encuesta_principal a, empresa_propietario b, persona_encuestada c, actividad_economica d, info_encuestadores e WHERE a.id_empresa = b.id_empresa AND a.id_tabla_persona = c.id_tabla_persona AND  d.id_actividad = a.actividad_economica AND e.id_encuestador = a.id_encuestador ORDER BY a.id_encuesta_principal;";
         $result = $this->_db->query($query);
 
         $rows = [];
@@ -75,9 +103,150 @@ class encuestaModel extends Modelo
         return $rows;
     }
 
-    public function putDataEmpresa($idEmpresa,$tipoIdentificacion,$nombreRazon, $personaNatural ,$representanteLegal,$direccionEmpresa,$barrio,$comuna,$telefonos,$celular,$correoElectronico){
+    /******/
+    public function getAllRowsEncuestaById ($id){
+        $query = "SELECT
+                      a.fecha,
+                      a.id_encuesta_principal,
+                      g.TipoOrg_name,
+                      b.id_tipo_organizacion,
+                      b.nombre_razon,
+                      b.nombre_persona,
+                      b.representante_legal,
+                      b.id_tipo_identifica,
+                      c.Diminutivo_identifica,
+                      b.id_empresa,
+                      e.ubicacion_name,
+                      f.name as caracter_ubicacion,
+                      b.direccion_empresa,
+                      b.barrio,
+                      b.telefonos as telefonoEmpresa,
+                      b.celular,
+                      b.correo_electronico,
+                      d.actividad_name,
+                      h.name_clasificacion,
+                      h.descripcion_clasificacion,
+                      i.empleados_direc_indirect,
+                      i.empleados_numero,
+                      i.prestaciones,
+                      i.porque_prestaciones,
+                      j.registroMercantil,
+                      j.num_registro,
+                      j.usoSuelo,
+                      j.justificacion_uso_suelo,
+                      j.certificadoBomberos,
+                      j.justificacion_bomberos,
+                      j.manipulacion_alimentos,
+                      j.justificacion_alimentos,
+                      j.registro_Invima,
+                      j.num_invima,
+                      j.justificacion_Invima,
+                      j.sayco_acinpro,
+                      j.num_sayco,
+                      j.justificacion_sayco,
+                      j.residuos_peligrosos,
+                      j.num_residuos,
+                      j.codigo_ciiu,
+                      j.num_ciiu,
+                      j.cod_industria_comercio,
+                      j.num_cod_indusComer,
+                      j.ingresos_mensuales,
+                      j.valor_activos,
+                      j.TIC_PRSTM,
+                      a.vendedor_estacionario,
+                      k.id_persona,
+                      k.Nombre as nombre_encuestado,
+                      k.telefono as telefono_encuestado,
+                      k.observaciones,
+                      l.sistemaSeguridad,
+                      l.id_tipos_seguridad,
+                      l.victimaDelito,
+                      l.id_tipo_delitos,
+                      l.sistema_seguridad_personal,
+                      m.id_encuestador,
+                      m.Nombre_Completo,
+                      m.tipo_usuario
+                    FROM
+                      encuesta_principal a,
+                      empresa_propietario b,
+                      titleDocumentoIdentifica c,
+                      actividad_economica d,
+                      ubicacion_comercial e,
+                      caracter_ubicacion_comercial f,
+                      tipo_organizacion g,
+                      clasificacion_de_empresas h,
+                      num_empleados i,
+                      encuesta_gral j,
+                      persona_encuestada k,
+                      info_maquila l,
+                      info_encuestadores m
+                    WHERE
+                      b.id_empresa = ".$id."
+                      AND a.id_empresa = b.id_empresa
+                      AND b.id_tipo_identifica = c.id_documento_identifica
+                      AND a.actividad_economica = d.id_actividad
+                      AND a.ubicacion_id =e.ubicacion_id
+                      AND a.id_caracter_ubicacion = f.id_caracter_ubicacion
+                      AND b.id_tipo_organizacion = g.TipoOrg_Id
+                      AND a.id_clasificacion = h.id_clasificacion
+                      AND i.id_empresa = b.id_empresa
+                      AND j.id_encuesta = a.id_encuesta
+                      AND k.id_tabla_persona = a.id_tabla_persona
+                      AND l.id_info_maquila = a.id_info_maquila
+                      AND m.id_encuestador = a.id_encuestador ;";
 
-        $query = "INSERT INTO empresa_propietario(id_empresa, id_tipo_identifica, nombre_razon, nombre_persona,representante_legal, direccion_empresa, barrio, comuna,telefonos, celular, correo_electronico) VALUES (".$idEmpresa.",".$tipoIdentificacion.",'".$nombreRazon."','". $personaNatural."','".$representanteLegal."','".$direccionEmpresa."','".$barrio."','".$comuna."','".$telefonos."','".$celular."','".$correoElectronico."');";
+        $result = $this->_db->query($query);
+
+        $rows = [];
+        while($row = $result->fetch_array(SQLITE3_ASSOC)){
+            $rows[] = $row;
+        }
+
+        $result->free();
+        return $rows;
+    }
+
+    public function getDocumentInfo($numTableDoc){
+        $query = "SELECT num_documento, fecha_renovada FROM info_documentos WHERE id_documentos = ".$numTableDoc.";";
+
+        $result = $this->_db->query($query);
+
+        $rows = $result->fetch_array(SQLITE3_ASSOC);
+
+        $result->free();
+        return $rows;
+    }
+
+    public function getVendedorAmbulanteByIdEmpresa($idEmpresa){
+
+        $query = "SELECT permiso_funcionamiento, cual_permiso, valor_ventas, impuestos, cual_impuesto, numero_empleos, jornada, prestaciones, justificacion_prestaciones FROM adicional_vendedores_naturales WHERE id_empresa = ".$idEmpresa.";";
+
+        $result = $this->_db->query($query);
+
+        $rows = $result->fetch_array(SQLITE3_ASSOC);
+
+        $result->free();
+
+        return $rows;
+    }
+
+    public function getRelacionDigitadorEncuesta($idDigitador, $idEncuesta){
+
+        $query = "SELECT a.Nombre_Completo as encuestador FROM info_encuestadores a, relacion_digitador_encuesta b WHERE a.id_encuestador = b.id_encuestador AND b.id_digitador = ".$idDigitador." AND b.id_encuesta = ".$idEncuesta.";";
+
+        $result = $this->_db->query($query);
+
+        $rows = $result->fetch_array(SQLITE3_ASSOC);
+
+        $result->free();
+
+        return $rows;
+    }
+    /******/
+
+    public function putDataEmpresa($idEmpresa,$tipoIdentificacion,$tipoOrganizacionId,$nombreRazon, $personaNatural ,$representanteLegal,$direccionEmpresa,$barrio,$comuna,$telefonos,$celular,$correoElectronico){
+
+        $query = "INSERT INTO empresa_propietario(id_empresa, id_tipo_identifica, id_tipo_organizacion, nombre_razon, nombre_persona,representante_legal, direccion_empresa, barrio, comuna,telefonos, celular, correo_electronico) VALUES (".$idEmpresa.",".$tipoIdentificacion.",".$tipoOrganizacionId.",'".$nombreRazon."','". $personaNatural."','".$representanteLegal."','".$direccionEmpresa."','".$barrio."','".$comuna."','".$telefonos."','".$celular."','".$correoElectronico."');";
 
         if($this->_db->query($query) === TRUE){
             return 'Empresa agregada correctaente <br><br>';
@@ -167,6 +336,37 @@ class encuestaModel extends Modelo
             return $this->_db->insert_id;
         }else{
             return "Error: " . $query . "<br>" . $this->_db->error;
+        }
+    }
+
+    public function putNewActivity($name,$pertence){
+        $query = 'INSERT INTO actividad_economica(actividad_name, id_title_actividad) VALUE ("'.$name.'",'.$pertence.');';
+
+        if($this->_db->query($query) === TRUE){
+            echo "Agregado Correctamente";
+        }else{
+            return "Error: " . $query . "<br>" . $this->_db->error;
+        }
+    }
+
+
+    public function deleteActividadEconomica($id){
+        $query = "DELETE FROM actividad_economica WHERE id_actividad =".$id.";";
+
+        if($this->_db->query($query) === TRUE){
+            echo "Actividad eliminada correctamente";
+        }else{
+            echo "Error al eliminar actividad económica: ". $this->_db->error;
+        }
+    }
+
+    public function updateActividadEconomica ($val,$id){
+        $query = "UPDATE actividad_economica SET actividad_name = '".$val."' WHERE id_actividad = ".$id.";";
+
+        if($this->_db->query($query) === TRUE){
+            echo "Actividad actualizada correctamente";
+        }else{
+            echo "Error al actualizar actividad económica: ". $this->_db->error;
         }
     }
 }

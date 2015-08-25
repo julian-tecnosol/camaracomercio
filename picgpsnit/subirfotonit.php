@@ -23,7 +23,7 @@ if ($_FILES["imagen"]["error"] > 0){
 	if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024){
 		//esta es la ruta donde copiaremos la imagen
 		//recuerden que deben crear un directorio con este mismo nombre
-		//en el mismo lugar donde se encuentra el archivo subir.php
+		//en el mismo lugar donde se encuentra el archivo subirfotonit.php
 		$ruta = "imagenes/" .$new_name .".jpg";
 		//comprovamos si este archivo existe para no volverlo a copiar.
 		//pero si quieren pueden obviar esto si no es necesario.
@@ -34,8 +34,8 @@ if ($_FILES["imagen"]["error"] > 0){
 			//almacenara true o false
 			$resultado = @move_uploaded_file($_FILES["imagen"]["tmp_name"], $ruta);
 			if ($resultado){
+				$UsuModel->uploadMedia($idEmpresa, $idCensador,"picgpsnit/".$ruta,$lat,$lon);
 				$UsuModel->uploadNumfotos($_SESSION['idCensador']);
-				$UsuModel->uploadMedia($idEmpresa, $idCensador,"picgps/".$ruta,$lat,$lon);
 			} else {
 				echo "ocurrio un error al mover el archivo.";
 			}

@@ -1,0 +1,47 @@
+body{
+    background: url("/img/bg.jpg");
+}
+
+.item-menu:first-child{
+    background: url("../img/applicattion.png") no-repeat center, rgba(41, 128, 185,0.5);
+    background-size: 50%;
+    transition: background 1s;
+}
+
+.item-menu:last-child{
+    background: url("../img/camera3.png") no-repeat center,rgba(41, 128, 185,0.5);
+    background-size: 50%;
+    transition: background 1s;
+
+}
+
+.item-menu:first-child:hover{
+    background: url("../img/applicattionhvr.png") no-repeat center, rgba(52, 73, 94,1.0);
+    background-size: 50%;
+}
+
+.item-menu:last-child:hover{
+    background: url("../img/camera3-hvr.png") no-repeat center,rgba(52, 73, 94,1.0);
+    background-size: 50%;
+
+}
+
+
+.item-menu{
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(52, 73, 94,1.0);
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.item-menu:before{
+    content: " ";
+    display: block;
+    padding-top: 100%;
+}
+
+.row{
+    margin: 0;
+}

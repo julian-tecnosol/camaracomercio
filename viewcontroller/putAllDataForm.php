@@ -83,7 +83,7 @@ require_once('../model/encuestaModel.php');
 
 $putData = new encuestaModel();
 
-echo $putData->putDataEmpresa($idEmpresa,$tipoIdentificacion,$razonSocial, $personaNatural,$nombreRepresenta,$dirEmpresa,$barrio,$comunaEmpresa,$telEmpresa,$celEmpresa,$emailEmpresa);
+echo $putData->putDataEmpresa($idEmpresa,$tipoIdentificacion,$tipoOrganizacion,$razonSocial, $personaNatural,$nombreRepresenta,$dirEmpresa,$barrio,$comunaEmpresa,$telEmpresa,$celEmpresa,$emailEmpresa);
 
 if($tieneEmpleados){
     echo $putData->putDataEmpleados($idEmpresa,$tipoEmpleados,$numEmpleados,$afilPensSalud,$justificacionPrestaciones);

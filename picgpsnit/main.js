@@ -1,5 +1,6 @@
 (function(){
 	var content = document.getElementById("geolocation-test");
+	console.dir(content);
 	var $divUpImage = $(".cuadroImagen");
 	$divUpImage.hide();
 
@@ -14,10 +15,9 @@
 		{
 			var lon = objPosition.coords.longitude;
 			var lat = objPosition.coords.latitude;
-
-			var miId = location.search.split("value=")[1];
+			
 			var miError = location.search.split("error=")[1];
-			content.innerHTML = "<p><h3>Tu posicion actual</h3><strong>Latitud:</strong><input type='text' name='latitud' class='form-control' value='" + lat + "' readonly></p><p><strong>Longitud:</strong><input type='text' class='form-control' name='longitud' value='" + lon + "' readonly></p><input type='hidden' name='idEmpresa' value='"+miId+"'>";
+			content.innerHTML = "<p><h3>Tu posicion actual</h3><strong>Latitud:</strong><input type='text' name='latitud' class='form-control' value='" + lat + "' readonly></p><p><strong>Longitud:</strong><input type='text' class='form-control' name='longitud' value='" + lon + "' readonly></p>";
 			if(miError.indexOf("TRUE") > -1){
 				$("#geolocation-test").append("<h4>Error al subir imagen vuelve a intentarlo</h4>")
 			}

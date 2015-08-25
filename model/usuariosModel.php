@@ -71,6 +71,20 @@ class usuariosModel extends Modelo
         }
     }
 
+    public function uploadMedia ($idEmpresa ,$idEncuestador ,$url_image, $lat, $lon){
+        $query = "INSERT INTO multimedia (id_empresa, id_encuestador, lat, name_img, lon) VALUES (".$idEmpresa.",".$idEncuestador.",'".$lat."','".$url_image."','".$lon."');";
+
+        if ($this->_db->query($query) === TRUE) {
+            if($this->updateEncuesta($idEmpresa)){
+                header("Location: /censo.php");
+            }else{
+                header("Location: /picgps?error=TRUE&value=".$idEmpresa);
+            };
+        } else {
+            echo "Error: " . $query . "<br>" . $this->_db->error;
+        }
+    }
+
     public function updateEncuesta ($idEmpresa){
         $query = "UPDATE encuesta_principal SET completo = 1 WHERE id_empresa =".$idEmpresa.";";
 
@@ -81,26 +95,10 @@ class usuariosModel extends Modelo
         }
     }
 
-    public function uploadMedia ($idEmpresa ,$idEncuestador ,$url_image, $lat, $lon){
-        $query = "INSERT INTO multimedia (id_empresa, id_encuestador, lat, name_img, lon) VALUES (".$idEmpresa.",".$idEncuestador.",'".$lat."','".$url_image."','".$lon."');";
-
-        if ($this->_db->query($query) === TRUE) {
-            if($this->updateEncuesta($idEmpresa)){
-                header("Location: /");
-            }else{
-                header("Location: /picgps?error=TRUE&value=".$idEmpresa);
-            };
-        } else {
-            echo "Error: " . $query . "<br>" . $this->_db->error;
-        }
-    }
-
     public function uploadNumfotos ($idCensador){
         $query = "UPDATE info_encuestadores SET num_fotos = num_fotos +1 WHERE id_encuestador =".$idCensador.";";
 
-        if ($this->_db->query($query) === TRUE) {
-            echo "Numero de fotos actualizado ";
-        } else {
+        if ($this->_db->query($query) === FALSE) {
             echo "Error: " . $query . "<br>" . $this->_db->error;
         }
     }

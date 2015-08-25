@@ -2,6 +2,10 @@
 	background-image: url('../img/bg.jpg');
 }
 
+.panel-heading{
+	cursor: pointer;
+}
+
 .headerFx{
 	background-color: #383EAE;
 	height: 80px;
@@ -9,12 +13,13 @@
 }
 h3{
 	color: rgb(66, 66, 66);
-	font-family: "Roboto-bold";
+	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 }
 label{
 	color: rgb(66, 66, 66);
-	font-family: "Roboto-medium";
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
 	font-size: 16px;
 }
 
@@ -24,8 +29,6 @@ label{
 
 .fix{
 	margin: 0px;
-	margin-left: 0px;
-	margin-right: 0px;
 }
 
 .edit{
@@ -36,9 +39,8 @@ label{
 }
 
 .arrow{
-    border-top-color: #B0B0B0;
-    border: 10px solid #ffffff;
-    height:5px;
+	border: 10px solid #ffffff;
+	height:5px;
     width:5px;
 }
 
@@ -131,7 +133,7 @@ label{
 @media (max-width: 768px) {
     .logo-img{
         margin-top: -30px;
-        margin-left: -15px;
+        margin-left: 25px;
     }
 
     .logo-img img{

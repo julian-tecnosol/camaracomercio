@@ -23,7 +23,7 @@
     <!--<link rel="stylesheet" href="libs/jquery/jquery-ui/jquery-ui.css">-->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 </head>
 <body class="backImg">
     <header class="headerFx row">
@@ -117,7 +117,7 @@
                                         Telefono y/o Fax de la empresa
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control col-md-6" type="number" name="telefonoEmpresa">
+                                        <input class="form-control col-md-6" type="number" data-validar="false" name="telefonoEmpresa">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -125,7 +125,7 @@
                                         Celular
                                     </label>
                                     <div class="col-md-8">
-                                        <input class="form-control col-md-6" type="number" name="celularEmpresa">
+                                        <input class="form-control col-md-6" type="number" data-validar="false" name="celularEmpresa">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -192,9 +192,9 @@
                                             <option value="Comuna 2">Comuna 2</option>
                                             <option value="Comuna 3">Comuna 3</option>
                                             <option value="Comuna 4">Comuna 4</option>
-                                            <option value="Comuna 4">Comuna 4</option>
                                             <option value="Comuna 5">Comuna 5</option>
                                             <option value="Comuna 6">Comuna 6</option>
+                                            <option value="Comuna 7">Comuna 7</option>
                                             <option value="Comuna 8">Comuna 8</option>
                                             <option value="Comuna 9">Comuna 9</option>
                                             <option value="Comuna 10">Comuna 10</option>
@@ -557,7 +557,7 @@
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="date" name="fechaInvima" max="<?php echo $fechaHoy?>" disabled="disabled">
+                                            <input class="form-control col-md-4" type="text" name="fechaInvima" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -604,7 +604,7 @@
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control col-md-4" type="date" max="<?php echo $fechaHoy?>" name="fechaAcinpro" disabled="disabled">
+                                            <input class="form-control col-md-4" type="text" name="fechaAcinpro" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -638,7 +638,7 @@
                                             Fecha
                                         </label>
                                         <div class="col-md-4">
-                                            <input class="form-control" type="date" max="<?php echo $fechaHoy?>" name="fechaResiduosPeligrosos" disabled="disabled">
+                                            <input class="form-control" type="text" name="fechaResiduosPeligrosos" disabled="disabled">
                                         </div>
                                     </div>
                                 </div>
@@ -1056,7 +1056,9 @@
                             <p>Espera un momento . Por favor</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-info" id="takePic">Tomar Fotografia</button>
+                            <?php if ($_SESSION['tipo_usuario'] == 'C') {
+                                echo '<button type="button" class="btn btn-info" id="takePic">Tomar Fotografia</button>';
+                            }?>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                         </div>
                     </div><!-- /.modal-content -->

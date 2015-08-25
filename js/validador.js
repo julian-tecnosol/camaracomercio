@@ -5,22 +5,25 @@
 function validador(){
     var formulario = $("#formContainer");
 
-    document.onkeypress = function(event){
-        var x = event.which || event.keyCode;
-        var typeInput = event.target.type;
-        var keyString = String.fromCharCode(x);
-        var regular = new RegExp(/[0-9]/);
-
-        if(typeInput == "number"){
-            if(!(regular.test(keyString))){
-                $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Debe Ser Solo Numerico</div>');
+    function validIsNumber (ele){
+        var $esteInputNum = ele;
+        $esteInputNum.blur(function () {
+            var boolNumero = $.isNumeric($esteInputNum.val());
+            if (!boolNumero) {
+                $esteInputNum.focus();
+                $('body').append('<div class="col-md-2 persona-danger navbar-fixed-top">Debe Ser Solo Numerico '+$esteInputNum.val()+'</div>');
                 $('.persona-danger').fadeOut(5000);
-                return false;
-            }else{
-                return true;
             }
+        });
+    }
+
+    var allInputsNumber = $("input[type='number']");
+    allInputsNumber.each(function(){
+        var $esteInputNum = $(this);
+        if ($esteInputNum.data("validar") !== false) {
+            validIsNumber($esteInputNum);
         }
-    };
+    });
 
     formulario.submit(function(event){
 
@@ -84,6 +87,25 @@ function validador(){
                     else{
                         parentThisSelect.addClass('has-error');
                         contadorErrores += 1;
+                    }
+                }
+            }
+        }
+
+        for(var d = 0; d < ControlNumber; d++){
+            if(allInputNum[d].dataset.validar === undefined) {
+                if (allInputNum[d].disabled == false) {
+                    var thisInputNum = $(allInputNum[d]);
+                    if (!(thisInputNum.disabled)) {
+                        var valThisInputNum = thisInputNum.val();
+                        var parentThisNum = thisInputNum.parent();
+                        if (valThisInputNum.length >= 1) {
+                            parentThisNum.addClass('has-success');
+                        }
+                        else {
+                            parentThisNum.addClass('has-error');
+                            contadorErrores += 1;
+                        }
                     }
                 }
             }

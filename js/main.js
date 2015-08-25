@@ -17,11 +17,11 @@ function inicializar(){
             var lenTitleOrg = tituloOrganizaciones.length;
             var lenTiposOrg = objTiposOrganizacion.length;
             for(var i = 0; i < lenTitleOrg; i++){
-                codigoHTML += '<optgroup label="'+tituloOrganizaciones[i].Name+'"' +':>';
+                codigoHTML += '<optgroup label="'+tituloOrganizaciones[i].Name+':"' +'>';
                 for(var j = 0;j < lenTiposOrg; j++){
                     if(objTiposOrganizacion[j].id_title == tituloOrganizaciones[i].id_title){
                         codigoHTML += '<option value="'+objTiposOrganizacion[j].TipoOrg_Id+'">'+objTiposOrganizacion[j].TipoOrg_name+'</option>';
-                    };
+                    }
                 }
                 codigoHTML += '</optgroup>'
             }

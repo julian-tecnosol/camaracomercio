@@ -11,7 +11,7 @@ class Modelo
     protected $_db;
     public function __construct()
     {
-        $this->_db = new mysqli('localhost', 'root', 'root', 'camaracomercio');
+        $this->_db = new mysqli('localhost', 'root', 'root', 'emalazt_geosearch');
 
         if ( $this->_db->connect_errno )
         {

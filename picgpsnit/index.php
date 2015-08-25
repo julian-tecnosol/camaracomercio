@@ -32,7 +32,7 @@
             <!--</div>-->
         </div>
     </header>
-    <form action="subir.php" method="POST" enctype="multipart/form-data">
+    <form action="subirfotonit.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" value="<?php echo $_SESSION['num_fotos']?>" name="num_fotos">
         <input type="hidden" value="<?php echo $_SESSION['idCensador']?>" name="idCensador">
         <div class="col-md-offset-3 col-md-6" id="upImage">
@@ -41,6 +41,8 @@
                 <button id="reload">Recargar</button>
             </div>
             <div class="col-md-12 cuadroImagen">
+                <label class="label-control" for="imagen">NIT Empresa:</label>
+                <input class="form-control" type='text' name='idEmpresa'>
                 <label class="label-control" for="imagen">Imagen:</label>
                 <input class="form-control" type="file" name="imagen" id="imagen" />
                 <br>

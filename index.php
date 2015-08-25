@@ -20,7 +20,7 @@ if (!!isset($_SESSION['nombreCensador'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 	<title>Login</title>
     <style>
         .row{
@@ -67,8 +67,8 @@ if (!!isset($_SESSION['nombreCensador'])) {
                     success : function(data){
                         if(data){
                             switch (data){
-                                case "C" || "D" :
-                                    window.location.href = "/censo.php";
+                                case "C":
+                                    window.location.href = "/views/principal/";
                                     break;
                                 case "A" :
                                     window.location.href = "/view/admin/";
@@ -78,6 +78,9 @@ if (!!isset($_SESSION['nombreCensador'])) {
                                         '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
                                         '<strong>Upsss!</strong> Usuario y/o Contraseña Incorrectos'+
                                         '</div>');
+                                    break;
+                                case "D" :
+                                    window.location.href = "/censo.php";
                                     break;
                             }
                         }
