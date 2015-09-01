@@ -65,7 +65,7 @@ class encuestaModel extends Modelo
 
     public function getEncuestasForTable(){
 
-        $query = "SELECT a.id_encuesta_principal,a.fecha,a.id_empresa,a.ubicacion_id,a.id_encuestador,b.nombre_razon, b.nombre_persona, b.barrio, b.comuna, c.Nombre, c.telefono, c.observaciones, d.actividad_name, e.Nombre_Completo FROM encuesta_principal a, empresa_propietario b, persona_encuestada c, actividad_economica d, info_encuestadores e WHERE a.id_empresa = b.id_empresa AND a.id_tabla_persona = c.id_tabla_persona AND  d.id_actividad = a.actividad_economica AND e.id_encuestador = a.id_encuestador ORDER BY a.id_encuesta_principal;";
+        $query = "SELECT a.id_encuesta_principal,a.fecha,a.id_empresa,a.ubicacion_id,a.id_encuestador,b.nombre_razon, b.nombre_persona, b.barrio, b.direccion_empresa, b.comuna, c.Nombre, c.telefono, c.observaciones, d.actividad_name, e.Nombre_Completo FROM encuesta_principal a, empresa_propietario b, persona_encuestada c, actividad_economica d, info_encuestadores e WHERE a.id_empresa = b.id_empresa AND a.id_tabla_persona = c.id_tabla_persona AND  d.id_actividad = a.actividad_economica AND e.id_encuestador = a.id_encuestador ORDER BY a.id_encuesta_principal;";
         $result = $this->_db->query($query);
 
         $rows = [];
@@ -108,6 +108,7 @@ class encuestaModel extends Modelo
         $query = "SELECT
                       a.fecha,
                       a.id_encuesta_principal,
+                      a.id_caracter_ubicacion,
                       g.TipoOrg_name,
                       b.id_tipo_organizacion,
                       b.nombre_razon,
@@ -117,21 +118,24 @@ class encuestaModel extends Modelo
                       c.Diminutivo_identifica,
                       b.id_empresa,
                       e.ubicacion_name,
+                      e.ubicacion_id,
                       f.name as caracter_ubicacion,
                       b.direccion_empresa,
                       b.barrio,
+                      b.comuna,
                       b.telefonos as telefonoEmpresa,
                       b.celular,
                       b.correo_electronico,
                       d.actividad_name,
+                      d.id_actividad,
+                      d.id_title_actividad,
+                      h.id_clasificacion,
                       h.name_clasificacion,
                       h.descripcion_clasificacion,
-                      i.empleados_direc_indirect,
-                      i.empleados_numero,
-                      i.prestaciones,
-                      i.porque_prestaciones,
+                      a.empleados,
                       j.registroMercantil,
                       j.num_registro,
+                      j.justificacion_registro,
                       j.usoSuelo,
                       j.justificacion_uso_suelo,
                       j.certificadoBomberos,
@@ -158,6 +162,7 @@ class encuestaModel extends Modelo
                       k.Nombre as nombre_encuestado,
                       k.telefono as telefono_encuestado,
                       k.observaciones,
+                      l.num_maquinas,
                       l.sistemaSeguridad,
                       l.id_tipos_seguridad,
                       l.victimaDelito,
@@ -175,7 +180,6 @@ class encuestaModel extends Modelo
                       caracter_ubicacion_comercial f,
                       tipo_organizacion g,
                       clasificacion_de_empresas h,
-                      num_empleados i,
                       encuesta_gral j,
                       persona_encuestada k,
                       info_maquila l,
@@ -189,7 +193,6 @@ class encuestaModel extends Modelo
                       AND a.id_caracter_ubicacion = f.id_caracter_ubicacion
                       AND b.id_tipo_organizacion = g.TipoOrg_Id
                       AND a.id_clasificacion = h.id_clasificacion
-                      AND i.id_empresa = b.id_empresa
                       AND j.id_encuesta = a.id_encuesta
                       AND k.id_tabla_persona = a.id_tabla_persona
                       AND l.id_info_maquila = a.id_info_maquila
@@ -217,6 +220,31 @@ class encuestaModel extends Modelo
         return $rows;
     }
 
+    public function getDataEmpleados($idEmpresa){
+        $query = "SELECT empleados_direc_indirect, empleados_numero, prestaciones, porque_prestaciones FROM num_empleados WHERE id_empresa = ".$idEmpresa." ;";
+
+        $result = $this->_db->query($query);
+
+        $rows = $result->fetch_array(SQLITE3_ASSOC);
+
+        $result->free();
+        return $rows;
+    }
+
+    public function getAllJustificaciones(){
+        $query = "SELECT id_justificacion, Nombre_Justificacion FROM justificaciones ;";
+
+        $result = $this->_db->query($query);
+
+        $rows = [];
+        while($row = $result->fetch_array(SQLITE3_ASSOC)){
+            $rows[] = $row;
+        }
+
+        $result->free();
+        return $rows;
+    }
+
     public function getVendedorAmbulanteByIdEmpresa($idEmpresa){
 
         $query = "SELECT permiso_funcionamiento, cual_permiso, valor_ventas, impuestos, cual_impuesto, numero_empleos, jornada, prestaciones, justificacion_prestaciones FROM adicional_vendedores_naturales WHERE id_empresa = ".$idEmpresa.";";
@@ -233,6 +261,47 @@ class encuestaModel extends Modelo
     public function getRelacionDigitadorEncuesta($idDigitador, $idEncuesta){
 
         $query = "SELECT a.Nombre_Completo as encuestador FROM info_encuestadores a, relacion_digitador_encuesta b WHERE a.id_encuestador = b.id_encuestador AND b.id_digitador = ".$idDigitador." AND b.id_encuesta = ".$idEncuesta.";";
+
+        $result = $this->_db->query($query);
+
+        $rows = $result->fetch_array(SQLITE3_ASSOC);
+
+        $result->free();
+
+        return $rows;
+    }
+
+    public function getAllPosicion(){
+
+        $query = "SELECT a.lat,a.lon,a.name_img,b.nombre_razon FROM multimedia a, empresa_propietario b WHERE a.id_empresa = b.id_empresa;";
+
+        $result = $this->_db->query($query);
+
+        $rows = [];
+        while($row = $result->fetch_array(SQLITE3_ASSOC)){
+            $rows[] = $row;
+        }
+
+        $result->free();
+        return $rows;
+    }
+
+
+    public function getTiposDeSeguridadById ($idSeguridad){
+        $query = "SELECT name_seguridad FROM tipos_seguridad WHERE id_tipos_seguridad = ".$idSeguridad.";";
+
+        $result = $this->_db->query($query);
+
+        $rows = $result->fetch_array(SQLITE3_ASSOC);
+
+        $result->free();
+
+        return $rows;
+    }
+
+
+    public function getTiposDeDelitoById ($idDelito){
+        $query = "SELECT name_delito FROM tipo_delitos WHERE id_tipo_delito = ".$idDelito.";";
 
         $result = $this->_db->query($query);
 
@@ -369,4 +438,107 @@ class encuestaModel extends Modelo
             echo "Error al actualizar actividad económica: ". $this->_db->error;
         }
     }
+
+    /******************************************************
+     *      TODOS LOS SETTERS PARA MODIFICAR LOS DATOS
+    *******************************************************/
+
+    public function updateInformacionPersonal($selectTipoDocumento,$fechaencuesta,$inpNumDocuemnto,$inpNombreRazonSocial,$inpNombrePersonaNatural,$telefonoEmpresa,$celularEmpresa,$correoEmpresa,$tipoOrg,$inpNombreRepresentante){
+
+        $query = "UPDATE empresa_propietario SET id_tipo_identifica = ". $selectTipoDocumento .", id_tipo_organizacion = ".$tipoOrg.", nombre_razon = '".$inpNombreRazonSocial."', nombre_persona = '". $inpNombrePersonaNatural ."', representante_legal = '".$inpNombreRepresentante."', telefonos ='". $telefonoEmpresa."', celular ='". $celularEmpresa."', correo_electronico ='".$correoEmpresa."' WHERE id_empresa = ".$inpNumDocuemnto."; ";
+        $contador = 2;
+
+        if($this->_db->query($query) === TRUE){
+            if($this->_db->affected_rows > 0){
+                echo "Informacion personal actualizada correctamente";
+                $contador = $contador - 1;
+            }
+        }else{
+            echo "Error al actualizar Informacion personal:<br><br> ". $this->_db->error;
+        }
+
+        $query2 = "UPDATE encuesta_principal SET  fecha = '".$fechaencuesta."' WHERE id_empresa = ".$inpNumDocuemnto.";";
+
+        if($this->_db->query($query2) === TRUE){
+            if($this->_db->affected_rows > 0){
+                echo "Fecha de la encuesta personal actualizada correctamente";
+                $contador = $contador - 1;
+            }
+        }else{
+            echo "Error al actualizar Informacion personal:<br><br> ". $this->_db->error;
+        }
+
+        if($contador == 2){
+            echo "No Hay informacion para actualizar";
+        }
+    }
+
+    public function updateUbicacionEmpresa($direccionEmpresa,$barrioEmpresa,$comunaEmpresa,$selectUbicaComercial,$caracterUbicacion,$inpNumDocuemnto){
+
+        $contador = 2;
+        $query = "UPDATE empresa_propietario SET direccion_empresa = '".$direccionEmpresa."', barrio ='".$barrioEmpresa."', comuna ='".$comunaEmpresa."' WHERE id_empresa =".$inpNumDocuemnto.";";
+
+        if($this->_db->query($query) === TRUE){
+            echo "Direccion de la empresa actualizada correctamente<br><br>";
+        }else{
+            echo "Error al actualizar Direccion de la empresa:<br><br> ". $this->_db->error;
+        }
+
+        $query2 = "UPDATE encuesta_principal SET ubicacion_id = ".$selectUbicaComercial.", id_caracter_ubicacion = ".$caracterUbicacion." WHERE id_empresa = ".$inpNumDocuemnto.";";
+
+        if($this->_db->query($query2) === TRUE){
+            if($this->_db->affected_rows > 0){
+                echo "Ubicacion de la empresa actualizada correctamente<br><br>";
+                $contador = $contador - 1;
+            }
+        }else{
+            echo "Error al actualizar Ubicacion de la empresa:<br><br> ". $this->_db->error;
+        }
+
+        if($contador == 2){
+            echo "No Hay informacion para actualizar";
+        }
+    }
+
+    public function updateClasificacionEmpresa($titletipoActividad,$ActividadEconomica,$clasificacionEmpresa,$tieneEmpleados,$tipoEmpleados,$numEmpleados,$afilPensSalud,$justificacionPrestaciones,$inpNumDocuemnto){
+
+        $query = "UPDATE encuesta_principal SET actividad_economica= ".$ActividadEconomica.", id_clasificacion =".$clasificacionEmpresa.", empleados =".$tieneEmpleados." WHERE id_empresa =".$inpNumDocuemnto.";";
+
+        if($this->_db->query($query) === TRUE){
+            echo "Clasificación de la empresa actualizada correctamente<br><br>";
+        }else{
+            echo "Error al actualizar Clasificación de la empresa:<br><br> ". $this->_db->error;
+        }
+
+        if($tieneEmpleados == 1){
+            $queryEmpleados = "SELECT id_num_empleados FROM num_empleados WHERE id_empresa = ". $inpNumDocuemnto .";";
+
+            $resultEmpleados = $this->_db->query($queryEmpleados);
+
+            if($resultEmpleados->num_rows > 1){
+                $rows = $resultEmpleados->fetch_array(SQLITE3_ASSOC);
+
+                $queryUpdate = "UPDATE num_empleados SET empleados_direc_indirect =".$tipoEmpleados.", empleados_numero = ".$numEmpleados.", prestaciones = ".$afilPensSalud.", porque_prestaciones= '".$justificacionPrestaciones."' WHERE id_num_empleados = ".$rows["id_num_empleados"].";";
+
+                if($this->_db->query($queryUpdate) === TRUE){
+                    echo "Empleados actualizados correctamente<br><br>";
+                }else{
+                    echo "Error al actualizar empleados :<br><br> ". $this->_db->error;
+                }
+
+            }else{
+                $queryInsert = "INSERT INTO num_empleados(id_empresa, empleados_direc_indirect, empleados_numero, prestaciones, porque_prestaciones) VALUES (".$inpNumDocuemnto.",".$tipoEmpleados.",".$numEmpleados.",".$afilPensSalud.",'".$justificacionPrestaciones."');";
+
+                if($this->_db->query($queryInsert) === TRUE){
+                    echo "Empleados agregados correctamente<br><br>";
+                }else{
+                    return "Error: " . $queryInsert . "<br>" . $this->_db->error;
+                };
+            };
+
+            $resultEmpleados->free();
+        }
+    }
+
+    /******************************************************/
 }

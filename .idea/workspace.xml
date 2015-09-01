@@ -1,36 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c53d481a-cb81-4177-beda-e5c703634a3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/autocompleActividades.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/viewcontroller/getAllEncuestasForTable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/js/mainadmin.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index2.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/picgps/index.html" afterPath="$PROJECT_DIR$/picgps/index.php" />
+    <list default="true" id="c53d481a-cb81-4177-beda-e5c703634a3c" name="Default" comment="Inicio de creacion de ubicacion en el mapa">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/loading.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/editarencuesta.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/viewcontroller/getPosicionAndUrl.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/js/maineditar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/sendDataForUpdate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/viewcontroller/seters/setClasificacion.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/viewcontroller/seters/setInformacionPersonal.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/viewcontroller/seters/setUbicacion.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin/js/valid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/censo.php" afterPath="$PROJECT_DIR$/censo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/censocc.iml" afterPath="$PROJECT_DIR$/.idea/censocc.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/encuestaModel.php" afterPath="$PROJECT_DIR$/model/encuestaModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/getAllEncuestadores.php" afterPath="$PROJECT_DIR$/viewcontroller/getAllEncuestadores.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/getClasificacionEmpresa.php" afterPath="$PROJECT_DIR$/viewcontroller/getClasificacionEmpresa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/getTipoOrganizacion.php" afterPath="$PROJECT_DIR$/viewcontroller/getTipoOrganizacion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/getTitleTipoOrganizacion.php" afterPath="$PROJECT_DIR$/viewcontroller/getTitleTipoOrganizacion.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/getUbicacionComercial.php" afterPath="$PROJECT_DIR$/viewcontroller/getUbicacionComercial.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/logstyle.css" afterPath="$PROJECT_DIR$/css/logstyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picgps/main.js" afterPath="$PROJECT_DIR$/picgps/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picgps/maingeo.css" afterPath="$PROJECT_DIR$/picgps/maingeo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" afterPath="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picgps/subir.php" afterPath="$PROJECT_DIR$/picgps/subir.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/usuariosModel.php" afterPath="$PROJECT_DIR$/model/usuariosModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/validador.js.orig" afterPath="$PROJECT_DIR$/js/validador.js.orig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/validador.js" afterPath="$PROJECT_DIR$/js/validador.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/validationUser.php" afterPath="$PROJECT_DIR$/viewcontroller/validationUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewcontroller/getAllDataEncuesta.php" afterPath="$PROJECT_DIR$/viewcontroller/getAllDataEncuesta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/index.php" afterPath="$PROJECT_DIR$/views/admin/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/main.css" afterPath="$PROJECT_DIR$/views/admin/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/js/mainadmin.js" afterPath="$PROJECT_DIR$/views/admin/js/mainadmin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="censocc.iws" />
@@ -58,7 +47,29 @@
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - camaracomercio@localhost" />
+        <option name="myItemId" value="MySQL - emalazt_geosearch@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="emalazt_geosearch" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - emalazt_geosearch@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="emalazt_geosearch" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="num_empleados" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -69,12 +80,188 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="validador.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/validador.js">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.024">
-              <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editarencuesta.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin/editarencuesta.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendDataForUpdate.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/sendDataForUpdate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.552">
+              <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+              <folding>
+                <element signature="n#!!doc;n#sendDataByAjax#0" expanded="false" />
+                <marker date="1441120412472" expanded="true" signature="278:297" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setClasificacion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/viewcontroller/seters/setClasificacion.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="encuestaModel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/encuestaModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+              <folding>
+                <marker date="1441070598283" expanded="true" signature="228:290" placeholder="SELECT TipoO..tipo_organizacion..." />
+                <marker date="1441070598283" expanded="true" signature="580:743" placeholder="SELECT a.id_..actividad_economica..." />
+                <marker date="1441070598283" expanded="true" signature="1033:1114" placeholder="SELECT id_ac..actividad_economica..." />
+                <marker date="1441070598283" expanded="true" signature="1450:1490" placeholder="SELECT id_ti..tipos_orgtitle..." />
+                <marker date="1441070598283" expanded="true" signature="1776:2320" placeholder="SELECT a.id_..encuesta_principal..." />
+                <marker date="1441070598283" expanded="true" signature="2604:2643" placeholder="SELECT * FRO..clasificacion_de_empresas..." />
+                <marker date="1441070598283" expanded="true" signature="2926:2985" placeholder="SELECT ubica..ubicacion_comercial..." />
+                <marker date="1441070598283" expanded="true" signature="3289:7372" placeholder="SELECT a.fec..encuesta_principal..." />
+                <marker date="1441070598283" expanded="true" signature="7665:7745" placeholder="SELECT num_d..info_documentos..." />
+                <marker date="1441070598283" expanded="true" signature="7988:8111" placeholder="SELECT emple..num_empleados..." />
+                <marker date="1441070598283" expanded="true" signature="8348:8414" placeholder="SELECT id_ju..justificaciones..." />
+                <marker date="1441070598283" expanded="true" signature="8722:8928" placeholder="SELECT permi..adicional_vendedores_naturales..." />
+                <marker date="1441070598283" expanded="true" signature="9198:9395" placeholder="SELECT a.Nom..info_encuestadores..." />
+                <marker date="1441070598283" expanded="true" signature="9627:9746" placeholder="SELECT a.lat..multimedia..." />
+                <marker date="1441070598283" expanded="true" signature="10048:10118" placeholder="SELECT name_..tipos_seguridad..." />
+                <marker date="1441070598283" expanded="true" signature="10367:10427" placeholder="SELECT name_..tipo_delitos..." />
+                <marker date="1441070598283" expanded="true" signature="10844:11302" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="11668:11912" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="12235:12379" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="13086:14111" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="14540:14962" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="15358:15645" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="16100:16579" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="16928:17071" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="17395:17546" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="17812:17913" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="18179:18231" placeholder="DELETE FROM ..." />
+                <marker date="1441070598283" expanded="true" signature="18531:18611" placeholder="UPDATE activ..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19296" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19342" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19367" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19368" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19369" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19384" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19388" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19398" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19399" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19424" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19433" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19444" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19475" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19476" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19484" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19490" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19491" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19500" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19528" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19529" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19530" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19542" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19564" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19576" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19577" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19597" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19605" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19620" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19639" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19642" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19645" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19648" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19649" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19658" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19659" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="19265:19682" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20066:20145" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20842" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20864" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20886" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20887" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20892" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20897" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20916" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20917" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20924" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20927" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20946" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20952" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20955" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20965" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20966" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="20812:20987" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="21254:21298" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="21254:21349" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="21254:21392" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="22105:22223" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="22105:22237" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="22105:22275" placeholder="UPDATE empre..." />
+                <marker date="1441070598283" expanded="true" signature="22105:22296" placeholder="UPDATE encue..." />
+                <marker date="1441070598283" expanded="true" signature="22618:22660" placeholder="SELECT id_nu..num_empleados..." />
+                <marker date="1441070598283" expanded="true" signature="22618:22679" placeholder="SELECT id_nu..num_empleados..." />
+                <marker date="1441070598283" expanded="true" signature="22618:22680" placeholder="SELECT id_nu..num_empleados..." />
+                <marker date="1441070598283" expanded="true" signature="22618:22704" placeholder="SELECT id_nu..num_empleados..." />
+                <marker date="1441070598283" expanded="true" signature="22926:22977" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:22996" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:22997" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23006" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23015" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23016" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23039" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23047" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23049" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23050" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23051" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23073" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23076" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23077" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23089" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23090" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23091" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23093" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23127" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23129" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23132" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23137" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23146" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23148" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23149" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="22926:23180" placeholder="UPDATE num_e..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23615" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23622" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23623" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23645" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23646" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23664" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23665" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23682" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23683" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23701" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23703" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23734" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="23499:23736" placeholder="INSERT INTO ..." />
+                <marker date="1441070598283" expanded="true" signature="24070:24126" placeholder="/***********..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +271,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -98,34 +286,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/logstyle.css" />
-        <option value="$PROJECT_DIR$/index2.php" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/viewcontroller/getAllEncuestadores.php" />
-        <option value="$PROJECT_DIR$/css/styles.css" />
-        <option value="db-console:/da82ee10/e596c9a7-31c5-4ff1-a159-1c3e198f2e75/" />
-        <option value="$PROJECT_DIR$/viewcontroller/getAllEncuestasForTable.php" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e596c9a7-31c5-4ff1-a159-1c3e198f2e75/console.sql" />
-        <option value="$PROJECT_DIR$/model/conexion.php" />
-        <option value="$PROJECT_DIR$/viewcontroller/getTitleTipoOrganizacion.php" />
-        <option value="$PROJECT_DIR$/views/admin/index.php" />
-        <option value="$PROJECT_DIR$/views/admin/js/mainadmin.js" />
-        <option value="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" />
-        <option value="$PROJECT_DIR$/model/encuestaModel.php" />
-        <option value="$PROJECT_DIR$/js/autocompleActividades.js" />
         <option value="$PROJECT_DIR$/picgps/index.html" />
         <option value="$PROJECT_DIR$/viewcontroller/uploadMediaData.php" />
-        <option value="$PROJECT_DIR$/censo.php" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/picgps/maingeo.css" />
-        <option value="$PROJECT_DIR$/picgps/index.php" />
-        <option value="$PROJECT_DIR$/picgps/subir.php" />
         <option value="$PROJECT_DIR$/viewcontroller/validationUser.php" />
-        <option value="$PROJECT_DIR$/picgps/main.js" />
-        <option value="$PROJECT_DIR$/model/usuariosModel.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/validador.js" />
+        <option value="$PROJECT_DIR$/views/pricipal/index.php" />
+        <option value="$PROJECT_DIR$/views/principal/index.php" />
+        <option value="$PROJECT_DIR$/views/principal/css/mainmenu.css" />
+        <option value="$PROJECT_DIR$/views/principal/js/main.js" />
+        <option value="$PROJECT_DIR$/picgps/subir.php" />
+        <option value="$PROJECT_DIR$/picgpsnit/index.php" />
+        <option value="$PROJECT_DIR$/picgps/index.php" />
+        <option value="$PROJECT_DIR$/picgps/main.js" />
+        <option value="$PROJECT_DIR$/picgpsnit/main.js" />
+        <option value="$PROJECT_DIR$/picgpsnit/subirfotonit.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
+        <option value="$PROJECT_DIR$/views/admin/stylre.css" />
+        <option value="$PROJECT_DIR$/model/usuariosModel.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/getActividades.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/putNewActividad.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/deleteActividadEconomica.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/updateActividadEconomica.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/getAllActividades.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/getAllActividadesArr.php" />
+        <option value="$PROJECT_DIR$/js/autocompleActividades.js" />
+        <option value="$PROJECT_DIR$/censo.php" />
+        <option value="$PROJECT_DIR$/model/conexion.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/putAllDataForm.php" />
+        <option value="$PROJECT_DIR$/views/admin/js/apigooglemaps" />
+        <option value="$PROJECT_DIR$/views/admin/js/apigooglemaps.js" />
+        <option value="$PROJECT_DIR$/viewcontroller/getPosicionAndUrl.php" />
+        <option value="$PROJECT_DIR$/views/admin/main.css" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/85d4908a-2552-4095-970a-a44047aa1989/console.sql" />
+        <option value="$PROJECT_DIR$/viewcontroller/getDataEmpleados.php" />
+        <option value="$PROJECT_DIR$/js/editarColumna.js" />
+        <option value="$PROJECT_DIR$/views/admin/js/editarColumna.js" />
+        <option value="$PROJECT_DIR$/views/editarencuesta/maineditar.js" />
+        <option value="$PROJECT_DIR$/views/editarencuesta/index.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/views/admin/js/valid.js" />
+        <option value="$PROJECT_DIR$/viewcontroller/getAllDataEncuesta.php" />
+        <option value="$PROJECT_DIR$/views/admin/js/mainadmin.js" />
+        <option value="$PROJECT_DIR$/views/admin/js/maineditar.js" />
+        <option value="$PROJECT_DIR$/views/admin/editarencuesta.php" />
+        <option value="$PROJECT_DIR$/views/admin/index.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/seters/setInformacionPersonal.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/seters/setUbicacion.php" />
+        <option value="$PROJECT_DIR$/model/encuestaModel.php" />
+        <option value="$PROJECT_DIR$/viewcontroller/seters/setClasificacion.php" />
+        <option value="$PROJECT_DIR$/js/sendDataForUpdate.js" />
       </list>
     </option>
   </component>
@@ -139,7 +350,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
     <option name="y" value="24" />
     <option name="width" value="1600" />
@@ -168,8 +379,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -198,7 +409,121 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewcontroller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viewcontroller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="censocc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -227,11 +552,25 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="889" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="/opt/lampp/php/man/man1/php.1" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="last.edited.regexp" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/viewcontroller/seters" />
+      <recent name="$PROJECT_DIR$/views/editarencuesta/" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/views/principal/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views/admin" />
+      <recent name="$PROJECT_DIR$/views/admin/js" />
+      <recent name="$PROJECT_DIR$/views/picgps" />
+      <recent name="$PROJECT_DIR$/views" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.censo.php">
     <configuration default="false" name="censo.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/censocc/censo.php">
@@ -403,59 +742,48 @@
       <option name="project" value="LOCAL" />
       <updated>1437592085233</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Cambios Para empezar validador extra para los campos de tipo numero">
+      <created>1438881078425</created>
+      <option name="number" value="00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1438881078425</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Inicio de creacion de ubicacion en el mapa">
+      <created>1440471928486</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1440471928486</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1600" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14993565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17374517" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16409266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1988417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3243968" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32435897" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37435898" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967907" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32841823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286219" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2358643" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32508835" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19127086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967907" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297587" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -482,7 +810,10 @@
     <MESSAGE value="Cambies hechos el 16/07/2015" />
     <MESSAGE value="Modificacion del php para subir los strings donde es debido y comprobacion de el javascript para la vilidacion y envio de datoas" />
     <MESSAGE value="Cambios pre-finales para la entrega de el dia 22/07/2015" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios pre-finales para la entrega de el dia 22/07/2015" />
+    <MESSAGE value="Cambios Para empezar validador extra para los campos de tipo numero" />
+    <MESSAGE value="Inicio de creacion de ubicacion en el mapa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inicio de creacion de ubicacion en el mapa" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -491,331 +822,17 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/validador.js">
+    <entry file="file://$PROJECT_DIR$/viewcontroller/validationUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/encuestaModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.1493776">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viewcontroller/getUbicacionComercial.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0746888">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/censo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="7" selection-start-line="52" selection-start-column="7" selection-end-line="52" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/censo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/censo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="74" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/censo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/getUbicacionComercial.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/logstyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11772853">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/Fondo_azul_2000x200.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/Fondo_azul.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47368422">
-          <caret line="670" column="13" selection-start-line="670" selection-start-column="12" selection-end-line="670" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/e596c9a7-31c5-4ff1-a159-1c3e198f2e75.table:camaracomercio.info_maquila">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>e596c9a7-31c5-4ff1-a159-1c3e198f2e75.table:camaracomercio.info_maquila</OriginalElement>
-          <nodes>
-            <node x="" y="">e596c9a7-31c5-4ff1-a159-1c3e198f2e75.table:camaracomercio.info_maquila</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="139.0" y="84.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Columns</Category>
-            <Category>Key columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3469388">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/empresaModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/conexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25714287">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2820513">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/autocompleActividades.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50617284">
-          <caret line="404" column="8" selection-start-line="404" selection-start-column="8" selection-end-line="404" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/js/mainadmin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.037037037">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/85d4908a-2552-4095-970a-a44047aa1989/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/encuestaModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5020747">
-          <caret line="157" column="67" selection-start-line="157" selection-start-column="67" selection-end-line="157" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="246" column="22" selection-start-line="246" selection-start-column="22" selection-end-line="246" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/picgps/maingeo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.216">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/censo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.817427">
-          <caret line="95" column="126" selection-start-line="95" selection-start-column="109" selection-end-line="95" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40940526">
-          <caret line="70" column="61" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/picgps/subir.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7219917">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/picgps/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6390042">
-          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/picgps/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28">
-          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/getAllEncuestadores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/getAllEncuestasForTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/getClasificacionEmpresa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/getTipoOrganizacion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,55 +840,538 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0746888">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
+    <entry file="file://$PROJECT_DIR$/css/logstyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58921164">
-          <caret line="128" column="42" selection-start-line="128" selection-start-column="42" selection-end-line="128" selection-end-column="42" />
-          <folding />
+        <state vertical-scroll-proportion="0.12">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewcontroller/validationUser.php">
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1493776">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
+        <state vertical-scroll-proportion="0.096">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/camaracomercio..title_actividad_economica">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/usuariosModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.444445">
-          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="91" selection-end-column="14" />
-          <folding>
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..info_encuestadores..." />
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..info_encuestadores..." />
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="SELECT num_f..info_encuestadores..." />
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="SELECT id_en..info_encuestadores..." />
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="UPDATE encue..." />
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1438667490012" expanded="true" signature="-1:-1" placeholder="UPDATE info_..." />
-          </folding>
+        <state vertical-scroll-proportion="-20.11111">
+          <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/picgps/subir.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89626557">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getAllEncuestadores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19271949">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.09866667">
+          <caret line="327" column="22" selection-start-line="327" selection-start-column="22" selection-end-line="327" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/picgps/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.376">
+          <caret line="34" column="58" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/json.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34578148">
+          <caret line="88" column="9" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/updateActividadEconomica.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.373444">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/deleteActividadEconomica.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34854773">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getActividades.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22406639">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..relacion_digitador_encuesta">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getAllActividadesArr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0746888">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="34.703705">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..clasificacion_de_empresas">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..tipo_organizacion">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/putNewActividad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.099585064">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..actividad_economica">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..tipoDocumentos">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..info_documentos">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/putAllDataForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-48.11111">
+          <caret line="124" column="80" selection-start-line="124" selection-start-column="61" selection-end-line="124" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..titleDocumentoIdentifica">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/censo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21438451">
+          <caret line="1024" column="41" selection-start-line="1024" selection-start-column="41" selection-end-line="1024" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/principal/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getTipoOrganizacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0746888">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getPosicionAndUrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36258993">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/85d4908a-2552-4095-970a-a44047aa1989/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getAllEncuestasForTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0746888">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..empresa_propietario">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/autocompleActividades.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.096">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-          <folding />
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..encuesta_gral">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3659a99/85d4908a-2552-4095-970a-a44047aa1989/emalazt_geosearch..encuesta_principal">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/validador.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024">
-          <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        <state vertical-scroll-proportion="-2.5799723">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.928">
+          <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="229" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/js/mainadmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.856">
+          <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/getAllDataEncuesta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/js/maineditar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/js/valid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.592">
+          <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19917013">
+          <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="134" column="4" selection-start-line="134" selection-start-column="4" selection-end-line="134" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/seters/setInformacionPersonal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19917013">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="23" selection-end-column="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/editarencuesta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/seters/setUbicacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22406639">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/encuestaModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="537" column="0" selection-start-line="537" selection-start-column="0" selection-end-line="537" selection-end-column="0" />
+          <folding>
+            <marker date="1441070598283" expanded="true" signature="228:290" placeholder="SELECT TipoO..tipo_organizacion..." />
+            <marker date="1441070598283" expanded="true" signature="580:743" placeholder="SELECT a.id_..actividad_economica..." />
+            <marker date="1441070598283" expanded="true" signature="1033:1114" placeholder="SELECT id_ac..actividad_economica..." />
+            <marker date="1441070598283" expanded="true" signature="1450:1490" placeholder="SELECT id_ti..tipos_orgtitle..." />
+            <marker date="1441070598283" expanded="true" signature="1776:2320" placeholder="SELECT a.id_..encuesta_principal..." />
+            <marker date="1441070598283" expanded="true" signature="2604:2643" placeholder="SELECT * FRO..clasificacion_de_empresas..." />
+            <marker date="1441070598283" expanded="true" signature="2926:2985" placeholder="SELECT ubica..ubicacion_comercial..." />
+            <marker date="1441070598283" expanded="true" signature="3289:7372" placeholder="SELECT a.fec..encuesta_principal..." />
+            <marker date="1441070598283" expanded="true" signature="7665:7745" placeholder="SELECT num_d..info_documentos..." />
+            <marker date="1441070598283" expanded="true" signature="7988:8111" placeholder="SELECT emple..num_empleados..." />
+            <marker date="1441070598283" expanded="true" signature="8348:8414" placeholder="SELECT id_ju..justificaciones..." />
+            <marker date="1441070598283" expanded="true" signature="8722:8928" placeholder="SELECT permi..adicional_vendedores_naturales..." />
+            <marker date="1441070598283" expanded="true" signature="9198:9395" placeholder="SELECT a.Nom..info_encuestadores..." />
+            <marker date="1441070598283" expanded="true" signature="9627:9746" placeholder="SELECT a.lat..multimedia..." />
+            <marker date="1441070598283" expanded="true" signature="10048:10118" placeholder="SELECT name_..tipos_seguridad..." />
+            <marker date="1441070598283" expanded="true" signature="10367:10427" placeholder="SELECT name_..tipo_delitos..." />
+            <marker date="1441070598283" expanded="true" signature="10844:11302" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="11668:11912" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="12235:12379" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="13086:14111" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="14540:14962" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="15358:15645" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="16100:16579" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="16928:17071" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="17395:17546" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="17812:17913" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="18179:18231" placeholder="DELETE FROM ..." />
+            <marker date="1441070598283" expanded="true" signature="18531:18611" placeholder="UPDATE activ..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19296" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19342" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19367" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19368" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19369" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19384" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19388" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19398" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19399" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19424" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19433" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19444" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19475" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19476" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19484" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19490" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19491" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19500" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19528" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19529" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19530" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19542" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19564" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19576" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19577" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19597" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19605" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19620" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19639" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19642" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19645" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19648" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19649" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19658" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19659" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="19265:19682" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20066:20145" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20842" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20864" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20886" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20887" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20892" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20897" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20916" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20917" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20924" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20927" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20946" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20952" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20955" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20965" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20966" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="20812:20987" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="21254:21298" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="21254:21349" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="21254:21392" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="22105:22223" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="22105:22237" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="22105:22275" placeholder="UPDATE empre..." />
+            <marker date="1441070598283" expanded="true" signature="22105:22296" placeholder="UPDATE encue..." />
+            <marker date="1441070598283" expanded="true" signature="22618:22660" placeholder="SELECT id_nu..num_empleados..." />
+            <marker date="1441070598283" expanded="true" signature="22618:22679" placeholder="SELECT id_nu..num_empleados..." />
+            <marker date="1441070598283" expanded="true" signature="22618:22680" placeholder="SELECT id_nu..num_empleados..." />
+            <marker date="1441070598283" expanded="true" signature="22618:22704" placeholder="SELECT id_nu..num_empleados..." />
+            <marker date="1441070598283" expanded="true" signature="22926:22977" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:22996" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:22997" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23006" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23015" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23016" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23039" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23047" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23049" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23050" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23051" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23073" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23076" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23077" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23089" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23090" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23091" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23093" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23127" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23129" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23132" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23137" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23146" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23148" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23149" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="22926:23180" placeholder="UPDATE num_e..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23615" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23622" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23623" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23645" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23646" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23664" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23665" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23682" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23683" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23701" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23703" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23734" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="23499:23736" placeholder="INSERT INTO ..." />
+            <marker date="1441070598283" expanded="true" signature="24070:24126" placeholder="/***********..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewcontroller/seters/setClasificacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/sendDataForUpdate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.552">
+          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+          <folding>
+            <element signature="n#!!doc;n#sendDataByAjax#0" expanded="false" />
+            <marker date="1441120412472" expanded="true" signature="278:297" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

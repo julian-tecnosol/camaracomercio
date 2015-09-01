@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - camaracomercio@localhost" uuid="85d4908a-2552-4095-970a-a44047aa1989">
+  <data-source name="MySQL - emalazt_geosearch@localhost" uuid="85d4908a-2552-4095-970a-a44047aa1989">
     <database-info product="MySQL" version="5.6.25" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <schema name="" catalog="camaracomercio"/>
-    <table name="actividad_economica" schema="" catalog="camaracomercio" type="TABLE">
+    <schema name="" catalog="emalazt_geosearch"/>
+    <table name="actividad_economica" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_actividad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="actividad_name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="id_title_actividad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id_actividad"/>
     </table>
-    <table name="adicional_vendedores_naturales" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="adicional_vendedores_naturales" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_vendedor_natural" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_empresa" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="permiso_funcionamiento" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
       <column name="cual_permiso" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <column name="valor_ventas" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
@@ -27,21 +27,22 @@
       <column name="justificacion_prestaciones" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_vendedor_natural"/>
     </table>
-    <table name="caracter_ubicacion_comercial" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="caracter_ubicacion_comercial" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_caracter_ubicacion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_caracter_ubicacion"/>
     </table>
-    <table name="clasificacion_de_empresas" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="clasificacion_de_empresas" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_clasificacion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name_clasificacion" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
       <column name="descripcion_clasificacion" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_clasificacion"/>
     </table>
-    <table name="empresa_propietario" schema="" catalog="camaracomercio" type="TABLE">
-      <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    <table name="empresa_propietario" schema="" catalog="emalazt_geosearch" type="TABLE">
+      <column name="id_empresa" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="id_tipo_identifica" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_tipo_organizacion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
       <column name="nombre_razon" sqlType="VARCHAR" precision="150" scale="0" nullable="true" jdbcType="12"/>
       <column name="nombre_persona" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <column name="representante_legal" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
@@ -53,7 +54,7 @@
       <column name="correo_electronico" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_empresa"/>
     </table>
-    <table name="encuesta_gral" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="encuesta_gral" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_encuesta" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="registroMercantil" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
       <column name="num_registro" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -72,20 +73,21 @@
       <column name="justificacion_sayco" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <column name="residuos_peligrosos" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <column name="num_residuos" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <column name="ingresos_mensuales" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ingresos_mensuales" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="codigo_ciiu" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <column name="num_ciiu" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="cod_industria_comercio" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <column name="num_cod_indusComer" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="valor_activos" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="valor_activos" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="TIC_PRSTM" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id_encuesta"/>
+      <index name="num_registro" unique="false" columns="num_registro"/>
     </table>
-    <table name="encuesta_principal" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="encuesta_principal" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_encuesta_principal" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="fecha" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
       <column name="fecha_ultima_modifi" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
-      <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_empresa" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="ubicacion_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="id_caracter_ubicacion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="actividad_economica" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
@@ -99,25 +101,25 @@
       <column name="id_tabla_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id_encuesta_principal"/>
     </table>
-    <table name="info_documentos" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="info_documentos" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_documentos" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="tipo_documento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="num_documento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="fecha_renovada" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_documentos"/>
     </table>
-    <table name="info_encuestadores" schema="" catalog="camaracomercio" type="TABLE">
-      <column name="id_encuestador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    <table name="info_encuestadores" schema="" catalog="emalazt_geosearch" type="TABLE">
+      <column name="id_encuestador" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="Nombre_Completo" sqlType="VARCHAR" precision="155" scale="0" nullable="true" jdbcType="12"/>
       <column name="Telefono" sqlType="VARCHAR" precision="7" scale="0" nullable="true" jdbcType="12"/>
       <column name="Celular" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
       <column name="nickname" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="pass" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
       <column name="tipo_usuario" sqlType="VARCHAR" precision="5" scale="0" nullable="false" jdbcType="12" def="J0Mn"/>
-      <column name="num_fotos" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
+      <column name="num_fotos" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id_encuestador"/>
     </table>
-    <table name="info_maquila" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="info_maquila" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_info_maquila" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="num_maquinas" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="sistemaSeguridad" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
@@ -127,78 +129,90 @@
       <column name="sistema_seguridad_personal" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
       <primary-key name="PRIMARY" columns="id_info_maquila"/>
     </table>
-    <table name="multimedia" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="justificaciones" schema="" catalog="emalazt_geosearch" type="TABLE">
+      <column name="id_justificacion" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="Nombre_Justificacion" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_justificacion"/>
+    </table>
+    <table name="multimedia" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_empresa" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="id_encuestador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="lat" sqlType="VARCHAR" precision="60" scale="0" nullable="true" jdbcType="12"/>
       <column name="name_img" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
       <column name="lon" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="num_empleados" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="num_empleados" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_num_empleados" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="id_empresa" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id_empresa" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
       <column name="empleados_direc_indirect" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="empleados_numero" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="prestaciones" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6" def="MQ=="/>
       <column name="porque_prestaciones" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_num_empleados"/>
     </table>
-    <table name="persona_encuestada" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="persona_encuestada" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_tabla_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="id_persona" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="Nombre" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="telefono" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="observaciones" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
-      <column name="id_encuesta" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id_tabla_persona"/>
     </table>
-    <table name="relacion_digitador_encuesta" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="relacion_digitador_encuesta" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="id_digitador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="id_encuestador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="id_encuesta" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="tipoDocumentos" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="tipoDocumentos" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_documentos" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name_docuemento" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_documentos"/>
     </table>
-    <table name="tipo_delitos" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="tipo_delitos" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_tipo_delito" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name_delito" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="descripcion_delito" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_tipo_delito"/>
     </table>
-    <table name="tipo_organizacion" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="tipo_organizacion" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="TipoOrg_Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="TipoOrg_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="id_title" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="TipoOrg_diminutivo" sqlType="VARCHAR" precision="10" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="TipoOrg_Id"/>
     </table>
-    <table name="tipos_orgtitle" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="tipos_orgtitle" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_title" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="Name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="Descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_title"/>
     </table>
-    <table name="tipos_seguridad" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="tipos_seguridad" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_tipos_seguridad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name_seguridad" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
       <column name="descripcion_seguridad" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_tipos_seguridad"/>
     </table>
-    <table name="title_actividad_economica" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="titleDocumentoIdentifica" schema="" catalog="emalazt_geosearch" type="TABLE">
+      <column name="id_documento_identifica" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="Name_Documento_Identifica" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
+      <column name="Diminutivo_identifica" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id_documento_identifica"/>
+    </table>
+    <table name="title_actividad_economica" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="id_title_actividad" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="Name_actividad" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="Descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id_title_actividad"/>
     </table>
-    <table name="ubicacion_comercial" schema="" catalog="camaracomercio" type="TABLE">
+    <table name="ubicacion_comercial" schema="" catalog="emalazt_geosearch" type="TABLE">
       <column name="ubicacion_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="ubicacion_name" sqlType="VARCHAR" precision="35" scale="0" nullable="false" jdbcType="12"/>
       <column name="ubicacion_descripcion" sqlType="VARCHAR" precision="140" scale="0" nullable="true" jdbcType="12"/>

@@ -60,17 +60,15 @@ function iniciarTablaActividades(){
  */
 
 function verEncuestaCompleta (id){
-    console.log("id desde funcion ="+id);
     var $miModal = $("#myModal");
 
     $.post("/censocc/viewcontroller/getAllDataEncuesta.php", {idEmpresa : id}, function(allData){
-        console.log(allData);
         var dataView = allData[0];
         var codigoHTML = "<div>" +
             "<div><h3>Fecha encuesta: </h3><span>"+dataView.fecha+"</span></div>" +
             "<div><h3>Tipo de Organizacion: </h3><span>"+dataView.TipoOrg_name+"</span></div>" +
             "<div><h3>Razon Social: </h3><span>"+dataView.nombre_razon+"</span></div>" +
-            "<div><h3>Nombre Representante: </h3><span>"+dataView.nombre_razon+"</span></div>" +
+            "<div><h3>Nombre Representante: </h3><span>"+dataView.nombre_persona+"</span></div>" +
             "<div><h3>Nombre Propietario: </h3><span>"+dataView.nombre_persona+"</span></div>" +
             "<div><h3>Tipo de documento: </h3><span>"+dataView.Diminutivo_identifica+"</span></div>";
         var stringIdEmpresa = dataView.id_empresa;
@@ -82,21 +80,141 @@ function verEncuestaCompleta (id){
             "<div><h3>Caracter ubicacion: </h3><span>"+dataView.caracter_ubicacion+"</span></div>"+
             "<div><h3>Direccion empresa: </h3><span>"+dataView.direccion_empresa+"</span></div>"+
             "<div><h3>Barrio: </h3><span>"+dataView.barrio+"</span></div>"+
+            "<div><h3>Comuna: </h3><span>"+dataView.comuna+"</span></div>"+
             "<div><h3>Telefono: </h3><span>"+dataView.telefonoEmpresa+"</span></div>"+
             "<div><h3>Celular: </h3><span>"+dataView.celular+"</span></div>"+
             "<div><h3>Correo Electronico: </h3><span>"+dataView.correo_electronico+"</span></div>"+
             "<div><h3>Actividad Economica: </h3><span>"+dataView.actividad_name+"</span></div>"+
-            "<div><h3>Clasificacion Empresa: </h3><span>"+dataView.descripcion_clasificacion+"</span></div>"+
-            "<div><h3>Clasificacion Empresa: </h3><span>"+dataView.descripcion_clasificacion+"</span></div>"+
-            "</div>";
+            "<div><h3>Clasificacion Empresa: </h3><span>"+dataView.descripcion_clasificacion+"</span></div>";
+
+        if(dataView.empleados == 1){
+            codigoHTML += "<div><h3>Numero de Empleados: </h3><span>"+dataView.empleados_numero+"</span></div>" ;
+            if(dataView.prestaciones == 1){
+                codigoHTML += "<div><h3>Afiliado a salud, pension, ARL: </h3><span>Si</span></div>" ;
+            }else{
+                codigoHTML += "<div><h3>Afiliado a salud, pension, ARL: </h3><span>No</span></div>" +
+                    "<div><h3>Por que no estan afiliados ? </h3><span>"+dataView.porque_prestaciones+"</span></div>" ;
+            }
+        }
+
+        //      REGISTRO MERCANTIL
+        if(dataView.registroMercantil == 1){
+            codigoHTML += "<div><h3>Numero de registro mercantil: </h3><span>"+dataView.num_registro_mercantil+"</span></div>" +
+                "<div><h3>Fecha registro: </h3><span>"+dataView.fecha_registro_mercantil+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Porque no tiene registro mercantil: </h3><span>"+dataView.justificaciones[dataView.justificacion_registro - 1].Nombre_Justificacion+"</span></div>";
+        }
+
+        //      USO DEL SUELO
+
+        if(dataView.usoSuelo == 1){
+            codigoHTML += "<div><h3>Certificado de uso del suelo: </h3><span>Si</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Porque no tiene certificado de uso del suelo: </h3><span>"+dataView.justificaciones[dataView.justificacion_uso_suelo - 1].Nombre_Justificacion+"</span></div>";
+        }
+
+        //      CERTIFICADO DE BOMBEROS
+
+        if(dataView.certificadoBomberos == 1){
+            codigoHTML += "<div><h3>Certificado de Bomberos: </h3><span>Si</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Porque no tiene certificado de Bomberos: </h3><span>"+dataView.justificaciones[dataView.justificacion_bomberos - 1].Nombre_Justificacion+"</span></div>";
+        }
+
+        //     MANIPULACION DE ALIMENTOS
+
+        if(dataView.manipulacion_alimentos == 1){
+            codigoHTML += "<div><h3>Certificado de Manipulacion de alimentos: </h3><span>Si</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Porque no tiene certificado de Manipulacion de alimentos: </h3><span>"+dataView.justificaciones[dataView.justificacion_alimentos - 1].Nombre_Justificacion+"</span></div>";
+        }
+
+        //      REGISTRO INVIMA
+
+        if(dataView.registro_Invima == 1){
+            codigoHTML += "<div><h3>Numero Invima: </h3><span>"+dataView.num_registro_mercantil+"</span></div>" +
+                "<div><h3>Fecha registro: </h3><span>"+dataView.fecha_registro_mercantil+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Porque no tiene registro Invima: </h3><span>"+dataView.justificaciones[dataView.justificacion_Invima - 1].Nombre_Justificacion +"</span></div>";
+        }
+        if(dataView.sayco_acinpro == 1){
+            codigoHTML += "<div><h3>Numero Sayco: </h3><span>"+dataView.num_cert_sayco+"</span></div>" +
+                "<div><h3>Fecha registro: </h3><span>"+dataView.fecha_registro_mercantil+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Porque no tiene certificado de Sayco y Acinpro: </h3><span>"+dataView.justificaciones[dataView.justificacion_sayco - 1].Nombre_Justificacion+"</span></div>";
+        }
+        if(dataView.num_residuos == 1){
+            codigoHTML += "<div><h3>Numero Invima: </h3><span>"+dataView.num_residuos_peligrosos+"</span></div>" +
+                "<div><h3>Fecha registro: </h3><span>"+dataView.fecha_registro_mercantil+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Residuos Peligroso: </h3><span>No Tiene</span></div>";
+        }
+        if(dataView.num_ciiu == 1){
+            codigoHTML += "<div><h3>Numero CIIU: </h3><span>"+dataView.num_cod_ciiu+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Codigo CIIU: </h3><span>No Tiene</span></div>";
+        }
+        if(dataView.num_industriComercio == 1){
+            codigoHTML += "<div><h3>Numero Industria y Comercio: </h3><span>"+dataView.num_industriComercio+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Industria y Comercio: </h3><span>No Tiene</span></div>";
+        }
+
+        codigoHTML += "<div><h3>Ingresos Mensuales: </h3><span>"+dataView.ingresos_mensuales+"</span></div>";
+        codigoHTML += "<div><h3>Cuanto valen los activos del establecimiento: </h3><span>"+dataView.valor_activos+"</span></div>";
+
+        if(dataView.sistemaSeguridad == 1){
+            codigoHTML += "<div><h3>Cuenta con sistema de Seguridad: </h3><span>Si</span></div>" +
+                "<div><h3>Cual: </h3><span>"+dataView.name_seguridad+"</span></div>"
+        }else{
+            codigoHTML += "<div><h3>Cuenta con sistema de Seguridad: </h3><span>No</span></div>";
+        }
+
+        if(dataView.victimaDelito == 1){
+            codigoHTML += "<div><h3>Ha sido victima de algún delito: </h3><span>Si</span></div>" +
+                "<div><h3>Cual: </h3><span>"+dataView.name_delito+"</span></div>"
+        }else{
+            codigoHTML += "<div><h3>Ha sido victima de algún delito: </h3><span>No</span></div>";
+        }
+
+        codigoHTML += "<div><h3>Cuenta con sistema de seguridad personal: </h3><span>"+((dataView.sistema_seguridad_personal == 1) ? "Si" : "No") +"</span></div>";
+
+        if(dataView.tipo_usuario == 'D'){
+            codigoHTML += "<div><h3>Nombre del digitador: </h3><span>"+dataView.Nombre_Completo+"</span></div>";
+            codigoHTML += "<div><h3>Nombre del encuestador: </h3><span>"+dataView.nombre_encuestador+"</span></div>";
+        }else{
+            codigoHTML += "<div><h3>Nombre del encuestador: </h3><span>"+dataView.Nombre_Completo+"</span></div>";
+        }
+
+        codigoHTML +="</div>";
 
         $("#modalContentBody").html(codigoHTML);
     }, "json");
+
     $miModal.modal({
         show : true,
         keyboard : true
     });
 }
+
+
+/******************************************
+ *      INICIO DE FUNCIONES PARA EDITAR
+ * ***************************************/
+
+function inicioEditar(idEmpresa){
+    $.post("/censocc/viewcontroller/getAllDataEncuesta.php", {idEmpresa : idEmpresa}, function(allDataEditar){
+        var dataEdit = allDataEditar[0];
+        $.post("editarencuesta.php",function(data){
+            //console.log(data);
+            var $miModal = $("#myModalFormEdit");
+            $("#modalContentFormBody").html(data);
+            vaciarDatos(allDataEditar,$miModal);
+        });
+    });
+}
+
+/*****************************************/
 
 function inicializarTablaEncuestas(){
     var $botonTablaActividades = $("#tableContainer").find("button");
@@ -111,6 +229,8 @@ function inicializarTablaEncuestas(){
 
             if(evento == "ver"){
                 verEncuestaCompleta(id);
+            }else if(evento == "editar"){
+                inicioEditar(id);
             }
         });
     });
@@ -130,6 +250,7 @@ function iniciarTable(){
             codigoHTML += '<td>'+thisObj.nombre_razon+'</td>';
             codigoHTML += '<td>'+thisObj.nombre_persona+'</td>';
             codigoHTML += '<td>'+thisObj.actividad_name+'</td>';
+            codigoHTML += '<td>'+thisObj.direccion_empresa+'</td>';
             codigoHTML += '<td>'+thisObj.barrio+'</td>';
             codigoHTML += '<td>'+thisObj.comuna+'</td>';
             codigoHTML += '<td>'+thisObj.Nombre+'</td>';
@@ -171,6 +292,71 @@ function iniciarTable(){
         })
     });
 
+    $divsTabs.find("a[aria-controls='mapagoogle']").on('shown.bs.tab', function (e) {
+
+        /************************************************************************
+         *      INICIAR APLICACION PARA LA CREACION DE GEOPOSICIONAMIENTO
+         ***********************************************************************/
+
+        var map;
+        map = new google.maps.Map(document.getElementById('canvasmap'), {
+            center: {lat: 4.836242, lng: -75.6799514},
+            zoom: 14
+        });
+
+
+        function addNewMarker(position,data){
+            console.log(data);
+            console.log(parseFloat(data.lon),parseFloat(data.lat));
+
+            function toggleBounce() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+
+            var contentString = '<div class="row">' +
+                '<div id="content" class="col-md-12 class-md-12">' +
+                '<h1>'+data.nombre_razon+'</h1>' +
+                '<div class="col-md-12 class-md-12">' +
+                '<img src="/'+data.name_img+'" alt="'+data.nombre_razon+'" width="100%" heigth="100%    " class="img-responsive">' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+
+            var marker = new google.maps.Marker({
+                position: position,
+                map: map
+            });
+
+            marker.addListener('click', function() {
+                toggleBounce();
+                infowindow.open(map, marker);
+            });
+
+        }
+
+        function recuperarPosiciones(){
+            $.get("../../viewcontroller/getPosicionAndUrl.php", function(allPosicion){
+                for(var i = 0;i < allPosicion.length;i++){
+                    var thisPos = allPosicion[i];
+                    var pos = {lat : parseFloat(thisPos.lat), lng : parseFloat(thisPos.lon)};
+                    addNewMarker(pos,thisPos);
+                }
+            },"json");
+        }
+
+        recuperarPosiciones();
+    });
+
     $("#addNewActividades").submit(function(e){
         e.preventDefault();
         var $thisForm = $(this);
@@ -182,13 +368,8 @@ function iniciarTable(){
                 alert(data);
                 $thisForm[0].reset();
             }
-        })
+        });
     });
-
-
-    /************************************************************************
-     *      INICIAR APLICACION PARA LA CREACION DE GEOPOSICIONAMIENTO
-     ***********************************************************************/
 }
 
 $(document).ready(iniciarTable);

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4152693275">
-    <data-source source="LOCAL" name="MySQL - camaracomercio@localhost" uuid="85d4908a-2552-4095-970a-a44047aa1989">
+  <component name="DataSourceManagerImpl" format="xml" hash="3725642797">
+    <data-source source="LOCAL" name="MySQL - emalazt_geosearch@localhost" uuid="85d4908a-2552-4095-970a-a44047aa1989">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/camaracomercio</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/emalazt_geosearch</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />

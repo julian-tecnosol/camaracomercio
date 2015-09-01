@@ -40,6 +40,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Tabla</a></li>
             <li role="presentation"><a href="#actividades" aria-controls="actividades" role="tab" data-toggle="tab">Actividades</a></li>
+            <li role="presentation"><a href="#mapagoogle" aria-controls="mapagoogle" role="tab" data-toggle="tab">Mapa Informe</a></li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade in active" id="home">
@@ -51,6 +52,7 @@
                         <th>RAZÓN SOCIAL</th>
                         <th>NOMBRE PROPIETARIO</th>
                         <th>ACTIVIDAD ECONOMICA</th>
+                        <th>DIRECCION</th>
                         <th>BARRIO</th>
                         <th>COMUNA</th>
                         <th>NOMBRE ENCUESTADO</th>
@@ -102,20 +104,25 @@
                     </div>
                 </div>
             </div>
+            <div role="tabpanel" class="tab-pane fade" id="mapagoogle">
+                <div class="row">
+                    <div id="canvasmap"></div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+    <!-- Modal to edit dataform-->
+    <div id="myModalFormEdit" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
 
-            <!-- Modal content-->
+            <!-- Modal fucking content from php-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Datos generales de la encuesta</h4>
+                    <h4 class="modal-title">Editar datos para encuesta</h4>
                 </div>
-                <div class="modal-body" id="modalContentBody">
+                <div class="modal-body" id="modalContentFormBody">
                     <p>Some text in the modal.</p>
                 </div>
             </div>
@@ -123,8 +130,12 @@
         </div>
     </div>
     <!-- END MODAL CODE-->
+
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC1eAFPKJwC0mCgNkumzCx-9ILUNjU1vpQ&sensor=true" type="text/javascript"></script>
+    <script type="text/javascript" src="js/maineditar.js"></script>
     <script type="text/javascript" src="js/mainadmin.js"></script>
 </body>
 </html>
