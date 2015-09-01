@@ -4,7 +4,7 @@
 function sendDataByAjax(url,dataSerialize){
     $.ajax({
         method: "POST",
-        url : "../../viewcontroller/seters/"+url,
+        url : "../../viewcontroller/setters/"+url,
         data : dataSerialize,
         beforeSend : function(){
             var codigoHTML = "<div style='text-align: center;'><img src='/censocc/img/loading.gif'></div>";
@@ -56,29 +56,25 @@ function iniciarFuncionesParaActualizar(){
     $("#infoVendedoresAmbulantesForm").submit(function(e){
         var formData = $(this).serialize();
         e.preventDefault();
-        console.log(formData);
-        console.dir(this);
+        sendDataByAjax("setClasificacion.php",formData);
     });
 
     $("#infoSeguridadForm").submit(function(e){
         var formData = $(this).serialize();
         e.preventDefault();
-        console.log(formData);
-        console.dir(this);
+        sendDataByAjax("setClasificacion.php",formData);
     });
 
     $("#infoMaquilaForm").submit(function(e){
         var formData = $(this).serialize();
         e.preventDefault();
-        console.log(formData);
-        console.dir(this);
+        sendDataByAjax("setClasificacion.php",formData);
     });
 
     $("#infoPersonaEncuestadaForm").submit(function(e){
         var formData = $(this).serialize();
         e.preventDefault();
-        console.log(formData);
-        console.dir(this);
+        sendDataByAjax("setClasificacion.php",formData);
     });
 }
 
